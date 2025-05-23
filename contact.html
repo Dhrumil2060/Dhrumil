@@ -48,35 +48,20 @@
       color: #22c55e;
       margin-bottom: 2rem;
     }
-    form {
+    .contact-info {
       background-color: #161b22;
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 1rem;
-      border: none;
-      border-radius: 5px;
-      font-family: inherit;
+    .contact-info p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
     }
-    input:focus, textarea:focus {
-      outline: 2px solid #22c55e;
-    }
-    button {
-      margin-top: 1.5rem;
-      padding: 0.8rem 2rem;
-      background-color: #22c55e;
-      color: #0d1117;
-      border: none;
-      border-radius: 5px;
+    .contact-info a {
+      color: #22c55e;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1db954;
     }
     footer {
       text-align: center;
@@ -97,12 +82,10 @@
 
   <main data-aos="fade-up">
     <h1>Get in Touch</h1>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    
+    <div style="margin-top: 2rem;">
+      <a href="Dhrumil_Patel_Resume.pdf" download class="button" style="display:inline-block; padding: 0.75rem 1.5rem; background-color: #22c55e; color: #0d1117; border-radius: 5px; font-weight: bold; text-decoration: none;">Download My Resume</a>
+    </div>
   </main>
 
   <footer>
