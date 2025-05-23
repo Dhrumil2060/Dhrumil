@@ -10,11 +10,11 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #0d1117;
-      color: #e6edf3;
+      background-color: #0a0f1c;
+      color: #e2e8f0;
     }
     header {
-      background-color: rgba(22, 27, 34, 0.9);
+      background-color: rgba(15, 23, 42, 0.95);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -24,19 +24,20 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
     header h1 {
-      color: #22c55e;
+      color: #38bdf8;
       margin: 0;
     }
     nav a {
       margin-left: 1.5rem;
-      color: #e6edf3;
+      color: #cbd5e1;
       text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
-      color: #22c55e;
+      color: #38bdf8;
     }
     main {
       padding: 120px 2rem 2rem;
@@ -45,28 +46,42 @@
       text-align: center;
     }
     h1 {
-      color: #22c55e;
+      color: #38bdf8;
       margin-bottom: 2rem;
     }
     .contact-info {
-      background-color: #161b22;
+      background: linear-gradient(to right, #1e293b, #0f172a);
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
     }
     .contact-info p {
       margin: 1rem 0;
       font-size: 1.1rem;
     }
     .contact-info a {
-      color: #22c55e;
+      color: #38bdf8;
       text-decoration: none;
       font-weight: bold;
+    }
+    .resume-button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #38bdf8;
+      color: #0f172a;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .resume-button:hover {
+      background-color: #0ea5e9;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      color: #6e7681;
+      color: #64748b;
     }
   </style>
 </head>
@@ -82,9 +97,13 @@
 
   <main data-aos="fade-up">
     <h1>Get in Touch</h1>
-    
-    <div style="margin-top: 2rem;">
-      <a href="Dhrumil_Patel_Resume.pdf" download class="button" style="display:inline-block; padding: 0.75rem 1.5rem; background-color: #22c55e; color: #0d1117; border-radius: 5px; font-weight: bold; text-decoration: none;">Download My Resume</a>
+    <div class="contact-info">
+      <p><strong>Name:</strong> Dhrumil Patel</p>
+      <p><strong>Email:</strong> <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+    </div>
+    <div>
+      <a href="Dhrumil_Patel_Resume.pdf" download class="resume-button">Download My Resume</a>
     </div>
   </main>
 
