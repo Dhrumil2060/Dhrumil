@@ -1,1 +1,90 @@
-<!DOCTYPE html><html><head><title>Virtual Lab</title></head><body><h1>Virtual Lab</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtualization Lab | Dhrumil Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 2rem;
+    }
+    header {
+      background-color: #161b22;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #22c55e;
+      margin: 0;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: #e6edf3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #22c55e;
+    }
+    main {
+      margin-top: 100px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      color: #22c55e;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6e7681;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dhrumil Patel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Virtualization Lab</h2>
+    <p>
+      Designed a secure enterprise virtual lab using VMware ESXi and vCenter. Simulated endpoint threats, malware, and recovery strategies using snapshot rollbacks and isolated network zones.
+    </p>
+
+    <h3>Key Components:</h3>
+    <ul>
+      <li><strong>VMware ESXi:</strong> Bare-metal hypervisor for virtualized test environments</li>
+      <li><strong>vCenter Server:</strong> Centralized management of VMs and clusters</li>
+      <li><strong>Security Zones:</strong> Configured VLANs and firewall rules for DMZ/intranet isolation</li>
+      <li><strong>Endpoint Simulation:</strong> Loaded Kali Linux, Windows Server, and custom agents for real-world threat scenarios</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> Built a flexible security testing platform to experiment with malware behavior, SIEM logs, and rapid response workflows in a controlled, safe lab.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Dhrumil Patel
+  </footer>
+</body>
+</html>
