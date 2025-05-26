@@ -4,95 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap6bu9VXQ+vjxPQ6bF8Tf7oyhdF5Uw2hPHD6hFWzKbpl9ZVzh1jO/3ZgloL7kt6P+0YhKbl0HJK2c+J0O6p9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --accent: #00e0a8;
+      --card-bg: #161b22;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0a0c1b;
-      color: #f1f5f9;
+      background: var(--bg);
+      color: var(--text);
     }
     header {
-      background: linear-gradient(to right, #0a0c1b, #00507a);
-      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #21262d;
     }
     header h1 {
-      color: #00b3ff;
       font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), #00b3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     nav a {
-      color: #f1f5f9;
-      margin-left: 1.5rem;
+      margin-left: 2rem;
       text-decoration: none;
+      color: var(--text);
       font-weight: 600;
       position: relative;
     }
     nav a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      background: #00b3ff;
+      bottom: -4px;
       left: 0;
-      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
       transition: width 0.3s;
     }
     nav a:hover::after {
       width: 100%;
     }
     section {
+      padding: 6rem 2rem;
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
+      margin: auto;
     }
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-    .contact-card {
-      background-color: #111827;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      flex: 1 1 45%;
+    .hero {
+      height: 100vh;
+      background: radial-gradient(circle at top left, #00e0a811 0%, #0d1117 100%);
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+      padding-top: 6rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      background: var(--accent);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px var(--accent);
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background: #00c69c;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
-    .contact-card:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
-    .contact-card i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #00b3ff;
-    }
-    .contact-card h3 {
-      margin: 0.5rem 0;
-    }
-    .contact-card p {
-      margin: 0;
-      font-size: 0.95rem;
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #0a0c1b;
+      padding: 2rem 1rem;
+      background: #0d1117;
       color: #ccc;
-      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--accent);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -108,24 +147,69 @@
     </nav>
   </header>
 
+  <section id="home" class="hero">
+    <h2>Hello, I'm Dhrumil</h2>
+    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+    <a href="#projects">View My Work</a>
+  </section>
+
+  <section id="about">
+    <h2 style="text-align:center; margin-bottom:2rem;">About Me</h2>
+    <p style="max-width:800px; margin:auto; line-height:1.6;">
+      I’m a SOC Analyst with hands-on experience in real-time monitoring, threat intelligence, and endpoint security. I've worked with Sumo Logic, CrowdStrike, Netskope, and Power BI, building detection dashboards and responding to security incidents effectively.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:center; margin-bottom:2rem;">Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>NIST-CSF Implementation</h3>
+        <p>Created a complete framework strategy for NIST-CSF adoption in small enterprise security models.</p>
+      </div>
+      <div class="card">
+        <h3>Network Penetration Testing</h3>
+        <p>Performed vulnerability assessment and exploitation using Nmap, Wireshark, and Metasploit on lab infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>Virtual SOC Lab</h3>
+        <p>Built a simulated SOC environment using Splunk, integrated alerts, dashboards, and rule-based detections.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 style="text-align:center; margin-bottom:2rem;">Experience</h2>
+    <div class="card" style="margin:auto; max-width: 600px;">
+      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+      <p>Monitored incidents using Sumo Logic, mitigated phishing attacks, worked with Netskope DLP, and delivered executive reports via Power BI.</p>
+    </div>
+  </section>
+
   <section id="contact">
-    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 2rem;">Get in Touch</h2>
-    <div class="contact-container">
-      <div class="contact-card">
+    <h2 style="text-align:center; margin-bottom:2rem;">Contact Me</h2>
+    <div class="card-grid">
+      <div class="card" style="text-align:center;">
         <i class="fas fa-envelope"></i>
         <h3>Email</h3>
         <p>dhrumil0620@gmail.com</p>
       </div>
-      <div class="contact-card">
+      <div class="card" style="text-align:center;">
         <i class="fab fa-linkedin"></i>
         <h3>LinkedIn</h3>
-        <p>linkedin.com/in/dhrumilpatel06</p>
+        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Dhrumil Patel | All rights reserved.
+    <p>&copy; 2025 Dhrumil Patel</p>
+    <div>
+      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
   </footer>
+
 </body>
 </html>
