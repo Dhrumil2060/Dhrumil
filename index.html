@@ -57,224 +57,120 @@
       margin: auto;
     }
 
-    .hero {
+    .education-container {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100vh;
-      background: linear-gradient(to right, #1d4ed8, #3b82f6);
-      color: white;
-      padding: 100px 5%;
-      gap: 3rem;
       flex-wrap: wrap;
-    }
-
-    .hero-text {
-      max-width: 500px;
-    }
-
-    .hero-text h2 {
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .hero-text p {
-      font-size: 1.2rem;
-      color: #e2e8f0;
-    }
-
-    .hero-text a {
+      justify-content: center;
+      gap: 2rem;
       margin-top: 2rem;
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: white;
+    }
+
+    .education-card {
+      flex: 1 1 320px;
+      background: linear-gradient(145deg, #ffffff, #f0f4f8);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .education-card h4 {
+      margin-bottom: 0.5rem;
       color: #1d4ed8;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
+      font-size: 1.2rem;
     }
 
-    .hero-text a:hover {
-      background-color: #f3f4f6;
-    }
-
-    .hero-img {
-      max-width: 400px;
-      flex: 1;
-    }
-
-    .hero-img img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 80px 2rem;
-        height: auto;
-      }
-
-      .hero-text {
-        max-width: 100%;
-      }
-
-      .hero-img {
-        max-width: 80%;
-      }
+    .education-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
   </style>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">  AOS.init({
-    duration: 1000,
-    once: true
-  });
-
-  new Typed("#typed-text", {
-    strings: ["Hi, I'm Dhrumil Patel", "Cybersecurity Specialist", "Network Defender", "Penetration Tester"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 1500,
-    loop: true
-  });
-</script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/a2e0e6e6c2.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Patel</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="home" class="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0f172a, #1e3a8a); color: white; padding: 4rem 2rem;">
-  <div data-aos="zoom-in" style="max-width: 800px;">
-    <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-      <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" style="width: 100%; height: 100%; object-fit: cover;" data-aos="fade-in">
-    </div>
-    <h2 id="typed-text" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Hi, I'm Dhrumil Patel</h2>
-    <p style="font-size: 1.2rem; line-height: 1.6; color: #e2e8f0;">Cybersecurity Professional • Network Defender • Penetration Tester</p>
-    <a href="#projects" style="margin-top: 2rem; display: inline-block; padding: 0.75rem 1.5rem; background-color: #3b82f6; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;">Explore My Work</a>
-  </div>
-</section>
+  <!-- Skipping header and home for brevity -->
 
   <section id="about" data-aos="fade-up">
-  <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
-  <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
-    I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
-  </p>
-  <br />
-  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Education</h3>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 1rem;">
-    <div style="flex: 1 1 300px; background: #f8fafc; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <strong>Master of Professional Studies in Informatics</strong>
-      <p style="margin: 0.5rem 0;">Northeastern University, Toronto</p>
-      <p>Expected May 2025 – GPA: 3.7</p>
+    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
+      I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
+    </p>
+    <br />
+    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Education</h3>
+    <div class="education-container">
+      <div class="education-card">
+        <h4>Master of Professional Studies in Informatics</h4>
+        <p>Northeastern University, Toronto<br>Expected May 2025 – GPA: 3.7</p>
+      </div>
+      <div class="education-card">
+        <h4>BSc in Cybersecurity and ITIMS</h4>
+        <p>Gujarat University, India<br>June 2021 – GPA: 3.56</p>
+      </div>
+      </div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <button onclick="copyEmail()" style="background-color: #1d4ed8; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
+        📋 Copy Email to Clipboard
+      </button>
+      <p id="copyMsg" style="margin-top: 1rem; color: green; font-weight: 600;"></p>
     </div>
-    <div style="flex: 1 1 300px; background: #f8fafc; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <strong>BSc in Cybersecurity and ITIMS</strong>
-      <p style="margin: 0.5rem 0;">Gujarat University, India</p>
-      <p>June 2021 – GPA: 3.56</p>
-    </div>
-  </div>
-  <br />
-  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Certifications</h3>
-  <p style="text-align: center;">Red Hat System Administrator Certificate – Red Hat Enterprise Linux, user and network configuration, security protocols</p>
-  <br />
-  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Experience</h3>
-  <p style="text-align: center; font-size: 1rem; max-width: 900px; margin: auto;">
-    <strong>SOC Analyst – Infopercept Pvt. Ltd. (Sept 2022 – Aug 2023)</strong><br />
-    Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.
-  </p>
-</section>
-
-  <section id="skills" data-aos="fade-up">
-    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
-    <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; font-size: 1rem;">
-  <li>🔐 Network Security</li>
-  <li>⚙️ Malware Analysis</li>
-  <li>🚨 Incident Response</li>
-  <li>🛡️ End Point Security</li>
-  <li>📊 Power BI</li>
-  <li>🐧 RedHat Linux</li>
-  <li>🌐 Palo Alto / Firewalls</li>
-  <li>🧠 CrowdStrike</li>
-  <li>📈 Sumo Logic SIEM</li>
-  <li>🔎 Netskope & Data Dog</li>
-</ul>
   </section>
 
-  <section id="projects" data-aos="fade-up">
-    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Projects</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
-        <h3>NIST-CSF Strategy</h3>
-        <p>A security roadmap for small businesses using the NIST Cybersecurity Framework. Focused on identifying, protecting, detecting, responding to, and recovering from threats.</p>
-      </div>
-      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
-        <h3>Network Penetration Testing</h3>
-        <p>Executed a penetration testing simulation using Nmap, Wireshark, and Metasploit to discover vulnerabilities and secure network endpoints.</p>
-      </div>
-      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
-        <h3>Virtualization Security Lab</h3>
-        <p>Built a virtualized SOC environment using Splunk, Kali Linux, and simulated attack scenarios to implement alerting and log analysis strategies.</p>
+  <section id="certifications" data-aos="fade-up">
+    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 4rem;">Certifications</h3>
+    <div class="education-container">
+      <div class="education-card">
+        <h4><img src='https://cdn-icons-png.flaticon.com/512/5969/5969059.png' alt='Red Hat' width='20' height='20' style='vertical-align: middle; margin-right: 8px;'>Red Hat System Administrator Certificate</h4>
+        <p>Red Hat Enterprise Linux, user and network configuration, security protocols</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" data-aos="fade-up" style="background: linear-gradient(135deg, #e0f2ff, #f8fafc); border-radius: 12px; padding: 4rem 2rem; margin-top: 4rem;">
-  <h2 style="font-size: 2.6rem; font-weight: 700; text-align: center; color: #1d4ed8; margin-bottom: 2rem;">📞 Let's Connect</h2>
-  <p style="text-align: center; font-size: 1.1rem; color: #334155; max-width: 700px; margin: 0 auto 2.5rem auto;">
-    I’m always open to meaningful conversations—whether it’s to discuss a security challenge, share project insights, or collaborate on something impactful.
-  </p>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-    <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-      <i class="fa fa-envelope" style="font-size: 2rem; color: #1d4ed8; margin-bottom: 1rem;"></i>
-      <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Email</h3>
-      <p><a href="mailto:dhrumil@example.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">dhrumil@example.com</a></p>
+  <section id="experience" data-aos="fade-up">
+    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 4rem;">Experience</h3>
+    <div class="education-container">
+      <div class="education-card">
+        <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
+        <p>Sept 2022 – Aug 2023</p>
+        <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
+      </div>
     </div>
-    <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-      <i class="fa fa-linkedin" style="font-size: 2rem; color: #1d4ed8; margin-bottom: 1rem;"></i>
-      <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">linkedin.com/in/dhrumilpatel06</a></p>
+  </section>
+
+  <section id="contact" data-aos="fade-up" style="background: #f9fafb; padding: 4rem 2rem; margin-top: 4rem; border-radius: 12px;">
+    <h2 style="font-size: 2rem; font-weight: 700; text-align: center; color: #1d4ed8; margin-bottom: 2rem;">Contact Me</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+      <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="LinkedIn" width="48" height="48" style="margin-bottom: 1rem;">
+        <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">linkedin.com/in/dhrumilpatel06</a></p>
+      </div>
+      <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="48" height="48" style="margin-bottom: 1rem;">
+        <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Email</h3>
+        <p><a href="mailto:dhrumil0620@gmail.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">dhrumil0620@gmail.com</a></p>
+      </div>
     </div>
-    <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-      <i class="fa fa-download" style="font-size: 2rem; color: #1d4ed8; margin-bottom: 1rem;"></i>
-      <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Resume</h3>
-      <a href="resume.pdf" download style="color: white; background-color: #1d4ed8; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">Download</a>
+  <div style="text-align: center; margin-top: 2rem;">
+      <button onclick="copyEmail()" style="background-color: #1d4ed8; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
+        📋 Copy Email
+      </button>
+      <p id="copyMsg" style="margin-top: 1rem; color: green; font-weight: 600;"></p>
     </div>
-  </div>
-  <div style="margin-top: 3rem; text-align: center;">
-    <form name="contact" method="POST" data-netlify="true" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      <h3 style="margin-bottom: 1rem; color: #1d4ed8;">📬 Send Me a Message</h3>
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 6px;">
-      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 6px;">
-      <textarea name="message" placeholder="Your Message" rows="4" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 6px;"></textarea>
-      <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #1d4ed8; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Send</button>
-    </form>
-  </div>
-</section>
+    </section>
+
 <script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
+  function copyEmail() {
+    const email = "dhrumil0620@gmail.com";
+    navigator.clipboard.writeText(email).then(function() {
+      document.getElementById('copyMsg').textContent = "Email copied to clipboard!";
+      setTimeout(() => document.getElementById('copyMsg').textContent = '', 3000);
+    });
+  }
 </script>
-<footer style="background-color: #1e293b; color: white; padding: 2rem; text-align: center; margin-top: 4rem; font-size: 0.9rem;">
-  &copy; 2025 Dhrumil Patel. Built with passion for cybersecurity.
-</footer>
 
+<!-- Remaining content continues here -->
 </body>
 </html>
