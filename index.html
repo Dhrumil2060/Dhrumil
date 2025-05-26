@@ -133,7 +133,27 @@
       text-decoration: none;
       font-size: 1.2rem;
     }
-  </style>
+      .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--accent);
+    }
+    .scroll-top {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background: var(--accent);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 0 12px rgba(0,224,168,0.6);
+    }
+    .scroll-top.show {
+      display: block;
+    }
+</style>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
@@ -152,7 +172,7 @@
   <div style="width: 180px; height: 180px; margin-bottom: 2rem; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent); box-shadow: 0 0 15px var(--accent); animation: pulse 2s infinite;">
     <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" style="width: 100%; height: 100%; object-fit: cover;">
   </div>
-  <h2 style="font-size: 3.2rem; font-weight: 700;">Hi, I'm Dhrumil</h2>
+  <h2 style="font-size: 3.2rem; font-weight: 700;"><span id="typed"></span></h2>
   <p style="font-size: 1.3rem; max-width: 600px;">Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
   <a href="#projects">Explore My Work</a>
 </section>
@@ -180,9 +200,11 @@
 }
 </style>
 
-  <section id="projects" data-aos="fade-up">
-    <h2 style="text-align:center; margin-bottom:2rem;">Projects</h2>
-    <div class="card-grid">
+  $1
+      <div class="card">
+        <h3>Virtualization with VMware ESXi & VCSA</h3>
+        <p>Configured a complete virtualization environment using VMware ESXi 6.7 and vCenter Server Appliance (VCSA). The setup included installation of ESXi, staging and deployment of VCSA, configuration of iSCSI & NFS storage, vApps, virtual networks (Standard & Distributed Switch), OVA/OVF templates, High Availability, DRS, and vMotion for load balancing and failover. Successfully managed VM templates, backups, and created a distributed and scalable lab simulation environment.</p>
+      </div>
       <div class="card">
         <h3>NIST-CSF Implementation</h3>
         <p>Created a complete framework strategy for NIST-CSF adoption in small enterprise security models.</p>
@@ -200,21 +222,41 @@
 
   <section id="experience" data-aos="fade-up">
   <h2 style="text-align:center; margin-bottom:2rem;">Experience</h2>
-  <div style="display: flex; justify-content: center;">
-    <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; max-width: 850px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-      <h3 style="color: var(--accent); margin-bottom: 1rem;">SOC Analyst – Infopercept Pvt. Ltd. (Sept 2022 – Aug 2023)</h3>
-      <ul style="padding-left: 1.2rem; line-height: 1.8;">
-        <li>Performed proactive security monitoring and incident triage using Sumo Logic SIEM, ensuring minimal response times.</li>
-        <li>Investigated phishing, malware, and unauthorized access attempts using CrowdStrike and Netskope analytics tools.</li>
-        <li>Configured detection rules and automated alerting mechanisms to reduce false positives and improve threat visibility.</li>
-        <li>Collaborated with internal IT and external stakeholders during red/blue team assessments and compliance audits.</li>
-        <li>Delivered weekly and monthly dashboards in Power BI to communicate risk trends and incident metrics to leadership.</li>
-      </ul>
+  <div style="position: relative; margin: auto; max-width: 850px;">
+    <div style="border-left: 3px solid var(--accent); padding-left: 2rem;">
+      <div style="margin-bottom: 2rem; position: relative;">
+        <div style="position: absolute; left: -1.2rem; top: 0; width: 16px; height: 16px; background: var(--accent); border-radius: 50%;"></div>
+        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <small style="color: #ccc;">Sept 2022 – Aug 2023</small>
+        <ul style="margin-top: 0.5rem; line-height: 1.8;">
+          <li>Proactively monitored and triaged security events using Sumo Logic SIEM.</li>
+          <li>Investigated phishing, malware, and endpoint threats via CrowdStrike and Netskope.</li>
+          <li>Created detection rules and alerts to reduce false positives and improve visibility.</li>
+          <li>Participated in red/blue team exercises and audit remediations.</li>
+          <li>Generated Power BI dashboards for executive threat reporting.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-  <section id="contact" data-aos="fade-up">
+<section id="education" data-aos="fade-up">
+  <h2 style="text-align:center; margin-bottom:2rem;">Education</h2>
+  <div style="position: relative; margin: auto; max-width: 850px;">
+    <div style="border-left: 3px solid var(--accent); padding-left: 2rem;">
+      <div style="margin-bottom: 2rem; position: relative;">
+        <div style="position: absolute; left: -1.2rem; top: 0; width: 16px; height: 16px; background: var(--accent); border-radius: 50%;"></div>
+        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Master of Science in Informatics</h3>
+        <small style="color: #ccc;">Northeastern University, Toronto — 2023 – 2025</small>
+        <p style="margin-top: 0.5rem; line-height: 1.6;">
+          Specialized in Cybersecurity and Data Analytics with hands-on projects in SOC operations, threat detection, and cloud security frameworks.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-aos="fade-up">
     <h2 style="text-align:center; margin-bottom:2rem;">Contact Me</h2>
     <div class="card-grid">
       <div class="card" style="text-align:center;">
@@ -241,5 +283,23 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once: true, duration: 800 });</script>
+<div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+  ↑
+</div>
+<script>
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('show', window.scrollY > 300);
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed('#typed', {
+    strings: ["Hi, I'm Dhrumil", "SOC Analyst", "Cybersecurity Enthusiast"],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+  });
+</script>
 </body>
 </html>
