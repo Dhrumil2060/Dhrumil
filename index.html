@@ -107,17 +107,13 @@
       gap: 2rem;
       margin-top: 2rem;
     }
-    .education-card {
-      flex: 1 1 320px;
-      background: linear-gradient(145deg, #ffffff, #f0f4f8);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-    .education-card:hover {
-      transform: translateY(-6px);
-    }
+    $1
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+    $1
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: scale(1.03);
     .education-card h4 {
       margin-bottom: 0.5rem;
       color: #1d4ed8;
@@ -148,6 +144,56 @@
       <h2>Hi, I'm Dhrumil Patel</h2>
       <p>Cybersecurity Professional • Network Defender • Penetration Tester</p>
       <a href="#projects">Explore My Work</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">About Me</h2>
+    <p style="max-width:800px; margin:auto; text-align:center; font-size:1.1rem; line-height:1.8;">
+      I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Experience</h2>
+    <div class="education-container">
+      <div class="education-card">
+        <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
+        <p>Sept 2022 – Aug 2023</p>
+        <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Projects</h2>
+    <div class="education-container">
+      <div class="education-card">
+        <h4>NIST-CSF Strategy</h4>
+        <p>Designed a cybersecurity framework based on NIST-CSF for small enterprises to improve identification, protection, detection, and incident response capabilities.</p>
+      </div>
+      <div class="education-card">
+        <h4>Network Penetration Testing</h4>
+        <p>Performed scanning, vulnerability assessment, and exploitation in a controlled lab environment using Nmap, Wireshark, and Metasploit.</p>
+      </div>
+      <div class="education-card">
+        <h4>Virtual SOC Lab Simulation</h4>
+        <p>Simulated SOC environment with Splunk, firewall rules, and attack monitoring workflows to investigate real-time logs and threat patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Contact</h2>
+    <div class="education-container">
+      <div class="education-card" style="text-align:center;">
+        <i class="fa-brands fa-linkedin" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
+        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="text-decoration:none; color:#0f172a; font-weight:600;">linkedin.com/in/dhrumilpatel06</a></p>
+      </div>
+      <div class="education-card" style="text-align:center;">
+        <i class="fa-solid fa-envelope" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
+        <p><a href="mailto:dhrumil0620@gmail.com" style="text-decoration:none; color:#0f172a; font-weight:600;">dhrumil0620@gmail.com</a></p>
+      </div>
     </div>
   </section>
 
