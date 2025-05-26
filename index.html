@@ -129,8 +129,22 @@
       }
     }
   </style>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  new Typed("#typed-text", {
+    strings: ["Hi, I'm Dhrumil Patel", "Cybersecurity Specialist", "Network Defender", "Penetration Tester"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true
+  });
+</script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/a2e0e6e6c2.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
   <header>
@@ -144,39 +158,50 @@
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h2>Hello, I'm Dhrumil Patel</h2>
-      <p>
-        A cybersecurity specialist passionate about protecting systems,
-        analyzing threats, and building secure infrastructures.
-      </p>
-      <a href="#projects">View My Work</a>
-    </div>
-    <div class="hero-img">
-      <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-    </div>
-  </section>
+  <section id="home" class="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0f172a, #1e3a8a); color: white; padding: 4rem 2rem;">
+  <div data-aos="zoom-in" style="max-width: 800px;">
+    <h2 id="typed-text" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Hi, I'm Dhrumil Patel</h2>
+    <p style="font-size: 1.2rem; line-height: 1.6; color: #e2e8f0;">Cybersecurity Professional • Network Defender • Penetration Tester</p>
+    <a href="#projects" style="margin-top: 2rem; display: inline-block; padding: 0.75rem 1.5rem; background-color: #3b82f6; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;">Explore My Work</a>
+  </div>
+</section>
 
   <section id="about" data-aos="fade-up">
-    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
-    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
-      I'm a cybersecurity enthusiast with a background in system hardening, penetration testing, and network defense. I’ve completed industry projects on vulnerability assessments, threat detection, and risk mitigation aligned with the NIST Cybersecurity Framework. With hands-on experience in tools like Wireshark, Nmap, Splunk, and Metasploit, I aim to strengthen digital trust and security.
-    </p>
-  </section>
+  <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
+  <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
+    I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
+  </p>
+  <br />
+  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Education</h3>
+  <ul style="list-style: none; padding: 0; text-align: center; font-size: 1rem;">
+    <li><strong>Master of Professional Studies in Informatics</strong>, Northeastern University, Toronto (Expected May 2025) – GPA: 3.7</li>
+    <li><strong>Bachelor of Science in Cybersecurity and ITIMS</strong>, Gujarat University, India (June 2021) – GPA: 3.56</li>
+  </ul>
+  <br />
+  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Certifications</h3>
+  <p style="text-align: center;">Red Hat System Administrator Certificate – Red Hat Enterprise Linux, user and network configuration, security protocols</p>
+  <br />
+  <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Experience</h3>
+  <p style="text-align: center; font-size: 1rem; max-width: 900px; margin: auto;">
+    <strong>SOC Analyst – Infopercept Pvt. Ltd. (Sept 2022 – Aug 2023)</strong><br />
+    Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.
+  </p>
+</section>
 
   <section id="skills" data-aos="fade-up">
     <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
     <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; font-size: 1rem;">
-      <li>🔐 Network Security</li>
-      <li>🛠️ Penetration Testing</li>
-      <li>📊 Splunk & SIEM</li>
-      <li>🔍 Wireshark & Packet Analysis</li>
-      <li>🐧 Linux (Kali, Ubuntu)</li>
-      <li>🧰 Nmap, Metasploit, Burp Suite</li>
-      <li>📁 Vulnerability Management</li>
-      <li>🛡️ Risk Assessment (NIST, ISO)</li>
-    </ul>
+  <li>🔐 Network Security</li>
+  <li>⚙️ Malware Analysis</li>
+  <li>🚨 Incident Response</li>
+  <li>🛡️ End Point Security</li>
+  <li>📊 Power BI</li>
+  <li>🐧 RedHat Linux</li>
+  <li>🌐 Palo Alto / Firewalls</li>
+  <li>🧠 CrowdStrike</li>
+  <li>📈 Sumo Logic SIEM</li>
+  <li>🔎 Netskope & Data Dog</li>
+</ul>
   </section>
 
   <section id="projects" data-aos="fade-up">
@@ -209,7 +234,7 @@
     </div>
     <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); min-width: 280px; text-align: center;">
       <h3 style="color: #1d4ed8; margin-bottom: 0.5rem;">🔗 LinkedIn</h3>
-      <p><a href="https://linkedin.com/in/dhrumilpatel" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">linkedin.com/in/dhrumilpatel</a></p>
+<p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;"><i class="fa fa-linkedin" style="margin-right: 8px;"></i>linkedin.com/in/dhrumilpatel06</a></p>
     </div>
     <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); min-width: 280px; text-align: center;">
       <h3 style="color: #1d4ed8; margin-bottom: 0.5rem;">📄 Resume</h3>
