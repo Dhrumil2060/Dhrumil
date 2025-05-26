@@ -129,12 +129,7 @@
         <p>Gujarat University, India<br>June 2021 – GPA: 3.56</p>
       </div>
       </div>
-    <div style="text-align: center; margin-top: 3rem;">
-      <button onclick="copyEmail()" style="background-color: #1d4ed8; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
-        📋 Copy Email to Clipboard
-      </button>
-      <p id="copyMsg" style="margin-top: 1rem; color: green; font-weight: 600;"></p>
-    </div>
+    
   </section>
 
   <section id="certifications" data-aos="fade-up">
@@ -162,7 +157,7 @@
     <h2 style="font-size: 2rem; font-weight: 700; text-align: center; color: #1d4ed8; margin-bottom: 2rem;">Contact Me</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
       <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="LinkedIn" width="48" height="48" style="margin-bottom: 1rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="48" height="48" style="margin-bottom: 1rem;">
         <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">LinkedIn</h3>
         <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">linkedin.com/in/dhrumilpatel06</a></p>
       </div>
@@ -172,23 +167,28 @@
         <p><a href="mailto:dhrumil0620@gmail.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">dhrumil0620@gmail.com</a></p>
       </div>
     </div>
-  <div style="text-align: center; margin-top: 2rem;">
-      <button onclick="copyEmail()" style="background-color: #1d4ed8; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
-        📋 Copy Email
-      </button>
-      <p id="copyMsg" style="margin-top: 1rem; color: green; font-weight: 600;"></p>
-    </div>
+  
     </section>
 
-<script>
-  function copyEmail() {
-    const email = "dhrumil0620@gmail.com";
-    navigator.clipboard.writeText(email).then(function() {
-      document.getElementById('copyMsg').textContent = "Email copied to clipboard!";
-      setTimeout(() => document.getElementById('copyMsg').textContent = '', 3000);
-    });
-  }
-</script>
+
+
+<section id="projects" data-aos="fade-up">
+  <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Projects</h2>
+  <div class="education-container">
+    <div class="education-card">
+      <h4>NIST-CSF Strategy</h4>
+      <p>Designed a cybersecurity framework based on NIST-CSF for small enterprises to improve identification, protection, detection, and incident response capabilities.</p>
+    </div>
+    <div class="education-card">
+      <h4>Network Penetration Testing</h4>
+      <p>Performed scanning, vulnerability assessment, and exploitation in a controlled lab environment using Nmap, Wireshark, and Metasploit.</p>
+    </div>
+    <div class="education-card">
+      <h4>Virtual SOC Lab Simulation</h4>
+      <p>Simulated SOC environment with Splunk, firewall rules, and attack monitoring workflows to investigate real-time logs and threat patterns.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Remaining content continues here -->
 </body>
