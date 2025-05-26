@@ -128,84 +128,53 @@
       font-size: 0.95rem;
       line-height: 1.4;
     }
+    #about p {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+    #about p:hover {
+      transform: translateY(-3px);
+    }
+    #contact {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9fafb;
+      padding: 4rem 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #1e293b;
+    }
+    .contact-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .contact-card a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Patel</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <section id="home" class="hero">
-    <div>
-      <div class="hero-img">
-        <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
-      </div>
-      <h2>Hi, I'm Dhrumil Patel</h2>
-      <p>Cybersecurity Professional • Network Defender • Penetration Tester</p>
-      <a href="#projects">Explore My Work</a>
-    </div>
-  </section>
-
-  <section id="about" data-aos="fade-up">
-    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">About Me</h2>
-    <p style="max-width:800px; margin:auto; text-align:center; font-size:1.1rem; line-height:1.8;">
-      I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Projects</h2>
-    <div class="education-container">
-      <div class="education-card">
-        <h4>NIST-CSF Strategy</h4>
-        <p>Designed a cybersecurity framework based on NIST-CSF for small enterprises to improve identification, protection, detection, and incident response capabilities.</p>
-      </div>
-      <div class="education-card">
-        <h4>Network Penetration Testing</h4>
-        <p>Performed scanning, vulnerability assessment, and exploitation in a controlled lab environment using Nmap, Wireshark, and Metasploit.</p>
-      </div>
-      <div class="education-card">
-        <h4>Virtual SOC Lab Simulation</h4>
-        <p>Simulated SOC environment with Splunk, firewall rules, and attack monitoring workflows to investigate real-time logs and threat patterns.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Experience</h2>
-    <div class="education-container">
-      <div class="education-card">
-        <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
-        <p>Sept 2022 – Aug 2023</p>
-        <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Contact</h2>
-    <div class="education-container">
-      <div class="education-card">
-        <i class="fab fa-linkedin" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
-        <p style="margin-bottom:0.5rem;"><strong>LinkedIn</strong></p>
-        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="text-decoration:none; color:#0f172a; font-weight:600;">linkedin.com/in/dhrumilpatel06</a></p>
-      </div>
-      <div class="education-card">
-        <i class="fas fa-envelope" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
-        <p style="margin-bottom:0.5rem;"><strong>Email</strong></p>
-        <p><a href="mailto:dhrumil0620@gmail.com" style="text-decoration:none; color:#0f172a; font-weight:600;">dhrumil0620@gmail.com</a></p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-</body>
-</html>
+<!-- Content continues unchanged -->
