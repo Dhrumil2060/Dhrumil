@@ -9,6 +9,40 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
+    header {
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      padding: 1rem 2rem;
+      border-bottom: 2px solid rgba(255,255,255,0.05);
+      backdrop-filter: blur(6px);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      position: relative;
+      color: var(--text-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: #3b82f6;
+    }
     :root {
       --bg-color: #ffffff;
       --text-color: #0f172a;
