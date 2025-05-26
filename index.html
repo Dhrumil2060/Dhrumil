@@ -79,6 +79,16 @@
       text-align: center;
       padding-top: 6rem;
     }
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 15px var(--accent);
+      animation: pulse 2s infinite;
+      margin-bottom: 2rem;
+    }
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
@@ -139,6 +149,11 @@
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,224,168, 0.4); }
+      70% { box-shadow: 0 0 0 20px rgba(0,224,168, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,224,168, 0); }
+    }
     .scroll-top {
       position: fixed;
       right: 20px;
@@ -171,6 +186,7 @@
 </header>
 
 <section id="home" class="hero">
+  <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
   <h2>Hi, I'm Dhrumil</h2>
   <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
   <a href="#projects">Explore My Work</a>
@@ -202,10 +218,6 @@
     <div class="card">
       <h3>Network Penetration Testing</h3>
       <p>Performed scanning and exploitation in a controlled lab using Nmap, Wireshark, and Metasploit.</p>
-    </div>
-    <div class="card">
-      <h3>Virtual SOC Lab</h3>
-      <p>Simulated SOC with Splunk, alerts, dashboards, and rule-based threat detection.</p>
     </div>
   </div>
 </section>
