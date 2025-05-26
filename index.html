@@ -129,6 +129,8 @@
       }
     }
   </style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -155,5 +157,60 @@
       <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
     </div>
   </section>
+
+  <section id="about" data-aos="fade-up">
+    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
+    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
+      I'm a cybersecurity enthusiast with a background in system hardening, penetration testing, and network defense. I’ve completed industry projects on vulnerability assessments, threat detection, and risk mitigation aligned with the NIST Cybersecurity Framework. With hands-on experience in tools like Wireshark, Nmap, Splunk, and Metasploit, I aim to strengthen digital trust and security.
+    </p>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
+    <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; list-style: none; font-size: 1rem;">
+      <li>🔐 Network Security</li>
+      <li>🛠️ Penetration Testing</li>
+      <li>📊 Splunk & SIEM</li>
+      <li>🔍 Wireshark & Packet Analysis</li>
+      <li>🐧 Linux (Kali, Ubuntu)</li>
+      <li>🧰 Nmap, Metasploit, Burp Suite</li>
+      <li>📁 Vulnerability Management</li>
+      <li>🛡️ Risk Assessment (NIST, ISO)</li>
+    </ul>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Projects</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
+        <h3>NIST-CSF Strategy</h3>
+        <p>A security roadmap for small businesses using the NIST Cybersecurity Framework. Focused on identifying, protecting, detecting, responding to, and recovering from threats.</p>
+      </div>
+      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
+        <h3>Network Penetration Testing</h3>
+        <p>Executed a penetration testing simulation using Nmap, Wireshark, and Metasploit to discover vulnerabilities and secure network endpoints.</p>
+      </div>
+      <div style="padding: 1.5rem; background: #f1f5f9; border-radius: 1rem;">
+        <h3>Virtualization Security Lab</h3>
+        <p>Built a virtualized SOC environment using Splunk, Kali Linux, and simulated attack scenarios to implement alerting and log analysis strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Contact</h2>
+    <div style="text-align: center; font-size: 1.1rem;">
+      <p>Email: <a href="mailto:dhrumil@example.com">dhrumil@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/dhrumilpatel" target="_blank">linkedin.com/in/dhrumilpatel</a></p>
+      <a href="resume.pdf" download style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background-color: #1d4ed8; color: white; border-radius: 6px; text-decoration: none;">Download Resume</a>
+    </div>
+  </section>
+
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 </body>
 </html>
