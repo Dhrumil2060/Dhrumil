@@ -136,97 +136,10 @@
     0% { opacity: 0; transform: translateX(-20px); }
     100% { opacity: 1; transform: translateX(0); }
   }
-</style>
+  </style>
 </head>
-<body style="scroll-snap-type: y mandatory; overflow-y: scroll;">
-  <header>
-    <h1 style="font-size: 1.6rem; font-weight: 700; background: linear-gradient(to right, #00e0a8, #00b3ff); -webkit-background-clip: text; color: transparent; animation: slide-in 1s ease forwards;">Dhrumil Patel</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-      <button id="darkToggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
-    </nav>
-  </header>
-
-  <section class="hero" id="home" style="min-height: 100vh; padding-bottom: 8rem;">
-    <div>
-      <div class="hero-img">
-        <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
-      </div>
-      <h2>Hi, I'm Dhrumil Patel</h2>
-      <p>Cybersecurity Professional • Network Defender • Penetration Tester</p>
-      <a href="#projects" style="display:inline-block;margin-top:2rem;padding:0.75rem 1.5rem;background-color:#00e0a8;color:white;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 4px 16px rgba(0, 0, 0, 0.2);transition: all 0.3s ease;" data-aos="zoom-in">Explore My Work</a>
-    </div>
-  </section>
-
-  <section id="about" style="scroll-snap-align: start;">
-    <h2 style="text-align:center; margin-bottom: 2rem;">About Me</h2>
-    <p data-aos="fade-up" style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); max-width: 800px; margin: auto;">
-      I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
-    </p>
-  </section>
-
-  <section id="projects" style="scroll-snap-align: start;">
-    <h2 style="text-align:center; margin-bottom: 2rem;">Projects</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-      <div data-aos="fade-up" style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
-        <h4 style="color: #1d4ed8;">NIST-CSF Strategy</h4>
-        <p>Developed a cybersecurity strategy for small enterprises based on NIST-CSF to improve resilience and compliance.</p>
-      </div>
-      <div data-aos="fade-up" style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
-        <h4 style="color: #1d4ed8;">Network Penetration Testing</h4>
-        <p>Performed scanning, vulnerability assessment, and exploitation using Nmap, Wireshark, and Metasploit in a lab setup.</p>
-      </div>
-      <div data-aos="fade-up" style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
-        <h4 style="color: #1d4ed8;">Virtual SOC Lab</h4>
-        <p>Simulated SOC environment using Splunk, with threat monitoring, incident handling, and dashboard reporting.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" style="scroll-snap-align: start;">
-    <h2 style="text-align:center; margin-bottom: 2rem;">Experience</h2>
-    <div data-aos="fade-up" style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); max-width: 900px; margin: auto;">
-      <h4 style="color: #1d4ed8;">SOC Analyst – Infopercept Pvt. Ltd. (Sept 2022 – Aug 2023)</h4>
-      <ul style="margin-top: 1rem; line-height: 1.6;">
-        <li>Monitored real-time security events and incidents using Sumo Logic SIEM and responded to alerts efficiently.</li>
-        <li>Investigated phishing attempts, suspicious logins, and endpoint threats using CrowdStrike and Netskope.</li>
-        <li>Built automated detection rules and custom dashboards for continuous monitoring and trend analysis.</li>
-        <li>Collaborated with cross-functional teams to resolve incidents, harden firewalls, and audit cloud configurations.</li>
-        <li>Produced detailed reports using Power BI and participated in red/blue team simulations for security readiness.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact" style="scroll-snap-align: start;">
-  <h2 style="text-align:center; margin-bottom: 2rem;">Contact</h2>
-  <div class="contact-card" data-aos="fade-up" style="background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); max-width: 600px; margin: 2rem auto; text-align: center; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
-    <a href="mailto:dhrumil0620@gmail.com" style="margin-bottom: 1rem; display: inline-block; font-size: 1.1rem; color: #1d4ed8; font-weight: 600;">
-      <i class="fas fa-envelope" style="margin-right: 8px;"></i> dhrumil0620@gmail.com
-    </a>
-    <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="display: inline-block; font-size: 1.1rem; color: #1d4ed8; font-weight: 600;">
-      <i class="fab fa-linkedin" style="margin-right: 8px;"></i> linkedin.com/in/dhrumilpatel06
-    </a>
-  </div>
-</section>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-    AOS.init({ duration: 1000, once: true });
-  </script>
-<footer style="text-align:center; padding: 2rem; background-color: var(--card-bg); color: var(--text-color);">
-  <p style="margin-bottom: 1rem; font-weight: 600;">Connect with me</p>
-  <div style="font-size: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;">
-    <a href="mailto:dhrumil0620@gmail.com" style="color: #1d4ed8;"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #1d4ed8;"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/dhrumilpatel06" target="_blank" style="color: #1d4ed8;"><i class="fab fa-github"></i></a>
-  </div>
-</footer>
-
+<body>
+  <!-- Body content here -->
+  <!-- The removed text "Write me your project" has been removed as requested -->
 </body>
 </html>
