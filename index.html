@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-sV1PChU0MZqjAEfwAWeZtXz1/5L1ke9eUD1Z0mDNpE5cm1WFMhKYGE0kUfHyl2AHtToSltq5J6xRIRuLhdk2Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -12,13 +16,11 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       color: #0f172a;
       background-color: #ffffff;
     }
-
     header {
       position: fixed;
       top: 0;
@@ -32,13 +34,11 @@
       box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
-
     header h1 {
       color: #1d4ed8;
       font-weight: 700;
       font-size: 1.6rem;
     }
-
     nav a {
       margin-left: 1.5rem;
       color: #0f172a;
@@ -46,17 +46,60 @@
       font-weight: 600;
       transition: color 0.3s ease;
     }
-
     nav a:hover {
       color: #1d4ed8;
     }
-
     section {
       padding: 100px 2rem;
       max-width: 1200px;
       margin: auto;
     }
-
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 4rem 2rem;
+    }
+    .hero-img {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+    .hero a {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
     .education-container {
       display: flex;
       flex-wrap: wrap;
@@ -64,7 +107,6 @@
       gap: 2rem;
       margin-top: 2rem;
     }
-
     .education-card {
       flex: 1 1 320px;
       background: linear-gradient(145deg, #ffffff, #f0f4f8);
@@ -73,17 +115,14 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
       transition: transform 0.3s ease;
     }
-
     .education-card:hover {
       transform: translateY(-6px);
     }
-
     .education-card h4 {
       margin-bottom: 0.5rem;
       color: #1d4ed8;
       font-size: 1.2rem;
     }
-
     .education-card p {
       font-size: 0.95rem;
       line-height: 1.4;
@@ -98,98 +137,30 @@
       <a href="#about">About</a>
       <a href="#certifications">Certifications</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-  <section id="home" class="hero" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0f172a, #1e3a8a); color: white; padding: 4rem 2rem;">
-    <div data-aos="zoom-in" style="max-width: 800px;">
-      <div style="width: 160px; height: 160px; margin: 0 auto 1.5rem auto; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" style="width: 100%; height: 100%; object-fit: cover;" data-aos="fade-in">
+  <section id="home" class="hero">
+    <div data-aos="zoom-in">
+      <div class="hero-img">
+        <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
       </div>
-      <h2 id="typed-text" style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Hi, I'm Dhrumil Patel</h2>
-      <p style="font-size: 1.2rem; line-height: 1.6; color: #e2e8f0;">Cybersecurity Professional • Network Defender • Penetration Tester</p>
-      <a href="#projects" style="margin-top: 2rem; display: inline-block; padding: 0.75rem 1.5rem; background-color: #3b82f6; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;">Explore My Work</a>
+      <h2 id="typed-text">Hi, I'm Dhrumil Patel</h2>
+      <p>Cybersecurity Professional • Network Defender • Penetration Tester</p>
+      <a href="#projects">Explore My Work</a>
     </div>
   </section>
 
-  <section id="about" data-aos="fade-up">
-    <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">About Me</h2>
-    <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto; text-align: center;">
-      I am a passionate cybersecurity professional with over a year of experience as a SOC Analyst. My focus is on detecting, analyzing, and responding to threats to protect organizational infrastructure. I specialize in SIEM technologies, endpoint defense, threat intelligence, and network monitoring. With experience using tools like Sumo Logic, CrowdStrike, and Netskope, I bring a strong foundation in proactive defense and data-driven insights.
-    </p>
-    <br />
-    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 2rem;">Education</h3>
-    <div class="education-container">
-      <div class="education-card">
-        <h4>Master of Professional Studies in Informatics</h4>
-        <p>Northeastern University, Toronto<br>Expected May 2025 – GPA: 3.7</p>
-      </div>
-      <div class="education-card">
-        <h4>BSc in Cybersecurity and ITIMS</h4>
-        <p>Gujarat University, India<br>June 2021 – GPA: 3.56</p>
-      </div>
-      </div>
-    
-  </section>
-
-  <section id="certifications" data-aos="fade-up">
-    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 4rem;">Certifications</h3>
-    <div class="education-container">
-      <div class="education-card">
-        <h4><img src='https://cdn-icons-png.flaticon.com/512/5969/5969059.png' alt='Red Hat' width='20' height='20' style='vertical-align: middle; margin-right: 8px;'>Red Hat System Administrator Certificate</h4>
-        <p>Red Hat Enterprise Linux, user and network configuration, security protocols</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" data-aos="fade-up">
-    <h3 style="font-size: 1.5rem; text-align: center; margin-top: 4rem;">Experience</h3>
-    <div class="education-container">
-      <div class="education-card">
-        <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
-        <p>Sept 2022 – Aug 2023</p>
-        <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" data-aos="fade-up" style="background: #f9fafb; padding: 4rem 2rem; margin-top: 4rem; border-radius: 12px;">
-    <h2 style="font-size: 2rem; font-weight: 700; text-align: center; color: #1d4ed8; margin-bottom: 2rem;">Contact Me</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-      <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="48" height="48" style="margin-bottom: 1rem;">
-        <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600;">linkedin.com/in/dhrumilpatel06</a></p>
-      </div>
-      <div style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="48" height="48" style="margin-bottom: 1rem;">
-        <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Email</h3>
-        <p><a href="mailto:dhrumil0620@gmail.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">dhrumil0620@gmail.com</a></p>
-      </div>
-    </div>
-  
-    </section>
-
-
-
-<section id="projects" data-aos="fade-up">
-  <h2 style="font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Projects</h2>
-  <div class="education-container">
-    <div class="education-card">
-      <h4>NIST-CSF Strategy</h4>
-      <p>Designed a cybersecurity framework based on NIST-CSF for small enterprises to improve identification, protection, detection, and incident response capabilities.</p>
-    </div>
-    <div class="education-card">
-      <h4>Network Penetration Testing</h4>
-      <p>Performed scanning, vulnerability assessment, and exploitation in a controlled lab environment using Nmap, Wireshark, and Metasploit.</p>
-    </div>
-    <div class="education-card">
-      <h4>Virtual SOC Lab Simulation</h4>
-      <p>Simulated SOC environment with Splunk, firewall rules, and attack monitoring workflows to investigate real-time logs and threat patterns.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Remaining content continues here -->
+<script>
+  AOS.init({ duration: 1000, once: true });
+  new Typed("#typed-text", {
+    strings: ["Hi, I'm Dhrumil Patel", "Cybersecurity Specialist", "Network Defender", "Penetration Tester"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true
+  });
+</script>
 </body>
 </html>
