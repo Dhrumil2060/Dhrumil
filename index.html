@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-sV1PChU0MZqjAEfwAWeZtXz1/5L1ke9eUD1Z0mDNpE5cm1WFMhKYGE0kUfHyl2AHtToSltq5J6xRIRuLhdk2Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
@@ -107,13 +106,19 @@
       gap: 2rem;
       margin-top: 2rem;
     }
-    $1
-  transform: scale(1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-    $1
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-  transform: scale(1.03);
+    .education-card {
+      background-color: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .education-card:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      transform: translateY(-5px);
+    }
     .education-card h4 {
       margin-bottom: 0.5rem;
       color: #1d4ed8;
@@ -131,8 +136,8 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -154,21 +159,18 @@
     </p>
   </section>
 
-  
-
   <section id="projects">
-  <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Projects</h2>
-    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Projects</h2>
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Projects</h2>
     <div class="education-container">
-      $1>
+      <div class="education-card">
         <h4>NIST-CSF Strategy</h4>
         <p>Designed a cybersecurity framework based on NIST-CSF for small enterprises to improve identification, protection, detection, and incident response capabilities.</p>
       </div>
-      $1>
+      <div class="education-card">
         <h4>Network Penetration Testing</h4>
         <p>Performed scanning, vulnerability assessment, and exploitation in a controlled lab environment using Nmap, Wireshark, and Metasploit.</p>
       </div>
-      $1>
+      <div class="education-card">
         <h4>Virtual SOC Lab Simulation</h4>
         <p>Simulated SOC environment with Splunk, firewall rules, and attack monitoring workflows to investigate real-time logs and threat patterns.</p>
       </div>
@@ -176,35 +178,34 @@
   </section>
 
   <section id="experience">
-  <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Experience</h2>
-  <div class="education-container">
-    <div class="education-card">
-      <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
-      <p>Sept 2022 – Aug 2023</p>
-      <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;" data-aos="fade-up">Experience</h2>
+    <div class="education-container">
+      <div class="education-card">
+        <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
+        <p>Sept 2022 – Aug 2023</p>
+        <p>Monitored and responded to security incidents, configured infrastructure and performed email analysis using Sumo Logic SIEM. Created custom dashboards with Netskope, managed firewalls and endpoint tools including CrowdStrike and VPNs. Delivered visual reports using Power BI and improved real-time threat detection.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Contact</h2>
-  <div class="education-container">
-    $1>
-      <i class="fab fa-linkedin" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
-      <p style="margin-bottom:0.5rem;"><strong>LinkedIn</strong></p>
-      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="text-decoration:none; color:#0f172a; font-weight:600;">linkedin.com/in/dhrumilpatel06</a></p>
+  <section id="contact">
+    <h2 style="text-align:center; font-size:2.2rem; margin-bottom:1rem;">Contact</h2>
+    <div class="education-container">
+      <div class="education-card">
+        <i class="fab fa-linkedin" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
+        <p style="margin-bottom:0.5rem;"><strong>LinkedIn</strong></p>
+        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="text-decoration:none; color:#0f172a; font-weight:600;">linkedin.com/in/dhrumilpatel06</a></p>
+      </div>
+      <div class="education-card">
+        <i class="fas fa-envelope" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
+        <p style="margin-bottom:0.5rem;"><strong>Email</strong></p>
+        <p><a href="mailto:dhrumil0620@gmail.com" style="text-decoration:none; color:#0f172a; font-weight:600;">dhrumil0620@gmail.com</a></p>
+      </div>
     </div>
-    $1>
-      <i class="fas fa-envelope" style="font-size:2rem; color:#1d4ed8; margin-bottom:0.5rem;"></i>
-      <p style="margin-bottom:0.5rem;"><strong>Email</strong></p>
-      <p><a href="mailto:dhrumil0620@gmail.com" style="text-decoration:none; color:#0f172a; font-weight:600;">dhrumil0620@gmail.com</a></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<script>
-  AOS.init({ duration: 1000, once: true });
-  
-</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
