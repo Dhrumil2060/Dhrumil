@@ -1,13 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhrumil Patel | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
-</head>
+<style>
+  :root {
+    --bg: #0d1117;
+    --text: #e6edf3;
+    --accent: #00e0a8;
+    --card-bg: #161b22;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid #21262d;
+  }
+  header h1 {
+    background: linear-gradient(to right, var(--accent), #00b3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 600;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  section {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--accent);
+  }
+  .card h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #0d1117;
+    color: #ccc;
+  }
+  footer a {
+    color: var(--accent);
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+</style>
 <body>
 <header>
   <h1>Dhrumil Patel</h1>
@@ -21,7 +104,7 @@
   </nav>
 </header>
 
-<section id="projects" class="section">
+<section id="projects" style="padding-top: 8rem;">
   <h2 style="text-align:center; margin-bottom:2rem;">Projects</h2>
   <div class="card-grid">
     <a href="virtualization.html" class="card">
@@ -44,15 +127,4 @@
     <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 </footer>
-
-<div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-  ↑
-</div>
-<script>
-  const scrollBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('show', window.scrollY > 300);
-  });
-</script>
 </body>
-</html>
