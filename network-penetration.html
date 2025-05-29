@@ -4,55 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Network Penetration Testing | Dhrumil Patel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --accent: #00e0a8;
+      --card-bg: #161b22;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      margin: 0;
-      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
     }
     header {
-      background-color: #161b22;
-      padding: 1rem 2rem;
       position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       z-index: 100;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #21262d;
     }
     header h1 {
-      color: #22c55e;
-      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), #00b3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    nav a {
-      margin-left: 1.5rem;
-      color: #e6edf3;
+    a {
+      color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #22c55e;
     }
     main {
-      margin-top: 100px;
+      padding: 6rem 2rem 3rem;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--accent);
     }
     h2 {
-      color: #22c55e;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
     ul {
-      line-height: 1.8;
+      margin-top: 1rem;
+      padding-left: 1.5rem;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #6e7681;
+    ul li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -60,32 +80,22 @@
   <header>
     <h1>Dhrumil Patel</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">&larr; Back to Home</a>
     </nav>
   </header>
 
   <main>
-    <h2>Network Penetration Testing</h2>
-    <p>
-      Executed a full penetration testing lifecycle using tools like <strong>Nmap, Wireshark, Hashcat, John the Ripper, and Responder</strong> to identify and exploit vulnerabilities in simulated networks.
-    </p>
-
-    <h3>Key Techniques:</h3>
-    <ul>
-      <li><strong>Nmap:</strong> SYN, TCP, UDP, XMAS, and RPC scanning</li>
-      <li><strong>Wireshark:</strong> Live traffic inspection of DNS/ICMP/HTTP/FTP packets</li>
-      <li><strong>Hashcat:</strong> Dictionary + combinator attacks on captured NTLM/MD5 hashes</li>
-      <li><strong>Responder:</strong> LLMNR/NBT-NS spoofing and multi-relay simulations</li>
-      <li><strong>Reporting:</strong> Screenshots, tool output, and mitigation aligned to OWASP Top 10</li>
-    </ul>
-
-    <p><strong>Outcome:</strong> Identified high-risk vulnerabilities, extracted valid credentials, and validated network security posture through real-world attack scenarios.</p>
+    <div class="project-card">
+      <h2>Network Penetration Testing</h2>
+      <p>This hands-on lab focused on identifying vulnerabilities in a controlled environment using Kali Linux tools. The objective was to simulate real-world cyberattacks and document findings to enhance security posture and incident response capabilities.</p>
+      <ul>
+        <li>Used Nmap and Nessus for network enumeration and vulnerability scanning.</li>
+        <li>Performed exploits using Metasploit and manual scripting.</li>
+        <li>Documented CVEs, impacted ports/services, and mitigation strategies.</li>
+        <li>Captured and analyzed packets using Wireshark.</li>
+        <li>Reported findings with detailed technical and executive summaries.</li>
+      </ul>
+    </div>
   </main>
-
-  <footer>
-    &copy; 2025 Dhrumil Patel
-  </footer>
 </body>
 </html>
