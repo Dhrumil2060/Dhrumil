@@ -45,9 +45,9 @@
     }
     nav a {
       margin-left: 2rem;
-      text-decoration: none;
       color: var(--text);
       font-weight: 600;
+      text-decoration: none;
       position: relative;
     }
     nav a::after {
@@ -64,7 +64,7 @@
       width: 100%;
     }
     section {
-      padding: 5rem 1.5rem;
+      padding: 6rem 2rem 3rem;
       max-width: 1200px;
       margin: auto;
     }
@@ -104,34 +104,21 @@
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 0 10px var(--accent);
-      transition: background 0.3s;
-    }
-    .hero a:hover {
-      background: #00c69c;
-    }
-    .about-animated {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    .about-animated:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px var(--accent);
     }
     .card-grid {
       display: flex;
-      gap: 1.5rem;
       flex-wrap: wrap;
+      gap: 2rem;
       justify-content: center;
     }
     .card {
       background: var(--card-bg);
       padding: 1.5rem;
       border-radius: 10px;
+      width: 300px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
+      text-align: center;
     }
     .card:hover {
       transform: translateY(-5px);
@@ -139,6 +126,40 @@
     }
     .card h3 {
       color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .timeline {
+      border-left: 3px solid var(--accent);
+      padding-left: 2rem;
+      max-width: 850px;
+      margin: auto;
+    }
+    .timeline h3 { color: var(--accent); }
+    .about-box {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      line-height: 1.7;
+      max-width: 900px;
+      margin: auto;
+      transition: transform 0.3s ease;
+    }
+    .about-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0d1117;
+      color: #ccc;
+    }
+    footer a {
+      color: var(--accent);
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(0,224,168, 0.4); }
@@ -168,55 +189,75 @@
 </section>
 
 <section id="about">
-  <h2 style="text-align: center; margin-bottom: 2rem;">About Me</h2>
-  <div class="about-animated">
-    <p>As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies. I bring a practical understanding of incident response procedures, log analysis, SIEM operations, and have worked closely with red and blue teams. I enjoy collaborating with cross-functional teams to improve the security posture and have a goal to continuously enhance my knowledge in cloud security and threat intelligence.</p>
+  <h2>About Me</h2>
+  <div class="about-box">
+    <p>
+      As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies. I specialize in SIEM tools, endpoint detection, compliance strategies, and enjoy working on hands-on lab simulations to build scalable defense systems.
+    </p>
   </div>
 </section>
 
 <section id="projects">
-  <h2 style="text-align: center; margin-bottom: 2rem;">Projects</h2>
+  <h2>Projects</h2>
   <div class="card-grid">
-    <div class="card"><h3>Virtualization Lab (VMware ESXi)</h3></div>
-    <div class="card"><h3>NIST-CSF Strategy</h3></div>
-    <div class="card"><h3>Penetration Testing Lab</h3></div>
+    <a href="virtualization.html" class="card">
+      <h3>Virtualization with VMware ESXi & VCSA</h3>
+      <p>Click to explore</p>
+    </a>
+    <a href="nist-csf.html" class="card">
+      <h3>NIST-CSF Strategy Implementation</h3>
+      <p>Click to explore</p>
+    </a>
+    <a href="network-penetration-testing.html" class="card">
+      <h3>Network Penetration Testing</h3>
+      <p>Click to explore</p>
+    </a>
   </div>
 </section>
 
 <section id="experience">
-  <h2 style="text-align: center; margin-bottom: 2rem;">Experience</h2>
-  <div class="about-animated">
-    <p><strong>SOC Analyst – Infopercept Pvt. Ltd. (Sept 2022 – Aug 2023)</strong></p>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+    <small>Sept 2022 – Aug 2023</small>
     <ul>
-      <li>Monitored security events and responded using Sumo Logic, CrowdStrike, and Netskope.</li>
-      <li>Developed dashboards and executive reports in Power BI.</li>
-      <li>Worked on incident detection, response automation, and red/blue team exercises.</li>
+      <li>Monitored incidents using Sumo Logic</li>
+      <li>Responded to threats with CrowdStrike</li>
+      <li>Created dashboards and reports with Power BI</li>
     </ul>
   </div>
 </section>
 
 <section id="education">
-  <h2 style="text-align: center; margin-bottom: 2rem;">Education</h2>
-  <div class="about-animated">
-    <p><strong>Master of Science in Informatics</strong><br>Northeastern University, Toronto — 2023 – 2025</p>
-    <p><strong>BSc in Cybersecurity and ITIMS</strong><br>Gujarat University — 2018 – 2021</p>
+  <h2>Education</h2>
+  <div class="timeline">
+    <h3>Master of Science in Informatics</h3>
+    <small>Northeastern University, 2023–2025</small>
+    <p>Specialization in Cybersecurity and Threat Analytics</p>
   </div>
 </section>
 
 <section id="contact">
-  <h2 style="text-align: center; margin-bottom: 2rem;">Contact</h2>
+  <h2>Contact</h2>
   <div class="card-grid">
-    <div class="card" style="text-align:center;">
-      <i class="fas fa-envelope"></i>
+    <div class="card">
       <h3>Email</h3>
       <p>dhrumil0620@gmail.com</p>
     </div>
-    <div class="card" style="text-align:center;">
-      <i class="fab fa-linkedin"></i>
+    <div class="card">
       <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+      <p><a href="https://linkedin.com/in/dhrumilpatel06">linkedin.com/in/dhrumilpatel06</a></p>
     </div>
   </div>
 </section>
+
+<footer>
+  <p>&copy; 2025 Dhrumil Patel</p>
+  <div>
+    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+  </div>
+</footer>
 </body>
 </html>
