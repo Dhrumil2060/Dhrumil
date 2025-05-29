@@ -6,7 +6,137 @@
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --accent: #00e0a8;
+      --card-bg: #161b22;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #21262d;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), #00b3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero {
+      height: 100vh;
+      background: radial-gradient(circle at top left, #00e0a811 0%, #0d1117 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 15px var(--accent);
+      animation: pulse 2s infinite;
+      margin-bottom: 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      background: var(--accent);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px var(--accent);
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background: #00c69c;
+    }
+    .about-animated {
+      background: linear-gradient(145deg, #12171f, #0d1117);
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 224, 168, 0.15);
+      padding: 2rem;
+      animation: fadeInSlide 1s ease-in-out;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      color: #e6edf3;
+      font-size: 1.1rem;
+    }
+    @keyframes fadeInSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,224,168, 0.4); }
+      70% { box-shadow: 0 0 0 20px rgba(0,224,168, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,224,168, 0); }
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -29,92 +159,20 @@
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">
+  <h2 style="text-align: center; margin-bottom: 2rem;">About Me</h2>
+  <div class="about-animated">
     <p>
       I'm a passionate cybersecurity analyst with experience in Security Operations Center (SOC) environments. I specialize in identifying and mitigating cyber threats using advanced threat intelligence, endpoint detection, and SIEM tools.
     </p>
     <p>
       I have experience with tools like Sumo Logic, CrowdStrike, Netskope, and reporting through Power BI. I'm actively learning cloud security and compliance frameworks.
     </p>
+    <p>
+      With strong communication and analytical skills, I enjoy breaking down complex security issues and working on real-world incident response and threat detection use cases. I continuously improve processes and aim to stay ahead of evolving cybersecurity threats.
+    </p>
   </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card-grid">
-    <a href="virtualization.html" class="card">
-      <h3>Virtualization Lab (VMware ESXi)</h3>
-    </a>
-    <a href="nist.html" class="card">
-      <h3>NIST-CSF Strategy</h3>
-    </a>
-    <a href="pentesting.html" class="card">
-      <h3>Penetration Testing Lab</h3>
-    </a>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-      <small>Sept 2022 – Aug 2023</small>
-      <ul>
-        <li>Monitored and triaged incidents via Sumo Logic.</li>
-        <li>Handled endpoint threats via CrowdStrike, Netskope.</li>
-        <li>Built dashboards in Power BI for reports.</li>
-        <li>Created rules for better threat detection.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Master of Science in Informatics</h3>
-      <small>Northeastern University, Toronto — 2023–2025</small>
-      <p>Specialized in Cybersecurity, SOC labs, and cloud security.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="card-grid">
-    <div class="card contact-card">
-      <i class="fas fa-envelope"></i>
-      <h3>Email</h3>
-      <p>dhrumil0620@gmail.com</p>
-    </div>
-    <div class="card contact-card">
-      <i class="fab fa-linkedin"></i>
-      <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Dhrumil Patel</p>
-  <div>
-    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
-  </div>
-</footer>
-
-<div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-  ↑
-</div>
-<script>
-  const scrollBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', () => {
-    scrollBtn.classList.toggle('show', window.scrollY > 300);
-  });
-</script>
+<!-- Additional content like Projects, Experience, Education, Contact should go here -->
 </body>
 </html>
