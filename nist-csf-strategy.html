@@ -3,56 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NIST CSF Strategy | Dhrumil Patel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <title>NIST-CSF Strategy | Dhrumil Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --accent: #00e0a8;
+      --card-bg: #161b22;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      margin: 0;
-      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
     }
     header {
-      background-color: #161b22;
-      padding: 1rem 2rem;
       position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       z-index: 100;
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #21262d;
     }
     header h1 {
-      color: #22c55e;
-      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), #00b3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    nav a {
-      margin-left: 1.5rem;
-      color: #e6edf3;
+    a {
+      color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #22c55e;
     }
     main {
-      margin-top: 100px;
+      padding: 6rem 2rem 3rem;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--accent);
     }
     h2 {
-      color: #22c55e;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
     ul {
-      line-height: 1.8;
+      margin-top: 1rem;
+      padding-left: 1.5rem;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #6e7681;
+    ul li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -60,32 +80,22 @@
   <header>
     <h1>Dhrumil Patel</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">← Back to Home</a>
     </nav>
   </header>
 
   <main>
-    <h2>Cybersecurity Strategy (NIST CSF)</h2>
-    <p>
-      Led a full cybersecurity strategy implementation for TrueNorth Construction Inc. using the NIST Cybersecurity Framework 2.0. Created policy documents, conducted phishing simulations, and deployed monitoring tools.
-    </p>
-
-    <h3>Highlights:</h3>
-    <ul>
-      <li><strong>Governance:</strong> Developed a risk register and mapped assets (ID.AM, ID.RA)</li>
-      <li><strong>Policy Development:</strong> 12+ policies created (Access Control, Logging, Endpoint Security, Encryption)</li>
-      <li><strong>Phishing Training:</strong> Ran 12-week simulation campaign across teams with >50% reduction in click-through</li>
-      <li><strong>SIEM & MITRE Integration:</strong> Wazuh integrated with CISA alerts and MITRE ATT&CK mappings</li>
-      <li><strong>Compliance:</strong> Mapped to NIST SP 800-53 and CIS v8 controls for maturity reporting</li>
-    </ul>
-
-    <p><strong>Outcome:</strong> Strengthened the organization's posture with measurable improvements in awareness, risk control, and detection capabilities — aligned with national frameworks.</p>
+    <div class="project-card">
+      <h2>NIST-CSF Strategy Implementation</h2>
+      <p>This project focused on the practical implementation of the NIST Cybersecurity Framework (CSF) in a simulated small-to-mid-sized enterprise environment. The goal was to assess the current cybersecurity posture, identify gaps, and design a custom roadmap for maturity improvement.</p>
+      <ul>
+        <li>Mapped current controls to the NIST-CSF functions: Identify, Protect, Detect, Respond, Recover.</li>
+        <li>Conducted gap analysis using the CSF Implementation Tiers.</li>
+        <li>Designed a control roadmap tailored to compliance and business objectives.</li>
+        <li>Created visuals in Power BI to communicate control coverage and priority areas.</li>
+        <li>Recommended cloud security integration and endpoint visibility as top priorities.</li>
+      </ul>
+    </div>
   </main>
-
-  <footer>
-    &copy; 2025 Dhrumil Patel
-  </footer>
 </body>
 </html>
