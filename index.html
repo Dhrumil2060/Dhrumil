@@ -110,16 +110,15 @@
       background: #00c69c;
     }
     .about-animated {
-      background: linear-gradient(145deg, #12171f, #0d1117);
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0, 224, 168, 0.15);
+      background: var(--card-bg);
+      border-radius: 10px;
       padding: 2rem;
-      animation: fadeInSlide 1s ease-in-out;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #e6edf3;
-      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .about-animated:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--accent);
     }
     .card-grid {
       display: flex;
@@ -140,10 +139,6 @@
     }
     .card h3 {
       color: var(--accent);
-    }
-    @keyframes fadeInSlide {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(0,224,168, 0.4); }
@@ -175,15 +170,7 @@
 <section id="about">
   <h2 style="text-align: center; margin-bottom: 2rem;">About Me</h2>
   <div class="about-animated">
-    <p>
-      I'm a passionate cybersecurity analyst with experience in Security Operations Center (SOC) environments. I specialize in identifying and mitigating cyber threats using advanced threat intelligence, endpoint detection, and SIEM tools.
-    </p>
-    <p>
-      I have experience with tools like Sumo Logic, CrowdStrike, Netskope, and reporting through Power BI. I'm actively learning cloud security and compliance frameworks.
-    </p>
-    <p>
-      With strong communication and analytical skills, I enjoy breaking down complex security issues and working on real-world incident response and threat detection use cases. I continuously improve processes and aim to stay ahead of evolving cybersecurity threats.
-    </p>
+    <p>As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies.</p>
   </div>
 </section>
 
