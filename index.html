@@ -126,29 +126,11 @@
     }
     .card h3 {
       color: var(--accent);
-      margin-bottom: 0;
+      margin-bottom: 0.5rem;
       text-decoration: none;
     }
-    .timeline {
-      border-left: 3px solid var(--accent);
-      padding-left: 2rem;
-      max-width: 850px;
-      margin: auto;
-    }
-    .timeline h3 { color: var(--accent); }
-    .about-box {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      line-height: 1.7;
-      max-width: 900px;
-      margin: auto;
-      transition: transform 0.3s ease;
-    }
-    .about-box:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px var(--accent);
+    .card h3:hover {
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -191,23 +173,21 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <div class="about-box">
-    <p>
-      As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies. I specialize in SIEM tools, endpoint detection, compliance strategies, and enjoy working on hands-on lab simulations to build scalable defense systems.
-    </p>
+  <div class="card">
+    <p>As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies. I also continuously explore cloud security and compliance frameworks.</p>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="card-grid">
-    <a href="virtualization-lab.html" class="card">
+    <a href="virtualization.html" class="card">
       <h3>Virtualization with VMware ESXi & VCSA</h3>
     </a>
-    <a href="nist-csf-strategy.html" class="card">
+    <a href="nist-csf.html" class="card">
       <h3>NIST-CSF Strategy Implementation</h3>
     </a>
-    <a href="network-penetration.html" class="card">
+    <a href="network-penetration-testing.html" class="card">
       <h3>Network Penetration Testing</h3>
     </a>
   </div>
@@ -215,36 +195,34 @@
 
 <section id="experience">
   <h2>Experience</h2>
-  <div class="timeline">
-    <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-    <small>Sept 2022 – Aug 2023</small>
-    <ul>
-      <li>Monitored incidents using Sumo Logic</li>
-      <li>Responded to threats with CrowdStrike</li>
-      <li>Created dashboards and reports with Power BI</li>
+  <div class="card">
+    <ul style="list-style: none; padding-left: 0;">
+      <li><strong>SOC Analyst – Infopercept Pvt. Ltd.</strong><br>Sept 2022 – Aug 2023<br>Handled security alerts, incident response, and reporting using Sumo Logic, CrowdStrike, Netskope, and Power BI.</li>
     </ul>
   </div>
 </section>
 
 <section id="education">
   <h2>Education</h2>
-  <div class="timeline">
-    <h3>Master of Science in Informatics</h3>
-    <small>Northeastern University, 2023–2025</small>
-    <p>Specialization in Cybersecurity and Threat Analytics</p>
+  <div class="card">
+    <ul style="list-style: none; padding-left: 0;">
+      <li><strong>Master of Science in Informatics</strong><br>Northeastern University, Toronto<br>2023 – 2025</li>
+    </ul>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <div class="card-grid">
-    <div class="card">
+    <div class="card" style="text-align:center;">
+      <i class="fas fa-envelope"></i>
       <h3>Email</h3>
       <p>dhrumil0620@gmail.com</p>
     </div>
-    <div class="card">
+    <div class="card" style="text-align:center;">
+      <i class="fab fa-linkedin"></i>
       <h3>LinkedIn</h3>
-      <p><a href="https://linkedin.com/in/dhrumilpatel06">linkedin.com/in/dhrumilpatel06</a></p>
+      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
     </div>
   </div>
 </section>
