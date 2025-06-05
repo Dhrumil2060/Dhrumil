@@ -130,6 +130,46 @@
     .project-tile a:hover {
       text-decoration: none;
     }
+    .timeline {
+      position: relative;
+      margin-top: 4rem;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 2px;
+      height: 100%;
+      background: var(--accent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .timeline-item h3 {
+      margin-bottom: 0.2rem;
+      color: var(--accent);
+    }
+    .timeline-item span {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .timeline-item p {
+      margin-top: 0.5rem;
+    }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -155,6 +195,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -177,6 +218,22 @@
       </div>
       <div class="project-tile">
         <a href="network-penetration-testing.html">Network Penetration Testing</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Experience & Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
+        <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Master of Science in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
+        <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
       </div>
     </div>
   </section>
