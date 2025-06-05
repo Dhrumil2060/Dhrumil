@@ -127,36 +127,42 @@
       font-weight: bold;
       text-decoration: none;
     }
-    .project-tile a:hover {
-      text-decoration: none;
-    }
     .timeline {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
+      margin-top: 4rem;
     }
-    .timeline-card {
-      flex: 1 1 45%;
-      background: #11161f;
-      padding: 1.5rem;
-      border-left: 4px solid var(--accent);
-      transition: transform 0.3s;
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    .timeline-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px var(--accent);
+    .timeline-container {
+      position: relative;
+      padding-left: 40px;
+      border-left: 3px solid var(--accent);
     }
-    .timeline-card h3 {
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .timeline-item h3 {
+      margin: 0;
       color: var(--accent);
-      margin-bottom: 0.5rem;
     }
-    .timeline-card span {
-      display: block;
+    .timeline-item span {
       font-size: 0.9rem;
       color: #aaa;
     }
-    .timeline-card p {
+    .timeline-item p {
       margin-top: 0.5rem;
     }
     footer {
@@ -211,15 +217,15 @@
     </div>
   </section>
 
-  <section id="timeline">
+  <section id="timeline" class="timeline">
     <h2>Experience & Education</h2>
-    <div class="timeline">
-      <div class="timeline-card">
+    <div class="timeline-container">
+      <div class="timeline-item">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
         <span>Sept 2022 – Aug 2023</span>
         <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
       </div>
-      <div class="timeline-card">
+      <div class="timeline-item">
         <h3>Master of Science in Informatics</h3>
         <span>Northeastern University, Toronto | 2023 – 2025</span>
         <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
