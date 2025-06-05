@@ -11,7 +11,6 @@
       --bg: #0d1117;
       --text: #e6edf3;
       --accent: #00e0a8;
-      --card-bg: #161b22;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -105,32 +104,31 @@
       text-decoration: none;
       box-shadow: 0 0 10px var(--accent);
     }
-    .card-grid {
-      display: flex;
-      flex-wrap: wrap;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      justify-content: center;
+      margin-top: 2rem;
     }
-    .card {
-      background: var(--card-bg);
+    .project-tile {
+      background-color: #11161f;
+      border-left: 4px solid var(--accent);
       padding: 1.5rem;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      text-align: center;
+      transition: all 0.3s ease-in-out;
     }
-    .card:hover {
+    .project-tile:hover {
+      background-color: #1e2633;
       transform: translateY(-5px);
       box-shadow: 0 0 15px var(--accent);
     }
-    .card h3 {
+    .project-tile a {
       color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .card a {
+      font-size: 1.1rem;
+      font-weight: bold;
       text-decoration: none;
-      color: inherit;
+    }
+    .project-tile a:hover {
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -152,88 +150,56 @@
   </style>
 </head>
 <body>
-<header>
-  <h1>Dhrumil Patel</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1>Dhrumil Patel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="home" class="hero">
-  <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
-  <h2>Hi, I'm Dhrumil</h2>
-  <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
-  <a href="#projects">Explore My Work</a>
-</section>
+  <section class="hero">
+    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel">
+    <h2>Hi, I'm Dhrumil</h2>
+    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+    <a href="#projects">Explore My Work</a>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>As a SOC Analyst with 1 year of experience, I am dedicated and highly motivated, passionate about cybersecurity. I have a strong commitment to protecting organizations from evolving threats. My expertise includes security monitoring, incident detection, and response methodologies. I also continuously explore cloud security and compliance frameworks.</p>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card-grid">
-    <a href="virtualization.html" class="card">
-      <h3>Virtualization with VMware ESXi & VCSA</h3>
-    </a>
-    <a href="nist-csf.html" class="card">
-      <h3>NIST-CSF Strategy Implementation</h3>
-    </a>
-    <a href="network-penetration-testing.html" class="card">
-      <h3>Network Penetration Testing</h3>
-    </a>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="card">
-    <ul style="list-style: none; padding-left: 0;">
-      <li><strong>SOC Analyst – Infopercept Pvt. Ltd.</strong><br>Sept 2022 – Aug 2023<br>Handled security alerts, incident response, and reporting using Sumo Logic, CrowdStrike, Netskope, and Power BI.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="card">
-    <ul style="list-style: none; padding-left: 0;">
-      <li><strong>Master of Science in Informatics</strong><br>Northeastern University, Toronto<br>2023 – 2025</li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card-grid">
-    <div class="card" style="text-align:center;">
-      <i class="fas fa-envelope"></i>
-      <h3>Email</h3>
-      <p>dhrumil0620@gmail.com</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <a href="virtualization.html">Virtualization with VMware ESXi & VCSA</a>
+      </div>
+      <div class="project-tile">
+        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+      </div>
+      <div class="project-tile">
+        <a href="network-penetration-testing.html">Network Penetration Testing</a>
+      </div>
     </div>
-    <div class="card" style="text-align:center;">
-      <i class="fab fa-linkedin"></i>
-      <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>&copy; 2025 Dhrumil Patel</p>
-  <div>
-    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-  </div>
-</footer>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
+      </div>
+      <div class="project-tile">
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dhrumil Patel</p>
+    <div>
+      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
