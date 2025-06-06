@@ -8,53 +8,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #f8f9fa; /* light background */
-      --text: #222222; /* darker main text */
-      --text-muted: #555555; /* muted text */
-      --accent: #00b894; /* teal accent */
-      --card-bg: #ffffff; /* white cards */
-      --shadow: rgba(0, 184, 148, 0.15);
+      --bg: #f0f6f9;
+      --text-primary: #24292e; /* dark text */
+      --text-secondary: #57606a; /* medium gray */
+      --accent: #0a9396; /* teal-ish accent */
+      --card-bg: #ffffff;
+      --timeline-line: #89c9c9;
+      --timeline-dot: #0a9396;
+      --shadow-light: rgba(0, 0, 0, 0.08);
     }
+
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--text-primary);
       line-height: 1.6;
+      min-height: 100vh;
     }
     header {
       position: fixed;
       width: 100%;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: saturate(180%) blur(20px);
+      background: #ffffff;
+      box-shadow: 0 2px 8px var(--shadow-light);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 1px solid #dee2e6;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #eaecef;
     }
     header h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(to right, var(--accent), #098d7e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      user-select: none;
-      animation: fadeInText 1.5s ease forwards;
+      color: var(--accent);
+      cursor: default;
     }
     nav a {
       margin-left: 2rem;
-      color: var(--text);
+      color: var(--text-primary);
       font-weight: 600;
       text-decoration: none;
       position: relative;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
     nav a::after {
       content: '';
@@ -66,68 +69,29 @@
       background-color: var(--accent);
       transition: width 0.3s;
     }
-    nav a:hover,
-    nav a:focus {
+    nav a:hover {
       color: var(--accent);
     }
-    nav a:hover::after,
-    nav a:focus::after {
+    nav a:hover::after {
       width: 100%;
     }
     section {
       padding: 6rem 2rem 3rem;
-      max-width: 1100px;
-      margin: 5rem auto 3rem;
+      max-width: 900px;
+      margin: 5rem auto 3rem; /* margin top to clear header */
       background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px var(--shadow);
-      animation: fadeInUp 1s ease forwards;
-      opacity: 0;
-    }
-    section:target {
-      animation: fadeInUp 1s ease forwards;
-      opacity: 1;
-    }
-    section h2 {
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      text-align: center;
-    }
-    section p,
-    section li,
-    section span,
-    section a {
-      color: var(--text);
-    }
-    section span,
-    section small {
-      color: var(--text-muted);
-    }
-    section a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    section a:hover,
-    section a:focus {
-      color: #098d7e;
-      text-decoration: underline;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px var(--shadow-light);
     }
     .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #d0f0ea 0%, #ffffff 100%);
+      height: 80vh;
+      background: radial-gradient(circle at top left, #e0f2f1, var(--card-bg));
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      border-radius: 12px;
-      margin-bottom: 3rem;
-      padding: 2rem;
-      box-shadow: 0 15px 40px rgba(0, 184, 148, 0.1);
-      animation: fadeInScale 1.2s ease forwards;
-      opacity: 0;
+      padding: 4rem 2rem;
     }
     .hero img {
       width: 180px;
@@ -135,240 +99,181 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid var(--accent);
-      box-shadow: 0 0 25px var(--accent);
-      animation: pulse 2.5s infinite ease-in-out;
+      box-shadow: 0 0 15px var(--accent);
+      animation: pulse 2.5s infinite;
       margin-bottom: 2rem;
+      background: #fff;
     }
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: var(--text);
-      text-shadow: 0 0 5px rgba(0, 184, 148, 0.3);
+      color: var(--text-primary);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       max-width: 600px;
       margin-bottom: 2rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
     }
     .hero a {
       background: var(--accent);
       color: #fff;
       padding: 0.75rem 2rem;
-      border-radius: 30px;
-      font-weight: 700;
+      border-radius: 50px;
+      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0, 184, 148, 0.3);
+      box-shadow: 0 5px 15px rgba(10,147,150,0.5);
       transition: background 0.3s ease;
     }
     .hero a:hover {
-      background: #098d7e;
+      background: #09898b;
+      box-shadow: 0 6px 20px rgba(9,137,139,0.7);
     }
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
+      gap: 2rem;
+      margin-top: 1rem;
     }
     .project-tile {
       background-color: var(--card-bg);
-      border-left: 6px solid var(--accent);
-      padding: 1.5rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px var(--shadow);
+      border-left: 5px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px var(--shadow-light);
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 1.1rem;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--accent);
       text-align: center;
+      text-decoration: none;
+      user-select: none;
     }
     .project-tile:hover {
-      background-color: #daf1ec;
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px var(--accent);
-      color: #098d7e;
-      font-weight: 700;
+      background-color: #d0eeec;
+      color: #00776e;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 22px rgba(0, 119, 110, 0.4);
+      text-decoration: none;
     }
     .project-tile a {
       color: inherit;
       text-decoration: none;
       width: 100%;
       display: block;
-      transition: color 0.3s;
+      user-select: none;
     }
     .project-tile a:hover {
       text-decoration: none;
-      color: #098d7e;
     }
     .timeline {
       margin-top: 4rem;
-    }
-    .timeline-container {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      border-left: 3px solid var(--accent);
       position: relative;
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 0;
-    }
-    .timeline-container::after {
-      content: '';
-      position: absolute;
-      width: 4px;
-      background-color: var(--accent);
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
-      border-radius: 2px;
-    }
-    .timeline-item {
-      padding: 1.5rem 2rem;
-      position: relative;
-      width: 45%;
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 15px 35px var(--shadow);
+      box-shadow: 0 6px 18px var(--shadow-light);
+    }
+    .timeline h2 {
+      text-align: center;
       margin-bottom: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      color: var(--text);
-      opacity: 0;
-      animation-fill-mode: forwards;
-    }
-    .timeline-item.left {
-      left: 0;
-      animation: slideInLeft 0.7s ease forwards;
-      animation-delay: 0.3s;
-    }
-    .timeline-item.right {
-      left: 55%;
-      animation: slideInRight 0.7s ease forwards;
-      animation-delay: 0.3s;
-    }
-    .timeline-item.left::before,
-    .timeline-item.right::before {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 1.5rem;
-      background-color: var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 0 25px var(--accent);
-      z-index: 1;
-    }
-    .timeline-item.left::before {
-      right: -10px;
-    }
-    .timeline-item.right::before {
-      left: -10px;
-    }
-    .timeline-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 40px var(--accent);
-    }
-    .timeline-item h3 {
-      margin-bottom: 0.3rem;
       color: var(--accent);
       font-weight: 700;
+      font-size: 2rem;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 3rem;
+      color: var(--text-primary);
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: slideIn 0.6s forwards;
+    }
+    .timeline-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.7s;
+    }
+    .timeline-item:nth-child(5) {
+      animation-delay: 0.9s;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -13px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border: 3px solid var(--card-bg);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(10,147,150,0.7);
+    }
+    .timeline-item h3 {
+      margin: 0 0 0.3rem 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
     }
     .timeline-item span {
       font-size: 0.9rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       display: block;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .timeline-item p {
       margin: 0;
-      color: var(--text-muted);
+      line-height: 1.4;
     }
-    #contact {
-      margin-top: 4rem;
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 224, 168, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(0, 224, 168, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 224, 168, 0);
+      }
     }
-    #contact .project-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-    #contact .project-tile p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: var(--text);
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #e9f5f2;
-      color: var(--accent);
-      box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+      background: var(--card-bg);
+      color: var(--text-secondary);
+      box-shadow: 0 -5px 10px var(--shadow-light);
     }
     footer a {
       color: var(--accent);
       margin: 0 0.5rem;
       font-size: 1.2rem;
       text-decoration: none;
-      transition: color 0.3s;
     }
     footer a:hover {
-      color: #098d7e;
-    }
-
-    /* Animations */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0,184,148, 0.4); }
-      70% { box-shadow: 0 0 0 20px rgba(0,184,148, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0,184,148, 0); }
-    }
-    @keyframes slideInLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    @keyframes slideInRight {
-      0% {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    @keyframes fadeInText {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      color: #057d7f;
     }
   </style>
 </head>
@@ -386,7 +291,10 @@
   <section class="hero">
     <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
     <h2>Hi, I'm Dhrumil</h2>
-    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+    <p>
+      Cybersecurity Enthusiast focused on threat detection, SOC operations, and
+      network defense.
+    </p>
     <a href="#projects">Explore My Work</a>
   </section>
 
@@ -408,20 +316,23 @@
   <section id="timeline" class="timeline">
     <h2>Experience & Education</h2>
     <div class="timeline-container">
-      <div class="timeline-item left">
+      <div class="timeline-item">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
         <span>Sept 2022 – Aug 2023</span>
-        <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
+        <p>
+          Monitored security alerts, investigated incidents, and created detailed
+          reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.
+        </p>
       </div>
-      <div class="timeline-item right">
+      <div class="timeline-item">
         <h3>Master of Science in Informatics</h3>
         <span>Northeastern University, Toronto | 2023 – 2025</span>
         <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
       </div>
-      <div class="timeline-item left">
+      <div class="timeline-item">
         <h3>Bachelor of Technology in Electronics & Communication Engineering</h3>
         <span>University of Kerala | 2014 – 2018</span>
-        <p>Completed undergraduate degree specializing in electronics and communication engineering.</p>
+        <p>Covered foundational engineering, embedded systems, and digital communications.</p>
       </div>
     </div>
   </section>
@@ -433,7 +344,12 @@
         <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
       </div>
       <div class="project-tile">
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
+            >linkedin.com/in/dhrumilpatel06</a
+          >
+        </p>
       </div>
     </div>
   </section>
