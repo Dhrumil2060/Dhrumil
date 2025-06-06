@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #f8f9fa; /* Light background */
-      --text: #222222; /* Dark text for readability */
-      --text-muted: #555555; /* Muted text */
-      --accent: #00b894; /* Teal accent */
-      --card-bg: #ffffff; /* White card background */
+      --bg: #f8f9fa; /* light background */
+      --text: #222222; /* dark text */
+      --text-muted: #555555; /* muted text */
+      --accent: #00b894; /* teal accent */
+      --card-bg: #ffffff; /* white cards */
       --shadow: rgba(0, 184, 148, 0.15);
     }
     * {
@@ -28,8 +28,7 @@
     header {
       position: fixed;
       width: 100%;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       z-index: 100;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: saturate(180%) blur(20px);
@@ -88,6 +87,32 @@
     section:target {
       animation: fadeInUp 1s ease forwards;
       opacity: 1;
+    }
+    section h2 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    section p,
+    section li,
+    section span,
+    section a {
+      color: var(--text);
+    }
+    section span,
+    section small {
+      color: var(--text-muted);
+    }
+    section a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    section a:hover,
+    section a:focus {
+      color: #098d7e;
+      text-decoration: underline;
     }
     .hero {
       min-height: 100vh;
@@ -182,11 +207,6 @@
     .timeline {
       margin-top: 4rem;
     }
-    .timeline h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--accent);
-    }
     .timeline-container {
       position: relative;
       max-width: 900px;
@@ -257,13 +277,13 @@
     }
     .timeline-item span {
       font-size: 0.9rem;
-      color: #666;
+      color: var(--text-muted);
       display: block;
       margin-bottom: 0.75rem;
     }
     .timeline-item p {
       margin: 0;
-      color: #444;
+      color: var(--text-muted);
     }
     #contact {
       margin-top: 4rem;
