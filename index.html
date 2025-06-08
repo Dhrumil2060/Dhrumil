@@ -5,58 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #f5f7fa;
-      --text: #2c3e50;
-      --primary: #194e70;    /* dark blue */
-      --secondary: #b5b5be;  /* soft gray */
-      --highlight: #ffe599;  /* pale yellow */
-      --accent: #6fa8dc;     /* sky blue */
-      --timeline-line: #073763; /* deep blue */
-      --timeline-dot: #194e70;
-      --card-bg: #ffffff;
-      --shadow: rgba(111, 168, 220, 0.25);
+      --bg: #e9f0f7; /* Light blue-gray */
+      --text-primary: #073763; /* Dark blue */
+      --text-secondary: #6fa8dc; /* Medium blue */
+      --accent: #b5b5be; /* Gray */
+      --card-bg: #ffffff; /* White */
+      --timeline-line: #6fa8dc;
+      --timeline-dot: #073763;
+      --button-bg: #e1e5ea;
+      --button-hover-bg: #6fa8dc;
+      --button-text: #073763;
     }
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--text-primary);
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
     header {
       position: fixed;
       width: 100%;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       z-index: 100;
-      background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(7, 55, 99, 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 3rem;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
     }
     header h1 {
-      font-size: 1.8rem;
       font-weight: 700;
-      color: var(--primary);
-      cursor: default;
+      color: var(--text-primary);
     }
     nav a {
       margin-left: 2rem;
-      color: var(--primary);
+      color: var(--text-primary);
       font-weight: 600;
       text-decoration: none;
       position: relative;
@@ -69,57 +65,58 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background-color: var(--accent);
+      background-color: var(--text-secondary);
       transition: width 0.3s ease;
     }
     nav a:hover,
     nav a:focus {
-      color: var(--accent);
+      color: var(--text-secondary);
     }
     nav a:hover::after,
     nav a:focus::after {
       width: 100%;
     }
     section {
-      padding: 8rem 2rem 3rem;
-      max-width: 1000px;
-      margin: 5rem auto 3rem;
+      padding: 6rem 2rem 3rem;
+      max-width: 1100px;
+      margin: 6rem auto 3rem;
       background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 6px 12px var(--shadow);
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(111, 168, 220, 0.2);
     }
     .hero {
       height: 90vh;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
+      background: linear-gradient(135deg, #3b71ca, #194e70);
+      color: var(--button-bg);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(27, 67, 141, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(111,168,220,0.3);
+      padding: 2rem;
       margin-bottom: 3rem;
+      animation: fadeInDown 1s ease forwards;
     }
     .hero img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid var(--highlight);
-      box-shadow: 0 0 30px var(--highlight);
-      animation: pulse 2.5s infinite;
+      border: 5px solid rgba(225, 229, 234, 0.8);
+      box-shadow: 0 0 20px rgba(225, 229, 234, 0.6);
       margin-bottom: 2rem;
       transition: box-shadow 0.3s ease;
     }
     .hero img:hover {
-      box-shadow: 0 0 40px var(--highlight);
+      box-shadow: 0 0 35px rgba(225, 229, 234, 0.9);
     }
     .hero h2 {
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 0 2px 8px var(--highlight);
+      text-shadow: 0 0 10px rgba(225, 229, 234, 0.7);
     }
     .hero p {
       font-size: 1.3rem;
@@ -127,208 +124,198 @@
       margin-bottom: 2rem;
       font-weight: 400;
       letter-spacing: 0.02em;
-      text-shadow: 0 1px 6px var(--primary);
+      text-shadow: 0 1px 6px #194e70;
     }
     .hero a {
-      background: var(--highlight);
-      color: var(--primary);
+      background: var(--button-bg);
+      color: var(--button-text);
       padding: 0.85rem 2.5rem;
       border-radius: 30px;
       font-weight: 700;
       font-size: 1.1rem;
       text-decoration: none;
-      box-shadow: 0 6px 20px var(--highlight);
+      box-shadow: 0 6px 20px rgba(225, 229, 234, 0.7);
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .hero a:hover,
     .hero a:focus {
-      background-color: var(--accent);
-      color: white;
-      box-shadow: 0 8px 30px var(--accent);
+      background-color: var(--button-hover-bg);
+      color: #fff;
+      box-shadow: 0 8px 30px var(--button-hover-bg);
     }
-
-    /* Projects grid */
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
     .project-tile {
       background-color: var(--card-bg);
-      border-left: 5px solid var(--accent);
-      padding: 1.8rem 2rem;
+      border-left: 5px solid var(--text-secondary);
+      padding: 1.8rem 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 10px 25px var(--shadow);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      box-shadow: 0 10px 30px rgba(111, 168, 220, 0.15);
+      transition: all 0.3s ease-in-out;
       cursor: pointer;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.25rem;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       user-select: none;
-      text-decoration: none;
     }
-    .project-tile:hover,
-    .project-tile:focus {
-      background-color: var(--highlight);
-      box-shadow: 0 15px 40px var(--accent);
-      color: var(--primary);
-      transform: translateY(-6px);
-      outline: none;
-      text-decoration: none;
+    .project-tile:hover {
+      background-color: var(--text-secondary);
+      color: #fff;
+      box-shadow: 0 15px 40px rgba(111, 168, 220, 0.4);
+      transform: translateY(-8px);
     }
-    .project-tile a {
-      color: inherit;
-      text-decoration: none;
-      width: 100%;
-    }
-
-    /* Timeline styles */
     .timeline {
       margin-top: 4rem;
+      padding: 2rem 0;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(111, 168, 220, 0.15);
     }
     .timeline h2 {
       text-align: center;
-      margin-bottom: 3rem;
-      color: var(--primary);
-      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
       font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 0 6px var(--accent);
+      font-size: 2.5rem;
+      letter-spacing: 0.05em;
     }
     .timeline-container {
       position: relative;
-      padding-left: 60px;
-      border-left: 3px solid var(--accent);
       max-width: 700px;
-      margin: 0 auto 6rem;
+      margin: auto;
+      padding-left: 40px;
+      border-left: 4px solid var(--text-secondary);
     }
     .timeline-item {
       position: relative;
       margin-bottom: 3.5rem;
-      padding-left: 1rem;
-      transition: all 0.4s ease-in-out;
-      opacity: 0;
-      transform: translateX(-60px);
-      animation-fill-mode: forwards;
-      animation-duration: 0.7s;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .timeline-item:nth-child(odd) {
-      animation-name: slideInLeft;
-    }
-    .timeline-item:nth-child(even) {
-      animation-name: slideInRight;
+      padding-left: 1.5rem;
+      transition: all 0.3s ease;
+      color: var(--text-primary);
     }
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -22px;
-      top: 2px;
-      width: 16px;
-      height: 16px;
-      background: var(--accent);
-      border: 3px solid var(--card-bg);
+      left: -26px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--text-secondary);
       border-radius: 50%;
-      box-shadow: 0 0 15px var(--accent);
+      box-shadow: 0 0 12px var(--text-secondary);
+      transition: transform 0.3s ease;
+    }
+    .timeline-item:hover::before {
+      transform: scale(1.4);
+      box-shadow: 0 0 20px var(--text-secondary);
     }
     .timeline-item h3 {
-      margin: 0;
-      color: var(--primary);
+      margin-bottom: 0.3rem;
+      color: var(--text-secondary);
+      font-weight: 700;
       font-size: 1.3rem;
     }
     .timeline-item span {
-      font-size: 0.9rem;
-      color: var(--secondary);
-      display: block;
-      margin-bottom: 0.6rem;
+      font-size: 1rem;
       font-weight: 600;
-      letter-spacing: 0.4px;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 0.7rem;
     }
     .timeline-item p {
       margin: 0;
-      color: var(--primary);
-      font-size: 1rem;
+      font-weight: 400;
+      color: #333;
       line-height: 1.4;
     }
-
-    /* Contact section */
     #contact {
-      max-width: 700px;
-      margin: 0 auto 6rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(111, 168, 220, 0.15);
+      padding: 2rem;
+      margin-top: 3rem;
     }
     #contact h2 {
       text-align: center;
-      font-size: 2.5rem;
+      color: var(--text-secondary);
       font-weight: 700;
+      font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: var(--primary);
-      letter-spacing: 1px;
-      text-shadow: 0 0 8px var(--accent);
+      letter-spacing: 0.05em;
     }
-    .contact-grid {
+    .contact-item {
       display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .contact-card {
-      background: var(--card-bg);
-      padding: 1.5rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px var(--shadow);
-      min-width: 280px;
-      flex-grow: 1;
-      text-align: center;
-      color: var(--primary);
-      transition: box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .contact-card:hover {
-      box-shadow: 0 15px 40px var(--accent);
-      background-color: var(--highlight);
-      color: var(--primary);
-    }
-    .contact-card i {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-    .contact-card a {
-      color: var(--primary);
-      text-decoration: none;
+      align-items: center;
       font-weight: 600;
-      font-size: 1rem;
-      word-break: break-word;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-primary);
+      cursor: default;
     }
-    .contact-card a:hover {
-      color: var(--accent);
-      text-decoration: underline;
+    .contact-item i {
+      font-size: 1.7rem;
+      margin-right: 1rem;
+      color: var(--text-secondary);
+      min-width: 30px;
+      text-align: center;
+    }
+    .contact-item a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-item a:hover {
+      color: var(--text-secondary);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #e9f0f7;
+      color: var(--text-primary);
+      margin-top: 3rem;
+      box-shadow: inset 0 5px 5px -5px rgba(0,0,0,0.1);
+    }
+    footer a {
+      color: var(--text-secondary);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: var(--text-primary);
     }
 
-    /* Animations */
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255,229,153, 0.7); }
-      70% { box-shadow: 0 0 0 20px rgba(255,229,153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,229,153, 0); }
-    }
-    @keyframes slideInLeft {
-      to {
-        opacity: 1;
-        transform: translateX(0);
+      0% {
+        box-shadow: 0 0 0 0 rgba(225, 229, 234, 0.4);
       }
-    }
-    @keyframes slideInRight {
-      to {
-        opacity: 1;
-        transform: translateX(0);
+      70% {
+        box-shadow: 0 0 0 20px rgba(225, 229, 234, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(225, 229, 234, 0);
       }
     }
 
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -343,7 +330,7 @@
   </header>
 
   <section class="hero">
-    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" style="border: 5px solid var(--highlight); animation: pulse 2.5s infinite;">
+    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
     <h2>Hi, I'm Dhrumil</h2>
     <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
     <a href="#projects">Explore My Work</a>
@@ -352,15 +339,15 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <a href="virtualization.html" class="project-tile" tabindex="0">
-        Virtualization with VMware ESXi & VCSA
-      </a>
-      <a href="nist-csf.html" class="project-tile" tabindex="0">
-        NIST-CSF Strategy Implementation
-      </a>
-      <a href="network-penetration-testing.html" class="project-tile" tabindex="0">
-        Network Penetration Testing
-      </a>
+      <div class="project-tile" tabindex="0">
+        <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
+      </div>
+      <div class="project-tile" tabindex="0">
+        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+      </div>
+      <div class="project-tile" tabindex="0">
+        <a href="network-penetration-testing.html">Network Penetration Testing</a>
+      </div>
     </div>
   </section>
 
@@ -377,20 +364,19 @@
         <span>Northeastern University, Toronto | 2023 – 2025</span>
         <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
       </div>
+      <!-- Additional timeline items can be added here -->
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
-      </div>
-      <div class="contact-card">
-        <i class="fab fa-linkedin"></i>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
-      </div>
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
+    </div>
+    <div class="contact-item">
+      <i class="fab fa-linkedin"></i>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" rel="noopener noreferrer">linkedin.com/in/dhrumilpatel06</a></p>
     </div>
   </section>
 
