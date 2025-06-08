@@ -11,11 +11,12 @@
   />
   <style>
     :root {
-      --bg: #f9fafb;
-      --text: #1f2937;
-      --accent: #3b82f6;
-      --accent-light: #60a5fa;
-      --card-bg: #ffffff;
+      --bg-color: #0A192F;
+      --text-color: #E6F1FF;
+      --accent-color: #00FFF7;
+      --accent-dark: #0077B6;
+      --card-bg: #112D4E;
+      --shadow-color: rgba(0, 255, 247, 0.5);
     }
     * {
       margin: 0;
@@ -24,120 +25,102 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: "Inter", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
     header {
+      background: rgba(10, 25, 47, 0.95);
+      backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
-      z-index: 100;
-      background: #ffffffcc;
-      backdrop-filter: saturate(180%) blur(10px);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 1px 6px rgb(0 0 0 / 0.1);
+      border-bottom: 1px solid var(--card-bg);
+      z-index: 100;
     }
     header h1 {
-      font-size: 1.8rem;
       font-weight: 700;
-      color: var(--accent);
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: default;
+      user-select: none;
     }
     nav a {
       margin-left: 2rem;
-      color: var(--text);
       font-weight: 600;
+      color: var(--text-color);
       text-decoration: none;
       position: relative;
-      transition: color 0.3s ease;
     }
     nav a::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -4px;
       left: 0;
       width: 0%;
       height: 2px;
-      background-color: var(--accent);
+      background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
-    nav a:hover {
-      color: var(--accent);
-    }
-    nav a:hover::after {
+    nav a:hover::after,
+    nav a:focus::after {
       width: 100%;
     }
     section {
-      padding: 8rem 2rem 4rem;
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+      padding: 6rem 2rem 3rem;
+      max-width: 1200px;
+      margin: auto;
     }
+    /* Hero */
     .hero {
-      height: 90vh;
-      background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg) 100%);
+      height: 100vh;
+      background: radial-gradient(circle at top left, #00FFF722 0%, var(--bg-color) 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 2px 15px rgb(0 0 0 / 0.1);
     }
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--accent);
-      box-shadow: 0 0 15px var(--accent-light);
-      animation: pulse 2.5s infinite ease-in-out;
+      border: 3px solid var(--accent-color);
+      box-shadow: 0 0 20px var(--shadow-color);
+      animation: pulse 2.5s infinite;
       margin-bottom: 2rem;
     }
     .hero h2 {
       font-size: 3rem;
-      color: var(--text);
       margin-bottom: 1rem;
+      font-weight: 700;
     }
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
-      color: #444;
       margin-bottom: 2rem;
     }
     .hero a {
-      background: var(--accent);
-      color: #fff;
-      padding: 0.75rem 1.8rem;
-      border-radius: 50px;
+      background: var(--accent-color);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
       font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 6px 12px var(--accent-light);
-      transition: background 0.3s ease;
+      box-shadow: 0 0 15px var(--shadow-color);
+      transition: background-color 0.3s ease;
     }
     .hero a:hover {
-      background: var(--accent-light);
+      background: var(--accent-dark);
     }
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
-      }
-      70% {
-        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
-      }
-    }
-    /* Projects */
+    /* Project grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -146,145 +129,152 @@
     }
     .project-tile {
       background-color: var(--card-bg);
-      border-left: 4px solid var(--accent);
-      padding: 2rem;
-      font-weight: 600;
-      font-size: 1.15rem;
-      color: var(--text);
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgb(0 0 0 / 0.06);
-      cursor: pointer;
+      border-left: 5px solid var(--accent-color);
+      padding: 1.5rem;
       transition: all 0.3s ease-in-out;
-      user-select: none;
-    }
-    .project-tile:hover {
-      background-color: var(--accent-light);
-      color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px var(--accent);
-    }
-    .project-tile a {
-      color: inherit;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 8px transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--accent-color);
       text-decoration: none;
-      display: block;
-      height: 100%;
+    }
+    .project-tile:hover,
+    .project-tile:focus {
+      background-color: #1A365D; /* Slightly lighter navy */
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px var(--accent-color);
+      text-decoration: none;
+      outline: none;
     }
     /* Timeline */
     .timeline {
-      padding-top: 4rem;
-    }
-    .timeline h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--accent);
-      font-weight: 700;
+      margin-top: 4rem;
     }
     .timeline-container {
-      display: flex;
-      justify-content: center;
-      gap: 5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .timeline-column {
-      flex: 1 1 350px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgb(0 0 0 / 0.06);
-      padding: 2rem;
-    }
-    .timeline-column h3 {
-      text-align: center;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
+      position: relative;
+      padding-left: 60px;
+      border-left: 3px solid var(--accent-color);
     }
     .timeline-item {
       position: relative;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       padding-left: 1rem;
-    }
-    .timeline-item:not(:last-child) {
-      border-left: 3px solid var(--accent);
+      transition: all 0.3s ease-in-out;
     }
     .timeline-item::before {
-      content: "";
+      content: '';
       position: absolute;
-      left: -19px;
+      left: -14px;
       top: 0;
       width: 18px;
       height: 18px;
-      background: var(--accent);
+      background: var(--accent-color);
+      border: 2px solid var(--bg-color);
       border-radius: 50%;
-      box-shadow: 0 0 15px var(--accent-light);
-      transition: transform 0.3s ease;
-      cursor: default;
     }
-    .timeline-item:hover::before {
-      transform: scale(1.3);
-      box-shadow: 0 0 30px var(--accent);
-    }
-    .timeline-item h4 {
-      margin-bottom: 0.25rem;
+    .timeline-item h3 {
+      margin: 0;
+      color: var(--accent-color);
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--text);
     }
-    .timeline-item .date {
-      color: #777;
+    .timeline-item span {
       font-size: 0.9rem;
+      color: #aaa;
+      display: block;
       margin-bottom: 0.5rem;
     }
     .timeline-item p {
-      line-height: 1.4;
-      color: #555;
-      font-size: 0.95rem;
+      margin: 0;
+      color: var(--text-color);
+      line-height: 1.5;
     }
-    /* Contact */
+    /* Contact section */
     #contact {
-      max-width: 800px;
-      margin: 2rem auto 4rem;
-      padding: 2rem;
+      margin-top: 4rem;
+    }
+    #contact .project-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    #contact .project-tile {
+      border-left: none;
+      border-radius: 12px;
       background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgb(0 0 0 / 0.07);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem 1rem;
+      cursor: default;
       text-align: center;
+      color: var(--accent-color);
+      font-weight: 700;
+      font-size: 1.2rem;
     }
-    #contact h2 {
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+    #contact i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
-    #contact .contact-item {
-      margin-bottom: 1.25rem;
-      font-size: 1.1rem;
-      color: var(--text);
-    }
-    #contact .contact-item a {
-      color: var(--accent);
+    #contact a {
+      color: var(--accent-color);
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
     }
-    #contact .contact-item a:hover {
-      color: var(--accent-light);
+    #contact a:hover {
+      text-decoration: underline;
     }
+    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: var(--card-bg);
-      color: #777;
-      font-size: 0.9rem;
-      user-select: none;
+      background: var(--bg-color);
+      color: #ccc;
+      margin-top: 4rem;
     }
     footer a {
-      color: var(--accent);
+      color: var(--accent-color);
       margin: 0 0.5rem;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     footer a:hover {
-      color: var(--accent-light);
+      color: var(--accent-dark);
+    }
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0,255,247, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(0,255,247, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0,255,247, 0);
+      }
+    }
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background: var(--accent-color);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 0 12px rgba(0,255,247,0.6);
+    }
+    .scroll-top.show {
+      display: block;
     }
   </style>
 </head>
@@ -309,61 +299,28 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <div class="project-tile">
-        <a href="virtualization.html">Virtualization with VMware ESXi & VCSA</a>
-      </div>
-      <div class="project-tile">
-        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-      </div>
-      <div class="project-tile">
-        <a href="network-penetration-testing.html">Network Penetration Testing</a>
-      </div>
+      <a href="virtualization.html" class="project-tile">Virtualization with VMware ESXi & VCSA</a>
+      <a href="nist-csf.html" class="project-tile">NIST-CSF Strategy Implementation</a>
+      <a href="network-penetration-testing.html" class="project-tile">Network Penetration Testing</a>
     </div>
   </section>
 
-  <section id="timeline">
+  <section id="timeline" class="timeline">
     <h2>Experience & Education</h2>
     <div class="timeline-container">
-      <div class="timeline-column">
-        <h3>Education</h3>
-        <div class="timeline-item">
-          <h4>Master of Science in Informatics</h4>
-          <div class="date">Northeastern University, Toronto | 2023 – 2025</div>
-          <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>B-Tech in ECE</h4>
-          <div class="date">University of Kerala | 2014 – 2018</div>
-          <p>Completed Bachelor's degree focusing on electronics and communication engineering.</p>
-        </div>
+      <div class="timeline-item">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
+        <p>
+          Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.
+        </p>
       </div>
-      <div class="timeline-column">
-        <h3>Experience</h3>
-        <div class="timeline-item">
-          <h4>SOC Analyst – Infopercept Pvt. Ltd.</h4>
-          <div class="date">Sept 2022 – Aug 2023</div>
-          <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>Senior Software Engineer</h4>
-          <div class="date">InApp Information Technologies Pvt Ltd | 2021 – 2023</div>
-          <p>Worked on software engineering projects and client solutions with emphasis on reliability and performance.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>Project Coordinator</h4>
-          <div class="date">InApp Information Technologies Pvt Ltd | 2021 – 2023</div>
-          <p>Coordinated project timelines, deliverables, and cross-team collaboration.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>Software Engineer</h4>
-          <div class="date">InApp Information Technologies Pvt Ltd | 2019 – 2021</div>
-          <p>Contributed to development, testing, and maintenance of enterprise software.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>Business Development Executive</h4>
-          <div class="date">Yarab Technologies Pvt Ltd | 2018 – 2018</div>
-          <p>Handled client relationships and business growth initiatives.</p>
-        </div>
+      <div class="timeline-item">
+        <h3>Master of Science in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
+        <p>
+          Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.
+        </p>
       </div>
     </div>
   </section>
@@ -371,11 +328,13 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="project-grid">
-      <div class="project-tile">
-        <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
+      <div class="project-tile" style="cursor: default;">
+        <i class="fas fa-envelope"></i>
+        <p>dhrumil0620@gmail.com</p>
       </div>
-      <div class="project-tile">
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+      <div class="project-tile" style="cursor: default;">
+        <i class="fab fa-linkedin"></i>
+        <p><a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
       </div>
     </div>
   </section>
@@ -388,5 +347,19 @@
       <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
     </div>
   </footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
