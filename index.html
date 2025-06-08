@@ -10,460 +10,397 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <style>
-    /* Color Palette */
     :root {
-      --bg: #f7f9fc;
-      --text-primary: #2e3a59;
-      --text-secondary: #657786;
-      --accent-blue: #2978ff;
-      --accent-cyan: #00b8d9;
-      --accent-neon: #39ff14;
+      --bg: #f5f7fa;
+      --text: #2c3e50;
+      --primary: #194e70;    /* dark blue */
+      --secondary: #b5b5be;  /* soft gray */
+      --highlight: #ffe599;  /* pale yellow */
+      --accent: #6fa8dc;     /* sky blue */
+      --timeline-line: #073763; /* deep blue */
+      --timeline-dot: #194e70;
       --card-bg: #ffffff;
-      --shadow-light: rgba(41, 120, 255, 0.3);
+      --shadow: rgba(111, 168, 220, 0.25);
     }
-
-    /* Reset and base */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-primary);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
-    a {
-      color: var(--accent-blue);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: var(--accent-neon);
-      text-decoration: underline;
-    }
-
-    /* Header */
     header {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 2rem;
+      top: 0; left: 0;
+      z-index: 100;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      padding: 1rem 3rem;
     }
     header h1 {
-      font-weight: 700;
       font-size: 1.8rem;
-      color: var(--accent-blue);
+      font-weight: 700;
+      color: var(--primary);
       cursor: default;
     }
     nav a {
       margin-left: 2rem;
+      color: var(--primary);
       font-weight: 600;
-      color: var(--text-primary);
+      text-decoration: none;
       position: relative;
-      padding-bottom: 4px;
+      transition: color 0.3s ease;
     }
     nav a::after {
       content: '';
       position: absolute;
+      bottom: -4px;
       left: 0;
-      bottom: 0;
-      width: 0;
-      height: 3px;
-      background: var(--accent-neon);
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
       transition: width 0.3s ease;
-      border-radius: 3px;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent);
     }
     nav a:hover::after,
-    nav a.active::after {
+    nav a:focus::after {
       width: 100%;
     }
-
-    /* Sections */
     section {
+      padding: 8rem 2rem 3rem;
       max-width: 1000px;
-      margin: 100px auto 60px;
-      padding: 0 20px;
+      margin: 5rem auto 3rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 12px var(--shadow);
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--accent-blue);
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-    }
-
-    /* Hero */
     .hero {
       height: 90vh;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
       color: white;
-      border-radius: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(111,168,220,0.3);
       margin-bottom: 3rem;
-      box-shadow: 0 10px 30px var(--shadow-light);
     }
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--accent-neon);
-      box-shadow: 0 0 20px var(--accent-neon);
-      margin-bottom: 1.5rem;
-      animation: pulse 3s infinite;
+      border: 5px solid var(--highlight);
+      box-shadow: 0 0 30px var(--highlight);
+      animation: pulse 2.5s infinite;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .hero img:hover {
+      box-shadow: 0 0 40px var(--highlight);
     }
     .hero h2 {
       font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 8px var(--accent-neon);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px var(--highlight);
     }
     .hero p {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
       max-width: 600px;
-      font-weight: 500;
-      text-shadow: 0 0 6px var(--accent-blue);
+      margin-bottom: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 6px var(--primary);
     }
     .hero a {
-      background-color: var(--accent-neon);
-      color: #111;
-      padding: 0.75rem 2rem;
-      border-radius: 25px;
+      background: var(--highlight);
+      color: var(--primary);
+      padding: 0.85rem 2.5rem;
+      border-radius: 30px;
       font-weight: 700;
-      box-shadow: 0 0 15px var(--accent-neon);
-      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px var(--highlight);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .hero a:hover {
-      background-color: #29ff00cc;
-    }
-
-    /* Pulse animation */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(57, 255, 20, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
-      }
+    .hero a:hover,
+    .hero a:focus {
+      background-color: var(--accent);
+      color: white;
+      box-shadow: 0 8px 30px var(--accent);
     }
 
-    /* Projects Grid */
+    /* Projects grid */
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
     }
     .project-tile {
-      background: var(--card-bg, #ffffff);
-      border-left: 5px solid var(--accent-neon);
-      box-shadow: 0 5px 20px rgba(57, 255, 20, 0.2);
-      padding: 1.5rem;
-      border-radius: 15px;
+      background-color: var(--card-bg);
+      border-left: 5px solid var(--accent);
+      padding: 1.8rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      color: var(--text-primary);
-      font-weight: 600;
-      font-size: 1.15rem;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       user-select: none;
+      text-decoration: none;
     }
-    .project-tile:hover {
-      background: var(--accent-cyan);
-      color: #111;
-      border-left-color: var(--accent-blue);
-      box-shadow: 0 10px 30px var(--accent-neon);
+    .project-tile:hover,
+    .project-tile:focus {
+      background-color: var(--highlight);
+      box-shadow: 0 15px 40px var(--accent);
+      color: var(--primary);
       transform: translateY(-6px);
+      outline: none;
+      text-decoration: none;
     }
     .project-tile a {
       color: inherit;
       text-decoration: none;
+      width: 100%;
     }
 
-    /* Timeline */
+    /* Timeline styles */
     .timeline {
+      margin-top: 4rem;
+    }
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 6px var(--accent);
+    }
+    .timeline-container {
       position: relative;
-      padding-left: 2.5rem;
-      margin-top: 2rem;
-      border-left: 3px solid var(--accent-neon);
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      padding-left: 60px;
+      border-left: 3px solid var(--accent);
+      max-width: 700px;
+      margin: 0 auto 6rem;
     }
     .timeline-item {
       position: relative;
-      margin-bottom: 3rem;
-      padding-left: 2rem;
-      transition: all 0.3s ease;
-      background: white;
-      color: var(--text-primary);
-      padding: 1rem 1.5rem 1rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      margin-bottom: 3.5rem;
+      padding-left: 1rem;
+      transition: all 0.4s ease-in-out;
+      opacity: 0;
+      transform: translateX(-60px);
+      animation-fill-mode: forwards;
+      animation-duration: 0.7s;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .timeline-item:nth-child(odd) {
+      animation-name: slideInLeft;
+    }
+    .timeline-item:nth-child(even) {
+      animation-name: slideInRight;
     }
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -25px;
-      top: 20px;
-      width: 20px;
-      height: 20px;
-      background: var(--accent-neon);
+      left: -22px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent);
+      border: 3px solid var(--card-bg);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent-neon);
-      transition: background-color 0.3s ease;
-    }
-    .timeline-item:hover::before {
-      background: var(--accent-blue);
-      box-shadow: 0 0 10px var(--accent-blue);
+      box-shadow: 0 0 15px var(--accent);
     }
     .timeline-item h3 {
-      margin-top: 0;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--accent-neon);
-      margin-bottom: 0.3rem;
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.3rem;
     }
     .timeline-item span {
+      font-size: 0.9rem;
+      color: var(--secondary);
       display: block;
-      color: var(--accent-blue);
+      margin-bottom: 0.6rem;
       font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.4px;
     }
     .timeline-item p {
+      margin: 0;
+      color: var(--primary);
       font-size: 1rem;
-      color: var(--text-primary);
       line-height: 1.4;
     }
 
-    /* Contact Section */
+    /* Contact section */
     #contact {
-      max-width: 900px;
-      margin: 0 auto 80px;
-      padding: 1rem 2rem;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(57, 255, 20, 0.15);
-      color: var(--text-primary);
+      max-width: 700px;
+      margin: 0 auto 6rem;
     }
     #contact h2 {
-      color: var(--accent-neon);
-      font-weight: 700;
       text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
       margin-bottom: 2rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px var(--accent);
     }
-    .contact-info {
+    .contact-grid {
       display: flex;
+      gap: 2rem;
       justify-content: center;
-      gap: 4rem;
       flex-wrap: wrap;
     }
     .contact-card {
-      flex: 1 1 250px;
-      background: var(--accent-cyan);
-      color: #111;
-      border-radius: 15px;
-      padding: 1.8rem 2rem;
-      box-shadow: 0 5px 20px rgba(0, 184, 217, 0.3);
+      background: var(--card-bg);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px var(--shadow);
+      min-width: 280px;
+      flex-grow: 1;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: var(--primary);
+      transition: box-shadow 0.3s ease;
       cursor: pointer;
     }
     .contact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 30px var(--accent-neon);
-      background: var(--accent-neon);
-      color: #111;
+      box-shadow: 0 15px 40px var(--accent);
+      background-color: var(--highlight);
+      color: var(--primary);
     }
     .contact-card i {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: inherit;
-    }
-    .contact-card h3 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
+      color: var(--accent);
     }
     .contact-card a {
-      color: inherit;
-      font-weight: 600;
+      color: var(--primary);
       text-decoration: none;
-      word-break: break-all;
+      font-weight: 600;
+      font-size: 1rem;
+      word-break: break-word;
     }
     .contact-card a:hover {
+      color: var(--accent);
       text-decoration: underline;
     }
 
-    /* Footer */
-    footer {
-      background: var(--bg);
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
+    /* Animations */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,229,153, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(255,229,153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,229,153, 0); }
     }
-    footer a {
-      color: var(--accent-neon);
-      margin: 0 0.7rem;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
-    footer a:hover {
-      color: var(--accent-blue);
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    /* Scroll to top */
-    .scroll-top {
-      position: fixed;
-      right: 20px;
-      bottom: 30px;
-      background: var(--accent-neon);
-      color: #111;
-      padding: 10px 14px;
-      border-radius: 50%;
-      font-size: 1.3rem;
-      cursor: pointer;
-      box-shadow: 0 0 15px var(--accent-neon);
-      display: none;
-      z-index: 1000;
-      transition: opacity 0.3s ease;
-    }
-    .scroll-top.show {
-      display: block;
-      opacity: 1;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav a {
-        margin-left: 1rem;
-        font-size: 0.9rem;
-      }
-      .hero h2 {
-        font-size: 2.5rem;
-      }
-      .hero p {
-        font-size: 1rem;
-        max-width: 100%;
-      }
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-      .contact-info {
-        flex-direction: column;
-      }
-      .contact-card {
-        max-width: 300px;
-        margin: 0 auto;
-      }
-    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Dhrumil Patel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Dhrumil Patel</h1>
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#timeline">Experience & Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <section class="hero">
+    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" style="border: 5px solid var(--highlight); animation: pulse 2.5s infinite;">
+    <h2>Hi, I'm Dhrumil</h2>
+    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+    <a href="#projects">Explore My Work</a>
+  </section>
 
-<section class="hero" id="home">
-  <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-  <h2>Hi, I'm Dhrumil</h2>
-  <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
-  <a href="#projects">Explore My Work</a>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-tile"><a href="virtualization.html">Virtualization with VMware ESXi & VCSA</a></div>
-    <div class="project-tile"><a href="nist-csf.html">NIST-CSF Strategy Implementation</a></div>
-    <div class="project-tile"><a href="network-penetration-testing.html">Network Penetration Testing</a></div>
-  </div>
-</section>
-
-<section id="timeline">
-  <h2>Experience & Education</h2>
-  <div class="timeline-container timeline">
-    <div class="timeline-item">
-      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-      <span>Sept 2022 – Aug 2023</span>
-      <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <a href="virtualization.html" class="project-tile" tabindex="0">
+        Virtualization with VMware ESXi & VCSA
+      </a>
+      <a href="nist-csf.html" class="project-tile" tabindex="0">
+        NIST-CSF Strategy Implementation
+      </a>
+      <a href="network-penetration-testing.html" class="project-tile" tabindex="0">
+        Network Penetration Testing
+      </a>
     </div>
-    <div class="timeline-item">
-      <h3>Master of Science in Informatics</h3>
-      <span>Northeastern University, Toronto | 2023 – 2025</span>
-      <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
+  </section>
+
+  <section id="timeline" class="timeline">
+    <h2>Experience & Education</h2>
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
+        <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Master of Science in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
+        <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-info">
-    <div class="contact-card">
-      <i class="fas fa-envelope"></i>
-      <h3>Email</h3>
-      <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a></p>
+      </div>
     </div>
-    <div class="contact-card">
-      <i class="fab fa-linkedin"></i>
-      <h3>LinkedIn</h3>
-      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dhrumil Patel</p>
+    <div>
+      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
     </div>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Dhrumil Patel</p>
-  <div>
-    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://linkedin.com/in/dhrumilpatel06" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
-  </div>
-</footer>
-
-<button class="scroll-top" id="scrollTopBtn" title="Back to top">↑</button>
-
-<script>
-  const scrollBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.remove('show');
-    }
-  });
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
-</script>
-
+  </footer>
 </body>
 </html>
