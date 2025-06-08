@@ -8,16 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #e9f0f7; /* Light blue-gray */
-      --text-primary: #073763; /* Dark blue */
-      --text-secondary: #6fa8dc; /* Medium blue */
-      --accent: #b5b5be; /* Gray */
-      --card-bg: #ffffff; /* White */
-      --timeline-line: #6fa8dc;
-      --timeline-dot: #073763;
-      --button-bg: #e1e5ea;
-      --button-hover-bg: #6fa8dc;
-      --button-text: #073763;
+      --bg: #e9f0f7;
+      --text-primary: #073763;
+      --text-secondary: #6fa8dc;
+      --accent: #b5b5be;
+      --card-bg: #ffffff;
+      --button-bg: #6fa8dc;
+      --button-hover-bg: #194e70;
+      --button-text: #ffffff;
+      --project-link-color: #4b2e83; /* New purple shade */
     }
     * {
       margin: 0;
@@ -84,70 +83,17 @@
       border-radius: 10px;
       box-shadow: 0 6px 20px rgba(111, 168, 220, 0.2);
     }
-    .hero {
-      height: 90vh;
-      background: linear-gradient(135deg, #3b71ca, #194e70);
-      color: var(--button-bg);
-      border-radius: 10px;
-      box-shadow: 0 12px 40px rgba(27, 67, 141, 0.3);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      animation: fadeInDown 1s ease forwards;
-    }
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid rgba(225, 229, 234, 0.8);
-      box-shadow: 0 0 20px rgba(225, 229, 234, 0.6);
-      margin-bottom: 2rem;
-      transition: box-shadow 0.3s ease;
-    }
-    .hero img:hover {
-      box-shadow: 0 0 35px rgba(225, 229, 234, 0.9);
-    }
-    .hero h2 {
-      font-size: 3.5rem;
+    /* Projects Section */
+    #projects h2 {
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(225, 229, 234, 0.7);
-    }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      text-shadow: 0 1px 6px #194e70;
-    }
-    .hero a {
-      background: var(--button-bg);
-      color: var(--button-text);
-      padding: 0.85rem 2.5rem;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(225, 229, 234, 0.7);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hero a:hover,
-    .hero a:focus {
-      background-color: var(--button-hover-bg);
-      color: #fff;
-      box-shadow: 0 8px 30px var(--button-hover-bg);
+      font-size: 2rem;
     }
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
     .project-tile {
       background-color: var(--card-bg);
@@ -159,12 +105,13 @@
       cursor: pointer;
       font-weight: 600;
       font-size: 1.15rem;
-      color: var(--text-primary);
+      color: var(--project-link-color);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       user-select: none;
+      text-decoration: none;
     }
     .project-tile:hover {
       background-color: var(--text-secondary);
@@ -172,6 +119,17 @@
       box-shadow: 0 15px 40px rgba(111, 168, 220, 0.4);
       transform: translateY(-8px);
     }
+    .project-tile a {
+      color: inherit;
+      text-decoration: none; /* Remove underline */
+      width: 100%;
+    }
+    .project-tile a:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Timeline Section */
     .timeline {
       margin-top: 4rem;
       padding: 2rem 0;
@@ -236,12 +194,17 @@
       color: #333;
       line-height: 1.4;
     }
+
+    /* Contact Section */
     #contact {
       background: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(111, 168, 220, 0.15);
-      padding: 2rem;
+      padding: 2rem 3rem;
       margin-top: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     #contact h2 {
       text-align: center;
@@ -256,13 +219,13 @@
       align-items: center;
       font-weight: 600;
       font-size: 1.1rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       color: var(--text-primary);
       cursor: default;
+      gap: 1rem;
     }
     .contact-item i {
       font-size: 1.7rem;
-      margin-right: 1rem;
       color: var(--text-secondary);
       min-width: 30px;
       text-align: center;
@@ -278,10 +241,10 @@
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #e9f0f7;
+      background: var(--bg);
       color: var(--text-primary);
       margin-top: 3rem;
-      box-shadow: inset 0 5px 5px -5px rgba(0,0,0,0.1);
+      box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.1);
     }
     footer a {
       color: var(--text-secondary);
@@ -294,18 +257,18 @@
       color: var(--text-primary);
     }
 
+    /* Animations */
     @keyframes pulse {
       0% {
-        box-shadow: 0 0 0 0 rgba(225, 229, 234, 0.4);
+        box-shadow: 0 0 0 0 rgba(111, 168, 220, 0.4);
       }
       70% {
-        box-shadow: 0 0 0 20px rgba(225, 229, 234, 0);
+        box-shadow: 0 0 0 20px rgba(111, 168, 220, 0);
       }
       100% {
-        box-shadow: 0 0 0 0 rgba(225, 229, 234, 0);
+        box-shadow: 0 0 0 0 rgba(111, 168, 220, 0);
       }
     }
-
     @keyframes fadeInDown {
       0% {
         opacity: 0;
@@ -329,53 +292,52 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" role="banner" aria-label="Introduction">
     <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
     <h2>Hi, I'm Dhrumil</h2>
     <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
-    <a href="#projects">Explore My Work</a>
+    <a href="#projects" class="btn-primary">Explore My Work</a>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-tile" tabindex="0">
+  <section id="projects" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
+    <div class="project-grid" role="list">
+      <div class="project-tile" role="listitem" tabindex="0">
         <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
       </div>
-      <div class="project-tile" tabindex="0">
+      <div class="project-tile" role="listitem" tabindex="0">
         <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
       </div>
-      <div class="project-tile" tabindex="0">
+      <div class="project-tile" role="listitem" tabindex="0">
         <a href="network-penetration-testing.html">Network Penetration Testing</a>
       </div>
     </div>
   </section>
 
-  <section id="timeline" class="timeline">
-    <h2>Experience & Education</h2>
+  <section id="timeline" class="timeline" aria-labelledby="timeline-heading">
+    <h2 id="timeline-heading">Experience &amp; Education</h2>
     <div class="timeline-container">
-      <div class="timeline-item">
+      <div class="timeline-item" tabindex="0">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
         <span>Sept 2022 – Aug 2023</span>
         <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item" tabindex="0">
         <h3>Master of Science in Informatics</h3>
         <span>Northeastern University, Toronto | 2023 – 2025</span>
         <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
       </div>
-      <!-- Additional timeline items can be added here -->
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-item">
-      <i class="fas fa-envelope"></i>
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <div class="contact-item" tabindex="0">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
       <p><strong>Email:</strong> dhrumil0620@gmail.com</p>
     </div>
-    <div class="contact-item">
-      <i class="fab fa-linkedin"></i>
+    <div class="contact-item" tabindex="0">
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" rel="noopener noreferrer">linkedin.com/in/dhrumilpatel06</a></p>
     </div>
   </section>
@@ -383,9 +345,9 @@
   <footer>
     <p>&copy; 2025 Dhrumil Patel</p>
     <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+      <a href="mailto:dhrumil0620@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dhrumilpatel06" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
   </footer>
 </body>
