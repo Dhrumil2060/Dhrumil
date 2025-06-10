@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtualization & Vulnerability | Dhrumil Patel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtualization with VMware ESXi & VCSA | Dhrumil Patel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #0d1117;
-      --text: #e6edf3;
-      --accent: #00e0a8;
-      --card-bg: #161b22;
+      --bg: #f0f4f8;
+      --text-dark: #073763;
+      --text-light: #333333;
+      --accent-dark: #194e70;
+      --accent-light: #6fa8dc;
+      --card-bg: #ffffff;
+      --timeline-line: #6fa8dc;
+      --timeline-dot: #194e70;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -19,70 +23,84 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      color: var(--text-light);
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
     header {
-      width: 100%;
-      background: rgba(13, 17, 23, 0.95);
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #21262d;
+      margin-bottom: 2rem;
     }
     header h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(to right, var(--accent), #00b3ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--accent-dark);
     }
     nav a {
-      margin-left: 2rem;
-      color: var(--text);
+      margin-left: 1.5rem;
+      color: var(--text-dark);
       font-weight: 600;
       text-decoration: none;
       position: relative;
     }
-    nav a:hover {
-      color: var(--accent);
+    nav a:hover::after,
+    nav a:focus::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-dark);
+      transition: width 0.3s;
     }
-    section {
-      padding: 5rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .card {
+    main {
       background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.1);
+      color: var(--text-light);
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px var(--accent);
+    h2 {
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
-    h2, h3 {
-      color: var(--accent);
+    ul {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      list-style-type: disc;
     }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 1.5rem;
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-light);
     }
     footer {
+      margin-top: 3rem;
       text-align: center;
-      padding: 2rem;
-      background: #0d1117;
-      color: #ccc;
+      color: var(--accent-dark);
+      font-weight: 600;
     }
     footer a {
-      color: var(--accent);
+      color: var(--accent-dark);
       margin: 0 0.5rem;
+      font-size: 1.4rem;
       text-decoration: none;
-      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: var(--accent-light);
     }
   </style>
 </head>
@@ -90,37 +108,29 @@
   <header>
     <h1>Dhrumil Patel</h1>
     <nav>
-      <a href="index.html#home">Home</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience-education">Experience & Education</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="virtualization.html" aria-current="page">Virtualization</a>
+      <a href="nist-csf.html">NIST-CSF</a>
+      <a href="network-penetration-testing.html">Network Penetration Testing</a>
     </nav>
   </header>
 
-  <section>
-    <div class="card">
-      <h2>Virtualization and Vulnerability Assessment</h2>
-      <p>This project involved setting up a virtual environment and performing end-to-end vulnerability assessment. It integrated modern cybersecurity practices across various stages of the system lifecycle.</p>
-       <ul>
-        <li><strong>Tools Used:</strong> Oracle VirtualBox, Windows 10 ISO, Kali Linux ISO, VM network bridging</li>
-        <li><strong>Key Tasks:</strong>
-          <ul>
-            <ul style="padding-left: 1.5rem; list-style-type: circle;">
-              <li>Installed and configured two VMs with custom specs</li>
-              <li>Set up shared folders and guest additions</li>
-              <li>Implemented bridged networking to allow internet access</li>
-              <li>Captured network settings and screenshots of configurations</li>
-              <li>Verified system connectivity using ping, IP configuration, and VirtualBox settings</li>
-            </ul>
-            </ul>
-        </li>
-        <li><strong>Skills Demonstrated:</strong> VM provisioning, OS installation, networking configuration, system hardening basics</li>
+  <main>
+    <h2>Virtualization and Vulnerability Assessment</h2>
+    <p>This project involved setting up a virtual environment and performing end-to-end vulnerability assessment. It integrated modern cybersecurity practices across various stages of the system lifecycle.</p>
+    <ul>
+      <li><strong>Tools Used:</strong> Oracle VirtualBox, Windows 10 ISO, Kali Linux ISO, VM network bridging</li>
+      <li><strong>Key Tasks:</strong></li>
+      <ul>
+        <li>Installed and configured two VMs with custom specs</li>
+        <li>Set up shared folders and guest additions</li>
+        <li>Implemented bridged networking to allow internet access</li>
+        <li>Captured network settings and screenshots of configurations</li>
+        <li>Verified system connectivity using ping, IP configuration, and VirtualBox settings</li>
       </ul>
-      <img src="images/virtual-lab-setup.png" alt="Virtual Lab Setup">
-      <img src="images/juice-shop-nikto.png" alt="Juice Shop Scanning Result">
-    </div>
-  </section>
+      <li><strong>Skills Demonstrated:</strong> VM provisioning, OS installation, networking configuration, system hardening basics</li>
+    </ul>
+  </main>
 
   <footer>
     <p>&copy; 2025 Dhrumil Patel</p>
