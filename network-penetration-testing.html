@@ -2,138 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Network Penetration Testing | Dhrumil Patel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Penetration Testing - Dhrumil Patel</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Same styles as virtualization.html for consistency */
     :root {
       --bg: #f0f4f8;
-      --text-dark: #073763;
-      --text-light: #333333;
-      --accent-dark: #194e70;
-      --accent-light: #6fa8dc;
+      --text: #333;
+      --accent: #007acc;
       --card-bg: #ffffff;
-      --timeline-line: #6fa8dc;
-      --timeline-dot: #194e70;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text-light);
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
+      position: fixed;
+      width: 100%;
+      top: 0; left: 0;
+      z-index: 100;
+      background: var(--card-bg);
+      border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
     }
     header h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--accent-dark);
+      color: var(--accent);
     }
     nav a {
       margin-left: 1.5rem;
-      color: var(--text-dark);
+      color: var(--accent);
       font-weight: 600;
       text-decoration: none;
       position: relative;
     }
-    nav a:hover::after,
-    nav a:focus::after {
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: -4px;
       left: 0;
-      width: 100%;
+      width: 0%;
       height: 2px;
-      background-color: var(--accent-dark);
+      background-color: var(--accent);
       transition: width 0.3s;
     }
+    nav a:hover::after {
+      width: 100%;
+    }
     main {
+      max-width: 900px;
+      margin: 6rem auto 3rem;
+      padding: 0 1rem;
       background: var(--card-bg);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.1);
-      color: var(--text-light);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
     }
     h2 {
-      color: var(--accent-dark);
+      color: var(--accent);
+      margin: 1.5rem 0 1rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #004a8f;
     }
     p {
       margin-bottom: 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text-light);
     }
     ul {
-      margin-left: 1rem;
       margin-bottom: 1rem;
-      color: var(--text-light);
-      list-style-type: disc;
+      padding-left: 20px;
     }
     ul li {
       margin-bottom: 0.5rem;
-      font-size: 1rem;
-      line-height: 1.5;
     }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      color: var(--accent-dark);
-      font-weight: 600;
-    }
-    footer a {
-      color: var(--accent-dark);
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
+    a.button-back {
+      display: inline-block;
+      margin: 1.5rem 0;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 5px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: 600;
+      transition: background 0.3s;
     }
-    footer a:hover {
-      color: var(--accent-light);
+    a.button-back:hover {
+      background: #005ea3;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Patel</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="virtualization.html">Virtualization</a>
-      <a href="nist-csf.html">NIST-CSF</a>
-      <a href="network-penetration-testing.html" aria-current="page">Network Penetration Testing</a>
-    </nav>
-  </header>
+<header>
+  <h1>Dhrumil Patel</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="virtualization.html">Virtualization</a>
+    <a href="nist-csf.html">NIST-CSF</a>
+    <a href="network-penetration-testing.html" aria-current="page">Network Penetration Testing</a>
+  </nav>
+</header>
+<main>
+  <h2>Network Penetration Testing</h2>
 
-  <main>
-    <h2>Network Penetration Testing</h2>
-    <p>This project focused on assessing network vulnerabilities through penetration testing techniques to identify and remediate security risks.</p>
-    <ul>
-      <li>Performed vulnerability scanning using tools like Nmap and Nessus.</li>
-      <li>Executed penetration tests targeting open ports and services.</li>
-      <li>Documented findings with remediation recommendations.</li>
-      <li>Enhanced skills in ethical hacking and risk assessment.</li>
-    </ul>
-  </main>
+  <p><strong>Overview:</strong> Network penetration testing is a security exercise that simulates cyberattacks to identify vulnerabilities in a network before malicious actors exploit them. This project covers the history, types, stages, tools, and methods of penetration testing.</p>
 
-  <footer>
-    <p>&copy; 2025 Dhrumil Patel</p>
-    <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
+  <h3>1. What is Network Penetration Testing?</h3>
+  <p>Penetration testing is a cybersecurity practice where experts attempt to find and exploit vulnerabilities in computer systems to assess the system's security posture.</p>
+
+  <h3>2. History of Penetration Testing</h3>
+  <ul>
+    <li><strong>The Tiger Team (1960s-1970s):</strong> Early cybersecurity teams formed for testing defense systems.</li>
+    <li><strong>1980s:</strong> Government adoption of ethical hacking and legal frameworks such as the Computer Fraud and Abuse Act.</li>
+    <li><strong>1990s:</strong> Development of advanced hacking tools and recognition of penetration testing as a discipline.</li>
+    <li><strong>2000s:</strong> Establishment of industry standards including OWASP testing guides and Penetration Testing Execution Standard.</li>
+  </ul>
+
+  <h3>3. Approaches to Penetration Testing</h3>
+  <ul>
+    <li><strong>Black Box:</strong> Tester has no prior knowledge of the system.</li>
+    <li><strong>White Box:</strong> Tester has full access to source code and system information.</li>
+    <li><strong>Grey Box:</strong> Tester has limited knowledge, combining black and white box advantages.</li>
+  </ul>
+
+  <h3>4. Areas of Penetration Testing</h3>
+  <ul>
+    <li>Network Penetration Testing</li>
+    <li>Web Application Testing</li>
+    <li>Client-Side Tests</li>
+    <li>Wireless Network Testing</li>
+    <li>Social Engineering Tests</li>
+  </ul>
+
+  <h3>5. Stages of Penetration Testing</h3>
+  <ol>
+    <li>Planning and Reconnaissance</li>
+    <li>Scanning</li>
+    <li>Gaining Access</li>
+    <li>Maintaining Access</li>
+    <li>Analysis and Reporting</li>
+  </ol>
+
+  <h3>6. Tools Used</h3>
+  <ul>
+    <li><strong>Nmap:</strong> Network scanning and discovery tool.</li>
+    <li><strong>Wireshark:</strong> Network protocol analyzer.</li>
+    <li><strong>Hashcat:</strong> Password recovery tool.</li>
+    <li><strong>John the Ripper:</strong> Password cracking software.</li>
+    <li><strong>Responder:</strong> LLMNR, NBT-NS and MDNS poisoner.</li>
+  </ul>
+
+  <h3>7. Nmap Usage Overview</h3>
+  <p>Nmap scans networks to discover hosts, open ports, and services, and can perform OS detection and version scanning.</p>
+
+  <h3>8. Types of Scans in Nmap</h3>
+  <ul>
+    <li>TCP Scan</li>
+    <li>UDP Scan</li>
+    <li>SYN Scan</li>
+    <li>ACK Scan</li>
+    <li>FIN, NULL, and XMAS Scans</li>
+    <li>Ping Scan</li>
+  </ul>
+
+  <h3>9. Installation of Nmap</h3>
+  <p>Available for Windows, Mac, and Linux with respective installers or package managers.</p>
+
+  <h3>10. Implementation & Results</h3>
+  <p>Performed scans to identify open ports, services, and operating systems on target machines. Analyzed scan outputs to detect vulnerabilities.</p>
+
+  <a href="index.html" class="button-back">Back to Home</a>
+</main>
 </body>
 </html>
