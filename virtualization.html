@@ -2,143 +2,196 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Virtualization with VMware ESXi & VCSA | Dhrumil Patel</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
-      --bg: #f0f4f8;
-      --text-dark: #073763;
-      --text-light: #333333;
-      --accent-dark: #194e70;
-      --accent-light: #6fa8dc;
-      --card-bg: #ffffff;
-      --timeline-line: #6fa8dc;
-      --timeline-dot: #194e70;
+      --bg: #f5f8fa;
+      --text: #333;
+      --accent: #2a6ebb;
+      --card-bg: #fff;
+      --shadow: rgba(42,110,187,0.15);
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text-light);
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+      color: var(--text);
+      min-height: 100vh;
     }
     header {
+      position: fixed;
+      width: 100%;
+      top: 0; left: 0;
+      z-index: 1000;
+      background: var(--card-bg);
+      box-shadow: 0 2px 5px var(--shadow);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      padding: 1rem 2rem;
     }
     header h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--accent-dark);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    header h1 a {
+      color: var(--accent);
+      text-decoration: none;
     }
     nav a {
-      margin-left: 1.5rem;
-      color: var(--text-dark);
+      margin-left: 2rem;
+      color: var(--text);
       font-weight: 600;
       text-decoration: none;
       position: relative;
+      padding-bottom: 4px;
     }
-    nav a:hover::after,
-    nav a:focus::after {
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: 0;
       left: 0;
+      width: 0%;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after,
+    nav a.active::after {
       width: 100%;
-      height: 2px;
-      background-color: var(--accent-dark);
-      transition: width 0.3s;
     }
     main {
+      max-width: 900px;
+      margin: 120px auto 3rem;
       background: var(--card-bg);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.1);
-      color: var(--text-light);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px var(--shadow);
     }
     h2 {
-      color: var(--accent-dark);
-      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.6;
       margin-bottom: 1rem;
     }
     ul {
-      margin-left: 1rem;
+      margin-left: 1.5rem;
       margin-bottom: 1rem;
-      color: var(--text-light);
-      list-style-type: disc;
+      line-height: 1.6;
     }
     ul li {
       margin-bottom: 0.5rem;
-      font-size: 1rem;
-      line-height: 1.5;
     }
-    p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text-light);
+    img.project-image {
+      width: 100%;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px var(--shadow);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
     }
     footer {
-      margin-top: 3rem;
       text-align: center;
-      color: var(--accent-dark);
-      font-weight: 600;
+      padding: 2rem 1rem;
+      background: var(--card-bg);
+      color: var(--text);
+      box-shadow: 0 -2px 5px var(--shadow);
+      margin-top: 3rem;
     }
     footer a {
-      color: var(--accent-dark);
+      color: var(--accent);
       margin: 0 0.5rem;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
-    footer a:hover {
-      color: var(--accent-light);
+    .scroll-top {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 0 12px rgba(42,110,187,0.6);
+      z-index: 1100;
+    }
+    .scroll-top.show {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Patel</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="virtualization.html" aria-current="page">Virtualization</a>
-      <a href="nist-csf.html">NIST-CSF</a>
-      <a href="network-penetration-testing.html">Network Penetration Testing</a>
-    </nav>
-  </header>
+<header>
+  <h1><a href="index.html">Dhrumil Patel</a></h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#projects" class="active">Projects</a>
+    <a href="index.html#timeline">Timeline</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <h2>Virtualization and Vulnerability Assessment</h2>
-    <p>This project involved setting up a virtual environment and performing end-to-end vulnerability assessment. It integrated modern cybersecurity practices across various stages of the system lifecycle.</p>
-    <ul>
-      <li><strong>Tools Used:</strong> Oracle VirtualBox, Windows 10 ISO, Kali Linux ISO, VM network bridging</li>
-      <li><strong>Key Tasks:</strong></li>
-      <ul>
-        <li>Installed and configured two VMs with custom specs</li>
-        <li>Set up shared folders and guest additions</li>
-        <li>Implemented bridged networking to allow internet access</li>
-        <li>Captured network settings and screenshots of configurations</li>
-        <li>Verified system connectivity using ping, IP configuration, and VirtualBox settings</li>
-      </ul>
-      <li><strong>Skills Demonstrated:</strong> VM provisioning, OS installation, networking configuration, system hardening basics</li>
-    </ul>
-  </main>
+<main data-aos="fade-up" data-aos-duration="800">
+  <h2>Virtualization with VMware ESXi & VCSA</h2>
+  <p>
+    Configured a complete virtualization environment using VMware ESXi 6.7 and vCenter Server Appliance (VCSA). The setup included installation of ESXi, staging and deployment of VCSA, configuration of iSCSI & NFS storage, vApps, virtual networks (Standard & Distributed Switch), OVA/OVF templates, High Availability, DRS, and vMotion for load balancing and failover. Successfully managed VM templates, backups, and created a distributed and scalable lab simulation environment.
+  </p>
+  <img src="virtualization_lab.jpg" alt="VMware Virtualization Lab" class="project-image" />
+  <h3>Key Tasks:</h3>
+  <ul>
+    <li>Installation and configuration of VMware ESXi 6.7 hosts.</li>
+    <li>Deployment and management of vCenter Server Appliance (VCSA).</li>
+    <li>Configuration of storage solutions: iSCSI and NFS shared storage.</li>
+    <li>Setup of virtual networks including Standard and Distributed Switches.</li>
+    <li>Implementation of High Availability (HA), Distributed Resource Scheduler (DRS), and vMotion.</li>
+    <li>Creation and management of VM templates and backups.</li>
+    <li>Designed scalable lab environment for testing and demonstrations.</li>
+  </ul>
+</main>
 
-  <footer>
-    <p>&copy; 2025 Dhrumil Patel</p>
-    <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
+<footer>
+  <p>&copy; 2025 Dhrumil Patel</p>
+  <div>
+    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/dhrumilpatel06" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 800 });
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('show', window.scrollY > 300);
+  });
+</script>
 </body>
 </html>
