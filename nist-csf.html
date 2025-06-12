@@ -25,6 +25,7 @@
       background: var(--bg);
       color: var(--text-dark);
     }
+    /* === HEADER/Nav: match main page exactly === */
     header {
       position: fixed;
       width: 100%;
@@ -36,32 +37,45 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--accent);
+      border-bottom: 1px solid #cbd5e1;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
     }
     header h1 {
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: var(--accent);
       user-select: none;
+      margin: 0;
     }
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     nav a {
       color: var(--text-dark);
       font-weight: 600;
       text-decoration: none;
-      padding-bottom: 4px;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s ease;
+      position: relative;
+      padding-bottom: 3px;
     }
-    nav a:hover, nav a:focus, nav a[aria-current="page"] {
-      border-color: var(--accent);
-      color: var(--accent);
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.3s;
     }
+    nav a:hover::after,
+    nav a:focus::after,
+    nav a[aria-current="page"]::after {
+      width: 100%;
+    }
+    /* Main content styling */
     main {
       padding-top: 5rem;
       max-width: 850px;
@@ -133,21 +147,21 @@
   <main>
     <h2>NIST-CSF Strategy Implementation</h2>
     <p><strong>Project Overview:</strong></p>
-    <p>Implemented the NIST Cybersecurity Framework (CSF) to enhance organizational security posture. Developed policies and controls aligned with NIST standards to mitigate risks, improve threat detection, and ensure regulatory compliance.</p>
+    <p>Implemented the NIST Cybersecurity Framework (CSF) to improve the organization’s security posture through risk assessment and control implementation aligned with NIST standards.</p>
 
     <p><strong>Key Achievements:</strong></p>
     <ul>
-      <li>Conducted comprehensive risk assessments based on NIST CSF guidelines.</li>
-      <li>Designed and deployed security controls addressing Identify, Protect, Detect, Respond, and Recover functions.</li>
-      <li>Facilitated training sessions for staff on cybersecurity best practices aligned with NIST CSF.</li>
-      <li>Improved incident response time through enhanced monitoring and automation.</li>
+      <li>Performed detailed risk assessments based on NIST CSF core functions.</li>
+      <li>Developed policies covering Identify, Protect, Detect, Respond, and Recover.</li>
+      <li>Facilitated staff training on cybersecurity best practices.</li>
+      <li>Enhanced incident response efficiency through automation.</li>
     </ul>
 
     <p><strong>Tools and Technologies:</strong></p>
     <ul>
-      <li>Risk management tools</li>
-      <li>SIEM solutions for monitoring</li>
-      <li>Automation frameworks for incident response</li>
+      <li>Risk management frameworks</li>
+      <li>SIEM and monitoring tools</li>
+      <li>Automation platforms for response</li>
     </ul>
   </main>
 
