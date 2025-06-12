@@ -3,51 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NIST-CSF Strategy Implementation | Dhrumil Patel</title>
+  <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #f0f4f8;
-      --text-dark: #273c75;
-      --accent: #22a6b3;
-      --card-bg: #ffffff;
+      --accent-start: #00e0a8;
+      --accent-end: #00b3ff;
+      --text-dark: #111;
+      --text-muted: #555;
+      --bg-light: #f9fbfc;
+      --card-bg: #fff;
       --shadow: rgba(0, 0, 0, 0.1);
-      --link-color: #3867d6;
-      --link-hover: #2e86de;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background: var(--bg-light);
       color: var(--text-dark);
+      line-height: 1.6;
+      padding-top: 72px;
     }
-    /* === HEADER/Nav: match main page exactly === */
     header {
       position: fixed;
       width: 100%;
       top: 0; left: 0;
       z-index: 100;
-      background: var(--bg);
+      background: var(--bg-light);
       box-shadow: 0 2px 5px var(--shadow);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 1px solid #cbd5e1;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text-dark);
+      border-bottom: 1px solid #d1d9e6;
     }
     header h1 {
+      font-size: 1.8rem;
       font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--accent);
+      background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       user-select: none;
-      margin: 0;
     }
     nav {
       display: flex;
@@ -58,78 +56,47 @@
       font-weight: 600;
       text-decoration: none;
       position: relative;
-      padding-bottom: 3px;
+      padding-bottom: 4px;
     }
     nav a::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 0%;
+      width: 0;
       height: 2px;
-      background-color: var(--accent);
-      transition: width 0.3s;
+      background: var(--accent-start);
+      transition: width 0.3s ease;
     }
     nav a:hover::after,
-    nav a:focus::after,
     nav a[aria-current="page"]::after {
       width: 100%;
     }
-    /* Main content styling */
     main {
-      padding-top: 5rem;
-      max-width: 850px;
-      margin: 2rem auto 4rem;
+      max-width: 900px;
+      margin: 2rem auto;
       background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 6px 15px var(--shadow);
       padding: 2rem 3rem;
-      line-height: 1.6;
-      color: var(--text-dark);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px var(--shadow);
     }
     h2 {
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-      border-bottom: 3px solid var(--accent);
-      padding-bottom: 0.5rem;
-      user-select: none;
-    }
-    p {
-      font-size: 1.1rem;
+      color: var(--accent-start);
       margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    p, ul {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--text-dark);
     }
     ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding-left: 1.2rem;
+      list-style: disc;
     }
-    li {
+    ul li {
       margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-    strong {
-      font-weight: 700;
-      color: var(--accent);
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      background: var(--bg);
-      color: #444;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-    footer a {
-      color: var(--accent);
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
-      transition: color 0.3s;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--link-hover);
     }
   </style>
 </head>
@@ -138,40 +105,22 @@
     <h1>Dhrumil Patel</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="nist-csf.html" aria-current="page">Projects</a>
-      <a href="index.html#timeline">Experience & Education</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-
   <main>
     <h2>NIST-CSF Strategy Implementation</h2>
-    <p><strong>Project Overview:</strong></p>
-    <p>Implemented the NIST Cybersecurity Framework (CSF) to improve the organization’s security posture through risk assessment and control implementation aligned with NIST standards.</p>
-
+    <p>This project involved developing a cybersecurity strategy aligned with the NIST Cybersecurity Framework (CSF) to enhance risk management practices.</p>
+    <p><strong>Tools Used:</strong> Open-AudIT, Wazuh, AWS Inspector, Microsoft Defender</p>
     <p><strong>Key Achievements:</strong></p>
     <ul>
-      <li>Performed detailed risk assessments based on NIST CSF core functions.</li>
-      <li>Developed policies covering Identify, Protect, Detect, Respond, and Recover.</li>
-      <li>Facilitated staff training on cybersecurity best practices.</li>
-      <li>Enhanced incident response efficiency through automation.</li>
-    </ul>
-
-    <p><strong>Tools and Technologies:</strong></p>
-    <ul>
-      <li>Risk management frameworks</li>
-      <li>SIEM and monitoring tools</li>
-      <li>Automation platforms for response</li>
+      <li>Designed governance templates and risk registers for asset management.</li>
+      <li>Applied SWOT and Bayesian risk analysis methodologies.</li>
+      <li>Tailored CSF profiles for a small business scenario to improve security posture.</li>
+      <li>Presented comprehensive findings with practical recommendations.</li>
     </ul>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Dhrumil Patel</p>
-    <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
 </body>
 </html>
