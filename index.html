@@ -6,6 +6,7 @@
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     :root {
       --bg: #f0f4f8;
@@ -325,21 +326,32 @@
   <section id="timeline" class="timeline">
     <h2>Experience & Education</h2>
     <div class="timeline-container">
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right" data-aos-duration="700">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-        <span>Sept 2022 – Aug 2023</span>
-        <p>
-          Monitored security alerts, investigated incidents, and created detailed
-          reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.
-        </p>
+        <span>Sept 2022 – Aug 2023 | Ahmedabad, India</span>
+        <ul>
+          <li>Monitored and responded to security incidents using Sumo Logic SIEM.</li>
+          <li>Managed security and access tickets ensuring SLA adherence.</li>
+          <li>Provisioned/deprovisioned user accounts across enterprise systems.</li>
+          <li>Created SOPs, incident response workflows, and troubleshooting guides.</li>
+          <li>Supported escalation of high-severity incidents with root cause analysis.</li>
+          <li>Enhanced reporting using Power BI for ticket metrics and incident trends.</li>
+          <li>Worked with tools like CrowdStrike, WAFs, firewalls, VPNs, and Netskope.</li>
+        </ul>
       </div>
-      <div class="timeline-item">
-        <h3>Master of Science in Informatics</h3>
-        <span>Northeastern University, Toronto | 2023 – 2025</span>
-        <p>
-          Focus on Cybersecurity, Network Security, and Risk Assessment
-          methodologies.
-        </p>
+      <div class="timeline-item" data-aos="fade-left" data-aos-duration="700">
+        <h3>Master of Professional Studies in Informatics</h3>
+        <span>Northeastern University, Toronto, ON | Graduated May 2025</span>
+        <p>GPA: 3.7 — Focus on Cybersecurity, Network Security, and Risk Assessment.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-right" data-aos-duration="700">
+        <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
+        <span>Gujarat University, India | Graduated June 2021</span>
+        <p>GPA: 3.56 — Strong foundation in cybersecurity principles and IT management.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-left" data-aos-duration="700">
+        <h3>Red Hat System Administrator Certificate</h3>
+        <p>Proficient in Red Hat Enterprise Linux administration, system configuration, user management, networking, and security protocols.</p>
       </div>
     </div>
   </section>
@@ -352,9 +364,7 @@
     </div>
     <div class="contact-item">
       <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
-        >linkedin.com/in/dhrumilpatel06</a
-      >
+      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
     </div>
   </section>
 
@@ -362,11 +372,14 @@
     <p>&copy; 2025 Dhrumil Patel</p>
     <div>
       <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"
-        ><i class="fab fa-linkedin"></i
-      ></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+  </script>
 </body>
 </html>
