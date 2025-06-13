@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -14,8 +14,6 @@
       --accent-dark: #194e70;
       --accent-light: #6fa8dc;
       --card-bg: #ffffff;
-      --timeline-line: #6fa8dc;
-      --timeline-dot: #194e70;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -25,8 +23,6 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text-light);
-      min-height: 100vh;
-      line-height: 1.6;
     }
     header {
       position: fixed;
@@ -45,7 +41,6 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--accent-dark);
-      cursor: default;
     }
     nav a {
       margin-left: 2rem;
@@ -53,7 +48,6 @@
       font-weight: 600;
       text-decoration: none;
       position: relative;
-      font-size: 1rem;
     }
     nav a::after {
       content: '';
@@ -72,7 +66,7 @@
     section {
       padding: 6rem 2rem 3rem;
       max-width: 1200px;
-      margin: 0 auto 4rem;
+      margin: auto;
     }
     .hero {
       min-height: 100vh;
@@ -167,85 +161,50 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-    /* Timeline */
-    .timeline {
-      margin-top: 4rem;
-      padding: 0 1rem;
+
+    /* Experience & Education cards - new style */
+    #experience-education {
+      max-width: 900px;
+      margin: 4rem auto 6rem;
+      padding: 0 2rem;
+      font-family: 'Inter', sans-serif;
     }
-    .timeline h2 {
+    #experience-education h2 {
       text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
       color: var(--accent-dark);
       margin-bottom: 3rem;
-      font-weight: 700;
-      font-size: 2.2rem;
     }
-    .timeline-container {
-      position: relative;
-      max-width: 720px;
-      margin: auto;
-      padding-left: 50px;
-    }
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 35px;
-      top: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, #a0c4ff, #3a86ff);
-      border-radius: 3px;
-      box-shadow: 0 0 12px #3a86ff88;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3.5rem;
-      padding: 1rem 2rem 1.5rem 3rem;
+    .exp-ed-card {
       background: var(--card-bg);
-      border-radius: 14px;
-      box-shadow: 0 6px 15px rgba(58, 134, 255, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      width: calc(100% - 60px);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.1);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
     }
-    .timeline-item:hover {
-      transform: translateX(8px);
-      box-shadow: 0 12px 30px rgba(58, 134, 255, 0.3);
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -56px;
-      top: 20px;
-      width: 28px;
-      height: 28px;
-      background: #3a86ff;
-      border-radius: 50%;
-      box-shadow:
-        0 0 15px #3a86ffcc,
-        0 0 25px #3a86ff99,
-        0 0 40px #3a86ff55;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .timeline-item:hover::before {
-      background: #6699ff;
-      box-shadow:
-        0 0 25px #6699ffdd,
-        0 0 40px #6699ffbb,
-        0 0 60px #6699ff99;
-    }
-    .timeline-item h3 {
-      margin: 0;
+    .exp-ed-card:nth-child(2) { animation-delay: 0.8s; }
+    .exp-ed-card:nth-child(3) { animation-delay: 1s; }
+    .exp-ed-card h3 {
       color: var(--accent-dark);
-      font-size: 1.5rem;
       font-weight: 700;
+      margin-bottom: 0.3rem;
     }
-    .timeline-item span {
-      display: block;
-      margin-bottom: 0.7rem;
+    .exp-ed-card span {
+      color: var(--accent-light);
       font-weight: 600;
       font-size: 1rem;
-      color: var(--accent-light);
     }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Contact */
     #contact {
       max-width: 720px;
@@ -253,7 +212,7 @@
       padding: 2rem 2.5rem;
       background: var(--card-bg);
       border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(58, 134, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(25, 68, 123, 0.1);
       color: var(--accent-dark);
     }
     #contact h2 {
@@ -308,7 +267,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
-      <a href="#timeline">Timeline</a>
+      <a href="#experience-education">Experience & Education</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -338,21 +297,19 @@
     </div>
   </section>
 
-  <section id="timeline" class="timeline">
+  <section id="experience-education">
     <h2>Experience & Education</h2>
-    <div class="timeline-container">
-      <div class="timeline-item">
-        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-        <span>Sept 2022 – Aug 2023</span>
-      </div>
-      <div class="timeline-item">
-        <h3>Master of Professional Studies in Informatics</h3>
-        <span>Northeastern University, Toronto, ON | Graduated May 2025</span>
-      </div>
-      <div class="timeline-item">
-        <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
-        <span>Gujarat University, India | Graduated June 2021</span>
-      </div>
+    <div class="exp-ed-card">
+      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+      <span>Sept 2022 – Aug 2023</span>
+    </div>
+    <div class="exp-ed-card">
+      <h3>Master of Professional Studies in Informatics</h3>
+      <span>Northeastern University, Toronto | 2023 – 2025</span>
+    </div>
+    <div class="exp-ed-card">
+      <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
+      <span>Gujarat University, India | 2017 – 2021</span>
     </div>
   </section>
 
