@@ -1,286 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dhrumil Patel | Cybersecurity Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<style>
-  :root {
-    --bg: #f0f4f8;
-    --text-dark: #073763;
-    --text-light: #333333;
-    --accent-experience: #1f497d; /* dark blue */
-    --accent-education: #4bacc6; /* lighter blue */
-    --card-bg: #ffffff;
-    --shadow-color: rgba(31, 73, 125, 0.15);
-  }
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text-light);
-    min-height: 100vh;
-  }
-  header {
-    position: fixed;
-    width: 100%;
-    top: 0; left: 0;
-    z-index: 100;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text-dark);
-  }
-  nav a {
-    margin-left: 2rem;
-    color: var(--text-dark);
-    font-weight: 600;
-    text-decoration: none;
-    position: relative;
-    font-size: 1rem;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--text-dark);
-    transition: width 0.3s;
-  }
-  nav a:hover::after,
-  nav a:focus::after {
-    width: 100%;
-  }
-  section {
-    padding: 6rem 2rem 3rem;
-    max-width: 1000px;
-    margin: auto;
-  }
-  #experience-education {
-    position: relative;
-    margin: 3rem auto 6rem;
-  }
-  /* Vertical timeline line */
-  #experience-education::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-experience);
-    transform: translateX(-50%);
-    border-radius: 2px;
-  }
-  /* Cards container */
-  .timeline-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  /* Each timeline event */
-  .timeline-item {
-    position: relative;
-    width: 45%;
-    background: var(--card-bg);
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px var(--shadow-color);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-  }
-  .timeline-item:hover {
-    box-shadow: 0 12px 30px var(--accent-education);
-    transform: translateY(-8px);
-  }
-  /* Animation delay for fade in */
-  .timeline-item.visible {
-    animation: fadeInUp 0.6s ease forwards;
-  }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhrumil Patel | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #f0f4f8;
+      --text-dark: #073763;
+      --text-light: #333333;
+      --accent-dark: #194e70;
+      --accent-light: #6fa8dc;
+      --card-bg: #ffffff;
+      --timeline-line: #6fa8dc;
+      --timeline-dot: #194e70;
     }
-  }
-  /* Left timeline items */
-  .timeline-item.left {
-    margin-left: 0;
-    margin-right: auto;
-    text-align: right;
-  }
-  /* Right timeline items */
-  .timeline-item.right {
-    margin-left: auto;
-    margin-right: 0;
-    text-align: left;
-  }
-  /* Circle markers */
-  .timeline-item::before {
-    content: "";
-    position: absolute;
-    top: 1.5rem;
-    width: 18px;
-    height: 18px;
-    background: var(--accent-experience);
-    border: 4px solid var(--card-bg);
-    border-radius: 50%;
-    box-shadow: 0 0 12px var(--accent-education);
-    z-index: 10;
-  }
-  .timeline-item.left::before {
-    right: -42px;
-  }
-  .timeline-item.right::before {
-    left: -42px;
-  }
-  /* Headings and text */
-  .timeline-item h3 {
-    margin-bottom: 0.5rem;
-    color: var(--accent-experience);
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  .timeline-item span {
-    font-weight: 600;
-    color: var(--accent-education);
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
-  .timeline-item p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text-light);
-  }
-  /* Responsive adjustments */
-  @media (max-width: 900px) {
-    #experience-education::before {
-      left: 8px;
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      position: fixed;
+      width: 100%;
       top: 0;
-      width: 4px;
-      height: 100%;
-      transform: none;
+      left: 0;
+      z-index: 100;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
     }
-    .timeline-item {
-      width: 100% !important;
-      text-align: left !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 2.5rem;
-      padding-right: 2rem;
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+    nav a {
+      margin-left: 2rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent-dark);
+      transition: width 0.3s;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    main {
+      flex-grow: 1;
+      padding: 6rem 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.3);
+      padding: 3rem 1rem;
       margin-bottom: 3rem;
-      transform: translateY(20px);
     }
-    .timeline-item::before {
-      left: 0 !important;
-      right: auto !important;
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #a2d2ff;
+      box-shadow: 0 0 20px #a2d2ffaa;
+      animation: pulse 2.5s infinite;
+      margin-bottom: 2rem;
     }
-  }
-</style>
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #a2d2ffbb;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 6px #a2d2ffaa;
+    }
+    .hero a {
+      background: var(--accent-dark);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 15px var(--accent-light);
+      transition: background-color 0.3s ease;
+    }
+    .hero a:hover {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      box-shadow: 0 0 30px var(--accent-light);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 #a2d2ff88; }
+      70% { box-shadow: 0 0 0 20px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    /* Projects Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-tile {
+      background-color: var(--card-bg);
+      border-left: 6px solid var(--accent-dark);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .project-tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
+    }
+    .project-tile a {
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      width: 100%;
+      display: block;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    .project-tile a:hover,
+    .project-tile a:focus {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    /* New Experience & Education Section */
+
+    .exp-edu-section {
+      max-width: 900px;
+      margin: 3rem auto 6rem;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .exp-edu-card {
+      background: var(--card-bg);
+      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
+      border-radius: 12px;
+      padding: 2rem;
+      flex: 1 1 380px;
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .exp-edu-card:hover {
+      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
+    }
+    .exp-edu-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: var(--accent-dark);
+      border-bottom: 3px solid var(--accent-light);
+      padding-bottom: 0.5rem;
+    }
+    .exp-edu-card ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .exp-edu-card ul li {
+      margin-bottom: 0.7rem;
+    }
+    .exp-edu-card p {
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    /* Contact */
+    #contact {
+      max-width: 720px;
+      margin: 3rem auto 6rem;
+      padding: 2rem 2.5rem;
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(25, 68, 123, 0.1);
+      color: var(--accent-dark);
+    }
+    #contact h2 {
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent-dark);
+      text-align: center;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-item strong {
+      min-width: 90px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+    .contact-item a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-item a:hover {
+      color: var(--accent-dark);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--bg);
+      color: var(--accent-dark);
+      font-weight: 600;
+    }
+    footer a {
+      color: var(--accent-dark);
+      margin: 0 0.5rem;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: var(--accent-light);
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Dhrumil Patel</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience-education">Experience & Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1>Dhrumil Patel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-  <h2>Hi, I'm Dhrumil</h2>
-  <p>
-    Cybersecurity Enthusiast focused on threat detection, SOC operations,
-    and network defense.
-  </p>
-  <a href="#projects">Explore My Work</a>
-</section>
+  <main>
+    <section class="hero">
+      <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
+      <h2>Hi, I'm Dhrumil</h2>
+      <p>
+        Cybersecurity Enthusiast focused on threat detection, SOC operations,
+        and network defense.
+      </p>
+      <a href="#projects">Explore My Work</a>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-tile">
-      <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
-    </div>
-    <div class="project-tile">
-      <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-    </div>
-    <div class="project-tile">
-      <a href="network-penetration-testing.html">Network Penetration Testing</a>
-    </div>
-  </div>
-</section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-tile">
+          <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
+        </div>
+        <div class="project-tile">
+          <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+        </div>
+        <div class="project-tile">
+          <a href="network-penetration-testing.html">Network Penetration Testing</a>
+        </div>
+      </div>
+    </section>
 
-<section id="experience-education">
-  <h2>Experience & Education</h2>
-  <div class="timeline-container">
-    <div class="timeline-item left">
-      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-      <span>Sept 2022 – Aug 2023</span>
-    </div>
-    <div class="timeline-item right">
-      <h3>Master of Professional Studies in Informatics</h3>
-      <span>Northeastern University, Toronto | 2023 – 2025</span>
-    </div>
-    <div class="timeline-item left">
-      <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
-      <span>Gujarat University, India | 2017 – 2021</span>
-    </div>
-  </div>
-</section>
+    <section id="timeline" class="exp-edu-section">
+      <div class="exp-edu-card">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <p><strong>Duration:</strong> Sept 2022 – Aug 2023</p>
+        <ul>
+          <li>Monitored security alerts and investigated incidents.</li>
+          <li>Created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</li>
+          <li>Collaborated with cross-functional teams to improve security posture.</li>
+        </ul>
+      </div>
+      <div class="exp-edu-card">
+        <h3>Master of Science in Informatics</h3>
+        <p><strong>Institution:</strong> Northeastern University, Toronto</p>
+        <p><strong>Duration:</strong> 2023 – 2025</p>
+        <ul>
+          <li>Specialized in Cybersecurity, Network Security, and Risk Assessment methodologies.</li>
+          <li>Completed advanced projects on threat detection and risk mitigation.</li>
+          <li>Engaged in research on enterprise-grade cybersecurity frameworks.</li>
+        </ul>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-item">
-    <strong>Email:</strong>
-    <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
-  </div>
-  <div class="contact-item">
-    <strong>LinkedIn:</strong>
-    <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
-  </div>
-</section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-item">
+        <strong>Email:</strong>
+        <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
+          >linkedin.com/in/dhrumilpatel06</a
+        >
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; 2025 Dhrumil Patel</p>
-  <div>
-    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-  </div>
-</footer>
-
-<script>
-  // Scroll fade-in animation for timeline items
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  timelineItems.forEach(item => observer.observe(item));
-</script>
+  <footer>
+    <p>&copy; 2025 Dhrumil Patel</p>
+    <div>
+      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
