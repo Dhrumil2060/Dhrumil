@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -14,6 +14,7 @@
       --accent-dark: #194e70;
       --accent-light: #6fa8dc;
       --card-bg: #ffffff;
+      --shadow-color: rgba(25, 68, 123, 0.15);
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -23,6 +24,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text-light);
+      min-height: 100vh;
     }
     header {
       position: fixed;
@@ -48,6 +50,7 @@
       font-weight: 600;
       text-decoration: none;
       position: relative;
+      font-size: 1rem;
     }
     nav a::after {
       content: '';
@@ -134,7 +137,7 @@
       border-left: 6px solid var(--accent-dark);
       padding: 1.5rem 2rem;
       border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
+      box-shadow: 0 6px 15px var(--shadow-color);
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       cursor: pointer;
       display: flex;
@@ -144,7 +147,7 @@
     }
     .project-tile:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
+      box-shadow: 0 12px 30px var(--accent-light);
     }
     .project-tile a {
       color: var(--accent-dark);
@@ -161,50 +164,57 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-
-    /* Experience & Education cards - new style */
+    /* NEW Experience & Education design */
     #experience-education {
-      max-width: 900px;
       margin: 4rem auto 6rem;
-      padding: 0 2rem;
-      font-family: 'Inter', sans-serif;
-    }
-    #experience-education h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--accent-dark);
-      margin-bottom: 3rem;
+      max-width: 900px;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .exp-ed-card {
       background: var(--card-bg);
-      padding: 1.5rem 2rem;
+      flex: 1 1 350px;
+      padding: 1.8rem 2.5rem;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.1);
-      margin-bottom: 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s forwards;
+      box-shadow: 0 6px 20px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
     }
-    .exp-ed-card:nth-child(2) { animation-delay: 0.8s; }
-    .exp-ed-card:nth-child(3) { animation-delay: 1s; }
-    .exp-ed-card h3 {
+    .exp-ed-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 35px var(--accent-light);
+    }
+    .exp-ed-card h2 {
       color: var(--accent-dark);
       font-weight: 700;
-      margin-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.9rem;
+      border-bottom: 3px solid var(--accent-light);
+      padding-bottom: 0.5rem;
+    }
+    .exp-ed-card h3 {
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      font-size: 1.25rem;
     }
     .exp-ed-card span {
       color: var(--accent-light);
       font-weight: 600;
       font-size: 1rem;
+      margin-bottom: 1rem;
+      display: block;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .exp-ed-card p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
     }
-
     /* Contact */
     #contact {
       max-width: 720px;
@@ -212,7 +222,7 @@
       padding: 2rem 2.5rem;
       background: var(--card-bg);
       border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(25, 68, 123, 0.1);
+      box-shadow: 0 10px 30px var(--shadow-color);
       color: var(--accent-dark);
     }
     #contact h2 {
@@ -298,18 +308,26 @@
   </section>
 
   <section id="experience-education">
-    <h2>Experience & Education</h2>
     <div class="exp-ed-card">
-      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-      <span>Sept 2022 – Aug 2023</span>
+      <h2>Experience</h2>
+      <div>
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
+        <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
+      </div>
     </div>
     <div class="exp-ed-card">
-      <h3>Master of Professional Studies in Informatics</h3>
-      <span>Northeastern University, Toronto | 2023 – 2025</span>
-    </div>
-    <div class="exp-ed-card">
-      <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
-      <span>Gujarat University, India | 2017 – 2021</span>
+      <h2>Education</h2>
+      <div>
+        <h3>Master of Professional Studies in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
+        <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
+      </div>
+      <div>
+        <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
+        <span>Gujarat University, India | 2017 – 2021</span>
+        <p>Focused on core cybersecurity concepts, IT infrastructure, and security management.</p>
+      </div>
     </div>
   </section>
 
