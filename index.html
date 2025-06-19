@@ -14,6 +14,8 @@
       --accent-dark: #194e70;
       --accent-light: #6fa8dc;
       --card-bg: #ffffff;
+      --timeline-line: #6fa8dc;
+      --timeline-dot: #194e70;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -161,86 +163,73 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-
-    /* Timeline zigzag */
+    /* Timeline */
     .timeline {
-      max-width: 900px;
-      margin: 3rem auto 5rem;
+      margin-top: 4rem;
       padding: 0 1rem;
     }
     .timeline h2 {
-      font-size: 2.4rem;
-      font-weight: 700;
       text-align: center;
       color: var(--accent-dark);
       margin-bottom: 3rem;
+      font-weight: 700;
+      font-size: 2.2rem;
     }
     .timeline-container {
       position: relative;
-      padding: 2rem 0;
-    }
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, #6fa8dc, #194e70);
-      border-radius: 2px;
+      max-width: 720px;
+      margin: auto;
+      padding-left: 40px;
+      border-left: 3px solid var(--accent-light);
     }
     .timeline-item {
       position: relative;
-      width: 45%;
-      padding: 1rem 2rem;
+      margin-bottom: 3.5rem;
+      padding-left: 1rem;
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(25, 68, 123, 0.15);
-      margin-bottom: 3rem;
+      box-shadow: 0 4px 15px rgba(25, 68, 123, 0.1);
+      padding: 1rem 1.5rem 1.5rem 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .timeline-item.left {
-      left: 0;
-      clear: both;
+    .timeline-item:hover {
+      transform: translateX(6px);
+      box-shadow: 0 10px 30px rgba(25, 68, 123, 0.3);
     }
-    .timeline-item.right {
-      left: 55%;
-      clear: both;
-    }
-    .timeline-item::after {
+    .timeline-item::before {
       content: '';
       position: absolute;
-      top: 24px;
+      left: -28px;
+      top: 20px;
       width: 18px;
       height: 18px;
+      background: var(--accent-dark);
       border-radius: 50%;
-      background: #194e70;
-      border: 4px solid #6fa8dc;
-      box-shadow: 0 0 12px #6fa8dcaa;
+      box-shadow: 0 0 8px var(--accent-light);
+      transition: background-color 0.3s ease;
     }
-    .timeline-item.left::after {
-      right: -36px;
-    }
-    .timeline-item.right::after {
-      left: -36px;
+    .timeline-item:hover::before {
+      background: var(--accent-light);
+      box-shadow: 0 0 15px var(--accent-light);
     }
     .timeline-item h3 {
-      font-weight: 700;
+      margin: 0;
       color: var(--accent-dark);
-      margin-bottom: 0.3rem;
+      font-size: 1.4rem;
     }
     .timeline-item span {
-      font-weight: 600;
-      color: var(--accent-light);
-      margin-bottom: 0.8rem;
       display: block;
+      margin-bottom: 0.7rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent-light);
     }
     .timeline-item p {
-      font-size: 1rem;
+      margin: 0;
       color: var(--text-light);
+      font-size: 1rem;
       line-height: 1.5;
     }
-
     /* Contact */
     #contact {
       max-width: 720px;
@@ -336,26 +325,15 @@
   <section id="timeline" class="timeline">
     <h2>Experience & Education</h2>
     <div class="timeline-container">
-      <div class="timeline-item left">
-        <div class="content">
+      <a href="experience.html" style="text-decoration:none; color: inherit;">
+        <div class="timeline-item">
           <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
           <span>Sept 2022 – Aug 2023</span>
-          <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
         </div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content">
-          <h3>Master of Professional Studies in Informatics</h3>
-          <span>Northeastern University, Toronto | Graduated May 2025</span>
-          <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
-        </div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content">
-          <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
-          <span>Gujarat University, India | Graduated June 2021</span>
-          <p>Comprehensive knowledge of cybersecurity principles, information systems, and IT infrastructure.</p>
-        </div>
+      </a>
+      <div class="timeline-item">
+        <h3>Master of Science in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
       </div>
     </div>
   </section>
