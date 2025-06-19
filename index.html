@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -14,8 +14,6 @@
       --accent-dark: #194e70;
       --accent-light: #6fa8dc;
       --card-bg: #ffffff;
-      --timeline-line: #194e70;
-      --timeline-dot: #6fa8dc;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -25,9 +23,6 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text-light);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
     header {
       position: fixed;
@@ -65,20 +60,16 @@
       transition: width 0.3s;
     }
     nav a:hover::after,
-    nav a:focus::after,
-    nav a[aria-current="page"]::after {
+    nav a:focus::after {
       width: 100%;
     }
-    main {
-      margin-top: 6rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem 4rem;
-      flex-grow: 1;
+    section {
+      padding: 6rem 2rem 3rem;
+      max-width: 1200px;
+      margin: auto;
     }
     .hero {
-      min-height: 70vh;
+      min-height: 100vh;
       background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
       color: white;
       display: flex;
@@ -132,20 +123,11 @@
       70% { box-shadow: 0 0 0 20px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
-    /* Projects */
-    #projects h2 {
-      color: var(--accent-dark);
-      font-weight: 700;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      text-align: center;
-    }
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
+      margin-top: 2rem;
     }
     .project-tile {
       background-color: var(--card-bg);
@@ -179,109 +161,89 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-    /* Timeline */
+
+    /* Timeline zigzag */
     .timeline {
-      position: relative;
-      margin: 4rem auto 5rem;
-      padding: 0 0 2rem 0;
-      max-width: 700px;
+      max-width: 900px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
     }
-    .timeline::before {
+    .timeline h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--accent-dark);
+      margin-bottom: 3rem;
+    }
+    .timeline-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+    .timeline-container::before {
       content: '';
       position: absolute;
-      left: 50%;
       top: 0;
+      left: 50%;
       transform: translateX(-50%);
       width: 4px;
       height: 100%;
-      background: var(--timeline-line);
+      background: linear-gradient(180deg, #6fa8dc, #194e70);
       border-radius: 2px;
-      box-shadow: 0 0 12px var(--accent-light);
-      z-index: 1;
     }
     .timeline-item {
       position: relative;
       width: 45%;
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
+      box-shadow: 0 6px 18px rgba(25, 68, 123, 0.15);
       margin-bottom: 3rem;
-      z-index: 2;
     }
     .timeline-item.left {
       left: 0;
-      margin-right: auto;
-      transform-origin: right center;
-      animation: slideFromLeft 0.8s ease forwards;
+      clear: both;
     }
     .timeline-item.right {
       left: 55%;
-      margin-left: auto;
-      transform-origin: left center;
-      animation: slideFromRight 0.8s ease forwards;
+      clear: both;
     }
     .timeline-item::after {
       content: '';
       position: absolute;
-      top: 1.7rem;
-      width: 20px;
-      height: 20px;
+      top: 24px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: var(--timeline-dot);
-      box-shadow: 0 0 10px var(--accent-light);
-      border: 4px solid var(--card-bg);
-      z-index: 3;
+      background: #194e70;
+      border: 4px solid #6fa8dc;
+      box-shadow: 0 0 12px #6fa8dcaa;
     }
     .timeline-item.left::after {
-      right: -38px;
+      right: -36px;
     }
     .timeline-item.right::after {
-      left: -38px;
+      left: -36px;
     }
     .timeline-item h3 {
-      color: var(--accent-dark);
       font-weight: 700;
-      font-size: 1.3rem;
+      color: var(--accent-dark);
       margin-bottom: 0.3rem;
     }
     .timeline-item span {
-      display: block;
       font-weight: 600;
-      font-size: 0.9rem;
       color: var(--accent-light);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      display: block;
     }
-    /* Responsive Timeline */
-    @media (max-width: 768px) {
-      .timeline::before {
-        left: 8px;
-      }
-      .timeline-item,
-      .timeline-item.left,
-      .timeline-item.right {
-        width: 100%;
-        left: 0 !important;
-        margin: 0 0 2rem 20px !important;
-        animation: none !important;
-      }
-      .timeline-item::after {
-        left: 0 !important;
-        right: auto !important;
-      }
+    .timeline-item p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.5;
     }
-    /* Animations */
-    @keyframes slideFromLeft {
-      from {opacity: 0; transform: translateX(-50px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
-    @keyframes slideFromRight {
-      from {opacity: 0; transform: translateX(50px);}
-      to {opacity: 1; transform: translateX(0);}
-    }
+
     /* Contact */
     #contact {
-      max-width: 700px;
+      max-width: 720px;
       margin: 3rem auto 6rem;
       padding: 2rem 2.5rem;
       background: var(--card-bg);
@@ -339,69 +301,78 @@
   <header>
     <h1>Dhrumil Patel</h1>
     <nav>
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-      <h2>Hi, I'm Dhrumil</h2>
-      <p>
-        Cybersecurity Enthusiast focused on threat detection, SOC operations,
-        and network defense.
-      </p>
-      <a href="#projects">Explore My Work</a>
-    </section>
+  <section class="hero">
+    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
+    <h2>Hi, I'm Dhrumil</h2>
+    <p>
+      Cybersecurity Enthusiast focused on threat detection, SOC operations,
+      and network defense.
+    </p>
+    <a href="#projects">Explore My Work</a>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-tile">
-          <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
-        </div>
-        <div class="project-tile">
-          <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-        </div>
-        <div class="project-tile">
-          <a href="network-penetration-testing.html">Network Penetration Testing</a>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
+      </div>
+      <div class="project-tile">
+        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+      </div>
+      <div class="project-tile">
+        <a href="network-penetration-testing.html">Network Penetration Testing</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="timeline">
+    <h2>Experience & Education</h2>
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+          <span>Sept 2022 – Aug 2023</span>
+          <p>Monitored security alerts, investigated incidents, and created detailed reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.</p>
         </div>
       </div>
-    </section>
-
-    <section class="timeline">
-      <h2>Experience & Education</h2>
-      <article class="timeline-item left">
-        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-        <span>Sept 2022 – Aug 2023</span>
-      </article>
-      <article class="timeline-item right">
-        <h3>Master of Professional Studies in Informatics</h3>
-        <span>Northeastern University, Toronto | Graduated May 2025</span>
-      </article>
-      <article class="timeline-item left">
-        <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
-        <span>Gujarat University, India | Graduated June 2021</span>
-      </article>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-item">
-        <strong>Email:</strong>
-        <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>Master of Professional Studies in Informatics</h3>
+          <span>Northeastern University, Toronto | Graduated May 2025</span>
+          <p>Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.</p>
+        </div>
       </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
-          >linkedin.com/in/dhrumilpatel06</a
-        >
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
+          <span>Gujarat University, India | Graduated June 2021</span>
+          <p>Comprehensive knowledge of cybersecurity principles, information systems, and IT infrastructure.</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-item">
+      <strong>Email:</strong>
+      <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
+        >linkedin.com/in/dhrumilpatel06</a
+      >
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Dhrumil Patel</p>
