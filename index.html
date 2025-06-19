@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #f0f4f8;
-      --text-dark: #073763;
-      --text-light: #333333;
-      --accent-dark: #194e70;
-      --accent-light: #6fa8dc;
-      --card-bg: #ffffff;
-      --timeline-line: #6fa8dc;
-      --timeline-dot: #194e70;
-    }
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text-light);
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0a0f1a;
+      color: #e6e6e6;
+      line-height: 1.5;
     }
+    a {
+      color: #40a9ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #1890ff;
+    }
+    /* Header */
     header {
       position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      top: 0; left: 0; right: 0;
+      background: #0a0f1a;
+      padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      z-index: 1000;
     }
     header h1 {
-      font-size: 1.8rem;
       font-weight: 700;
-      color: var(--accent-dark);
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #40a9ff;
     }
     nav a {
       margin-left: 2rem;
-      color: var(--text-dark);
       font-weight: 600;
-      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
       position: relative;
     }
     nav a::after {
@@ -56,249 +56,244 @@
       position: absolute;
       bottom: -4px;
       left: 0;
-      width: 0%;
+      width: 0;
       height: 2px;
-      background-color: var(--accent-dark);
+      background: #1890ff;
       transition: width 0.3s;
     }
     nav a:hover::after,
-    nav a:focus::after {
+    nav a.active::after {
       width: 100%;
     }
+    /* Sections */
     section {
-      padding: 6rem 2rem 3rem;
-      max-width: 1200px;
-      margin: auto;
+      padding: 120px 20px 80px;
+      max-width: 960px;
+      margin: 0 auto;
     }
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
-      color: white;
+    h2.section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #40a9ff;
+      border-bottom: 2px solid #1890ff;
+      padding-bottom: 6px;
+      max-width: fit-content;
+      margin: 0 auto 2rem auto;
+    }
+    /* Hero */
+    #home {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      background: linear-gradient(135deg, #273c75, #192a56);
+      padding: 0 1rem;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.3);
-      padding: 3rem 1rem;
+      box-shadow: 0 8px 30px rgba(25, 68, 123, 0.3);
+      color: white;
       margin-bottom: 3rem;
     }
-    .hero img {
+    #home img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #a2d2ff;
-      box-shadow: 0 0 20px #a2d2ffaa;
+      box-shadow: 0 0 25px #a2d2ff88;
       animation: pulse 2.5s infinite;
       margin-bottom: 2rem;
     }
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #a2d2ffbb;
+    #home h2 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px #a2d2ffbb;
     }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
+    #home p {
+      font-size: 1.4rem;
       margin-bottom: 2rem;
-      text-shadow: 0 0 6px #a2d2ffaa;
+      max-width: 600px;
+      text-shadow: 0 0 10px #a2d2ffaa;
     }
-    .hero a {
-      background: var(--accent-dark);
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 25px;
+    #home a.button {
+      background: #1890ff;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
       font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 15px var(--accent-light);
+      box-shadow: 0 0 15px #40a9ff;
       transition: background-color 0.3s ease;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-    .hero a:hover {
-      background: var(--accent-light);
-      color: var(--accent-dark);
-      box-shadow: 0 0 30px var(--accent-light);
+    #home a.button:hover {
+      background: #40a9ff;
+      box-shadow: 0 0 30px #40a9ff;
+      color: #192a56;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 #a2d2ff88; }
       70% { box-shadow: 0 0 0 20px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
-    .project-grid {
+    /* Projects */
+    #projects .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 1.5rem;
     }
-    .project-tile {
-      background-color: var(--card-bg);
-      border-left: 6px solid var(--accent-dark);
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    .project-card {
+      background: #1e272e;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      padding: 1.5rem 1.8rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #40a9ff;
     }
-    .project-tile:hover {
+    .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
+      box-shadow: 0 0 20px #1890ff;
     }
-    .project-tile a {
-      color: var(--accent-dark);
+    .project-card h3 {
+      margin: 0 0 0.75rem 0;
       font-weight: 700;
       font-size: 1.2rem;
-      text-decoration: none;
-      width: 100%;
-      display: block;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
     }
-    .project-tile a:hover,
-    .project-tile a:focus {
-      color: var(--accent-light);
-      text-decoration: none;
+    .project-card p {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #b0bec5;
     }
-
-    /* Zig-zag timeline */
-    .timeline {
-      margin-top: 4rem;
+    /* Timeline */
+    #timeline {
       max-width: 720px;
+      margin: auto;
+    }
+    #timeline h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #40a9ff;
+      border-bottom: 2px solid #1890ff;
+      padding-bottom: 5px;
+      max-width: fit-content;
       margin-left: auto;
       margin-right: auto;
-      position: relative;
-      padding: 2rem 0;
     }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--accent-light);
-      transform: translateX(-50%);
+    .timeline-line {
+      position: relative;
+      margin-left: 40px;
+      padding-left: 10px;
+      border-left: 4px solid #1890ff;
+      min-height: 320px;
     }
     .timeline-item {
       position: relative;
-      width: 45%;
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .timeline-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
+      margin-bottom: 2.5rem;
+      padding-left: 20px;
     }
     .timeline-item::before {
-      content: '';
+      content: "";
       position: absolute;
-      top: 24px;
-      width: 20px;
-      height: 20px;
-      background: var(--accent-dark);
+      top: 5px;
+      left: -30px;
+      width: 14px;
+      height: 14px;
+      background: #40a9ff;
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent-light);
+      box-shadow: 0 0 8px #1890ff;
       transition: background-color 0.3s ease;
     }
     .timeline-item:hover::before {
-      background: var(--accent-light);
-      box-shadow: 0 0 15px var(--accent-light);
-    }
-    /* Left timeline item */
-    .timeline-item.left {
-      left: 0;
-      margin-right: auto;
-    }
-    .timeline-item.left::before {
-      right: -10px;
-    }
-    /* Right timeline item */
-    .timeline-item.right {
-      left: 55%;
-      margin-left: auto;
-    }
-    .timeline-item.right::before {
-      left: -10px;
+      background: #1890ff;
+      box-shadow: 0 0 12px #40a9ff;
     }
     .timeline-item h3 {
-      margin: 0 0 0.5rem 0;
-      color: var(--accent-dark);
-      font-size: 1.4rem;
+      font-weight: 700;
+      color: #40a9ff;
+      margin-bottom: 0.25rem;
+      font-size: 1.2rem;
     }
     .timeline-item span {
       display: block;
-      margin-bottom: 0.7rem;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--accent-light);
-    }
-    .timeline-item p {
-      margin: 0;
-      color: var(--text-light);
-      font-size: 1rem;
-      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      color: #8eb6e0;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
     /* Contact */
     #contact {
-      max-width: 720px;
+      max-width: 600px;
       margin: 3rem auto 6rem;
       padding: 2rem 2.5rem;
-      background: var(--card-bg);
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(25, 68, 123, 0.1);
-      color: var(--accent-dark);
+      background: #1e272e;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      color: #a8bbd1;
+      text-align: center;
     }
     #contact h2 {
       font-weight: 700;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
-      color: var(--accent-dark);
-      text-align: center;
+      color: #40a9ff;
     }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .contact-item strong {
-      min-width: 90px;
-      color: var(--accent-dark);
-      font-weight: 700;
-    }
-    .contact-item a {
-      color: var(--accent-light);
+    #contact a {
+      color: #40a9ff;
       text-decoration: none;
       transition: color 0.3s ease;
+      font-weight: 600;
     }
-    .contact-item a:hover {
-      color: var(--accent-dark);
+    #contact a:hover {
+      color: #8eb6e0;
     }
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: var(--bg);
-      color: var(--accent-dark);
+      background: #0a0f1a;
+      color: #a8bbd1;
       font-weight: 600;
     }
     footer a {
-      color: var(--accent-dark);
+      color: #40a9ff;
       margin: 0 0.5rem;
       font-size: 1.4rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     footer a:hover {
-      color: var(--accent-light);
+      color: #8eb6e0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      section {
+        padding: 100px 15px 50px;
+      }
+      #home h2 {
+        font-size: 2.5rem;
+      }
+      #projects .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline-line {
+        margin-left: 20px;
+        padding-left: 5px;
+        min-height: 280px;
+      }
+      .timeline-item::before {
+        left: -22px;
+        width: 12px;
+        height: 12px;
+      }
     }
   </style>
 </head>
@@ -306,65 +301,66 @@
   <header>
     <h1>Dhrumil Patel</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#home">Home</a>
       <a href="#projects">Projects</a>
       <a href="#timeline">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <section id="home" class="hero">
     <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
     <h2>Hi, I'm Dhrumil</h2>
-    <p>
-      Cybersecurity Enthusiast focused on threat detection, SOC operations,
-      and network defense.
-    </p>
-    <a href="#projects">Explore My Work</a>
+    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+    <a href="#projects" class="button">Explore My Work</a>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="project-grid">
-      <div class="project-tile">
+      <div class="project-card">
         <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
       </div>
-      <div class="project-tile">
+      <div class="project-card">
         <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
       </div>
-      <div class="project-tile">
+      <div class="project-card">
         <a href="network-penetration-testing.html">Network Penetration Testing</a>
       </div>
     </div>
   </section>
 
-  <section id="timeline" class="timeline">
-    <h2>Experience & Education</h2>
-    <div class="timeline-container">
-      <a href="experience.html" style="text-decoration:none; color: inherit;">
-        <div class="timeline-item left">
-          <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-          <span>Sept 2022 – Aug 2023</span>
-        </div>
-      </a>
-      <div class="timeline-item right">
+  <section id="timeline">
+    <h2 class="section-title">Experience & Education</h2>
+    <div class="timeline-line">
+      <div class="timeline-item">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
+      </div>
+      <div class="timeline-item">
         <h3>Master of Science in Informatics</h3>
         <span>Northeastern University, Toronto | 2023 – 2025</span>
+      </div>
+      <div class="timeline-item">
+        <h3>Diploma in Cybersecurity</h3>
+        <span>Durham College | 2021 – 2023</span>
+      </div>
+      <div class="timeline-item">
+        <h3>Bachelor of Engineering in Computer Science</h3>
+        <span>Gujarat Technological University, India | 2013 – 2017</span>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
     <div class="contact-item">
       <strong>Email:</strong>
       <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
     </div>
     <div class="contact-item">
       <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
-        >linkedin.com/in/dhrumilpatel06</a
-      >
+      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
     </div>
   </section>
 
@@ -372,9 +368,7 @@
     <p>&copy; 2025 Dhrumil Patel</p>
     <div>
       <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"
-        ><i class="fab fa-linkedin"></i
-      ></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
     </div>
   </footer>
