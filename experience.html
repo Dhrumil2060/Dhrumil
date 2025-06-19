@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhrumil Patel | Experience & Skills</title>
+  <title>Dhrumil Patel | Experience</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -22,7 +22,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text-light);
+      color: var(--text-dark);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -67,34 +67,36 @@
       width: 100%;
     }
     main {
-      margin-top: 5.5rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 6rem;
       padding: 2rem;
       flex-grow: 1;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
     h2 {
       color: var(--accent-dark);
       font-weight: 700;
       font-size: 2.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
     .skills-section {
-      margin-bottom: 3rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      display: flex;
       gap: 2rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
     .skill-card {
       background: var(--card-bg);
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
+      flex: 0 0 300px;
       border-radius: 12px;
       padding: 1.5rem;
+      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
     .skill-card:hover {
       transform: translateY(-6px);
@@ -103,28 +105,31 @@
     .skill-card h3 {
       margin-bottom: 1rem;
       color: var(--accent-dark);
-      font-size: 1.5rem;
       font-weight: 700;
+      font-size: 1.3rem;
       text-align: center;
     }
     .skill-list {
-      list-style-type: none;
-      padding-left: 0;
-      color: var(--text-light);
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      color: var(--text-dark);
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .skill-list li {
-      margin-bottom: 0.7rem;
-      padding-left: 1.5rem;
-      position: relative;
+      margin-bottom: 0.5rem;
     }
-    .skill-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent-light);
-      font-weight: bold;
+    /* Scrollbar Styling */
+    .skills-section::-webkit-scrollbar {
+      height: 8px;
+    }
+    .skills-section::-webkit-scrollbar-track {
+      background: #e0e6ef;
+      border-radius: 10px;
+    }
+    .skills-section::-webkit-scrollbar-thumb {
+      background: var(--accent-dark);
+      border-radius: 10px;
     }
     footer {
       text-align: center;
@@ -150,102 +155,52 @@
     <h1>Dhrumil Patel</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#timeline">Timeline</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="experience.html" aria-current="page">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <main>
-    <section class="skills-section">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Security Monitoring & SIEM</h3>
-          <ul class="skill-list">
-            <li>Splunk Enterprise & Splunk Phantom</li>
-            <li>Sumo Logic</li>
-            <li>Elastic Stack (ELK)</li>
-            <li>Wazuh & OSSEC</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Cloud & Virtualization</h3>
-          <ul class="skill-list">
-            <li>Microsoft Azure Security</li>
-            <li>Amazon Web Services (AWS)</li>
-            <li>VMware ESXi & vCenter</li>
-            <li>VirtualBox & Kali Linux</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Networking & Protocols</h3>
-          <ul class="skill-list">
-            <li>TCP/IP, DNS, DHCP</li>
-            <li>VPN, Firewall, IDS/IPS</li>
-            <li>Wireshark, Nmap</li>
-            <li>Network Segmentation & VLANs</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Security Tools & Techniques</h3>
-          <ul class="skill-list">
-            <li>Penetration Testing (Kali Linux, Metasploit)</li>
-            <li>Threat Intelligence & Incident Response</li>
-            <li>SIEM Use Cases & Alert Tuning</li>
-            <li>Security Automation & Playbooks</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <section class="skills-section">
-      <h2>Soft Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Communication</h3>
-          <ul class="skill-list">
-            <li>Clear Technical Reporting</li>
-            <li>Stakeholder Collaboration</li>
-            <li>Effective Presentation</li>
-            <li>Active Listening</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Problem Solving</h3>
-          <ul class="skill-list">
-            <li>Analytical Thinking</li>
-            <li>Threat Hunting Strategies</li>
-            <li>Root Cause Analysis</li>
-            <li>Creative Solutions</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Teamwork & Leadership</h3>
-          <ul class="skill-list">
-            <li>Agile & Scrum Methodologies</li>
-            <li>Mentoring & Training</li>
-            <li>Conflict Resolution</li>
-            <li>Project Coordination</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Time Management</h3>
-          <ul class="skill-list">
-            <li>Prioritization</li>
-            <li>Meeting Deadlines</li>
-            <li>Task Management</li>
-            <li>Self-Motivation</li>
-          </ul>
-        </div>
+  <main>
+    <h2>Technical Skills & Soft Skills</h2>
+    <div class="skills-section" role="region" aria-label="Technical Skills">
+      <div class="skill-card" tabindex="0">
+        <h3>Technical Skills</h3>
+        <ul class="skill-list">
+          <li>Security Operations Center (SOC) Monitoring</li>
+          <li>Threat Detection & Incident Response</li>
+          <li>SIEM Tools: Sumo Logic, Splunk, Elastic</li>
+          <li>Endpoint Protection: CrowdStrike, Netskope</li>
+          <li>Network Security & Penetration Testing</li>
+          <li>Cloud Security (Azure, AWS)</li>
+          <li>Power BI Reporting & Data Visualization</li>
+          <li>Linux & Windows System Administration</li>
+          <li>Python & Bash Scripting</li>
+        </ul>
       </div>
-    </section>
+      <div class="skill-card" tabindex="0">
+        <h3>Soft Skills</h3>
+        <ul class="skill-list">
+          <li>Analytical Thinking & Problem Solving</li>
+          <li>Effective Communication</li>
+          <li>Team Collaboration & Leadership</li>
+          <li>Adaptability & Continuous Learning</li>
+          <li>Attention to Detail</li>
+          <li>Time Management & Prioritization</li>
+          <li>Critical Thinking</li>
+          <li>Work Ethic & Dependability</li>
+        </ul>
+      </div>
+    </div>
   </main>
+
   <footer>
     <p>&copy; 2025 Dhrumil Patel</p>
     <div>
       <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/dhrumilpatel06" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dhrumilpatel06" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </footer>
 </body>
