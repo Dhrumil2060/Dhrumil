@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -25,9 +25,6 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text-light);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
     header {
       position: fixed;
@@ -68,11 +65,10 @@
     nav a:focus::after {
       width: 100%;
     }
-    main {
-      flex-grow: 1;
+    section {
       padding: 6rem 2rem 3rem;
       max-width: 1200px;
-      margin: 0 auto 2rem;
+      margin: auto;
     }
     .hero {
       min-height: 100vh;
@@ -129,7 +125,6 @@
       70% { box-shadow: 0 0 0 20px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
-    /* Projects Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -168,7 +163,6 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-
     /* Timeline */
     .timeline {
       margin-top: 4rem;
@@ -303,66 +297,62 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-      <h2>Hi, I'm Dhrumil</h2>
-      <p>
-        Cybersecurity Enthusiast focused on threat detection, SOC operations,
-        and network defense.
-      </p>
-      <a href="#projects">Explore My Work</a>
-    </section>
+  <section class="hero">
+    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
+    <h2>Hi, I'm Dhrumil</h2>
+    <p>
+      Cybersecurity Enthusiast focused on threat detection, SOC operations,
+      and network defense.
+    </p>
+    <a href="#projects">Explore My Work</a>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-tile">
-          <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
-        </div>
-        <div class="project-tile">
-          <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-        </div>
-        <div class="project-tile">
-          <a href="network-penetration-testing.html">Network Penetration Testing</a>
-        </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
       </div>
-    </section>
+      <div class="project-tile">
+        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+      </div>
+      <div class="project-tile">
+        <a href="network-penetration-testing.html">Network Penetration Testing</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="timeline" class="timeline">
-      <h2>Experience & Education</h2>
-      <div class="timeline-container">
-        <div class="timeline-item">
-          <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-          <span>Sept 2022 – Aug 2023</span>
-          <p>
-            Monitored security alerts and investigated incidents.
-          </p>
-        </div>
-        <div class="timeline-item">
-          <h3>Master of Science in Informatics</h3>
-          <span>Northeastern University, Toronto | 2023 – 2025</span>
-          <p>
-            Focused on Cybersecurity, Network Security, and Risk Assessment methodologies.
-          </p>
-        </div>
+  <section id="timeline" class="timeline">
+    <h2>Experience & Education</h2>
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+        <span>Sept 2022 – Aug 2023</span>
       </div>
-    </section>
+      <div class="timeline-item">
+        <h3>Master of Science in Informatics</h3>
+        <span>Northeastern University, Toronto | 2023 – 2025</span>
+      </div>
+      <div class="timeline-item">
+        <h3>Bachelor of Technology in Electronics & Communication Engineering</h3>
+        <span>University of Kerala | 2014 – 2018</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-item">
-        <strong>Email:</strong>
-        <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
-      </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
-          >linkedin.com/in/dhrumilpatel06</a
-        >
-      </div>
-    </section>
-  </main>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-item">
+      <strong>Email:</strong>
+      <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank"
+        >linkedin.com/in/dhrumilpatel06</a
+      >
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Dhrumil Patel</p>
