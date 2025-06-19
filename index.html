@@ -1,376 +1,395 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
-    *, *::before, *::after {
-      box-sizing: border-box;
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
       scroll-behavior: smooth;
     }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0a0f1a;
-      color: #e6e6e6;
-      line-height: 1.5;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #223056; /* navy dark text */
+      line-height: 1.6;
     }
     a {
-      color: #40a9ff;
+      color: #3459a8; /* medium navy */
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
     a:hover {
-      color: #1890ff;
+      color: #1a3d7c; /* darker navy on hover */
     }
+
     /* Header */
     header {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #0a0f1a;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #fff;
+      border-bottom: 1px solid #e0e6f3;
       padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     header h1 {
       font-weight: 700;
       font-size: 1.8rem;
-      letter-spacing: 2px;
-      color: #40a9ff;
+      color: #223056;
     }
     nav a {
       margin-left: 2rem;
       font-weight: 600;
       font-size: 1rem;
-      cursor: pointer;
       position: relative;
     }
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
       left: 0;
-      width: 0;
+      bottom: -4px;
+      width: 0%;
       height: 2px;
-      background: #1890ff;
+      background-color: #3459a8;
       transition: width 0.3s;
+      border-radius: 1px;
     }
     nav a:hover::after,
     nav a.active::after {
       width: 100%;
     }
-    /* Sections */
+
+    /* Section padding to avoid fixed header */
     section {
-      padding: 120px 20px 80px;
-      max-width: 960px;
-      margin: 0 auto;
+      padding: 6rem 3rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
     }
-    h2.section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #40a9ff;
-      border-bottom: 2px solid #1890ff;
-      padding-bottom: 6px;
-      max-width: fit-content;
-      margin: 0 auto 2rem auto;
-    }
+
     /* Hero */
-    #home {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #273c75, #192a56);
-      padding: 0 1rem;
+    .hero {
+      background: #f7f9fc;
       border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(25, 68, 123, 0.3);
-      color: white;
-      margin-bottom: 3rem;
+      padding: 4rem 3rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(52, 89, 168, 0.15);
     }
-    #home img {
+    .hero img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #a2d2ff;
-      box-shadow: 0 0 25px #a2d2ff88;
+      margin-bottom: 2rem;
+      border: 4px solid #3459a8;
+      box-shadow: 0 0 20px #3459a8aa;
       animation: pulse 2.5s infinite;
-      margin-bottom: 2rem;
     }
-    #home h2 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 15px #a2d2ffbb;
-    }
-    #home p {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      text-shadow: 0 0 10px #a2d2ffaa;
-    }
-    #home a.button {
-      background: #1890ff;
-      padding: 1rem 2.5rem;
-      border-radius: 30px;
+    .hero h2 {
+      font-size: 3rem;
       font-weight: 700;
-      box-shadow: 0 0 15px #40a9ff;
-      transition: background-color 0.3s ease;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: #223056;
     }
-    #home a.button:hover {
-      background: #40a9ff;
-      box-shadow: 0 0 30px #40a9ff;
-      color: #192a56;
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      color: #4b5c7a;
+    }
+    .hero a {
+      background-color: #3459a8;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgba(52, 89, 168, 0.4);
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .hero a:hover {
+      background-color: #1a3d7c;
+      box-shadow: 0 8px 16px rgba(26, 61, 124, 0.6);
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 #a2d2ff88; }
+      0% { box-shadow: 0 0 0 0 rgba(52,89,168, 0.4); }
       70% { box-shadow: 0 0 0 20px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
+
     /* Projects */
-    #projects .project-grid {
+    #projects h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #223056;
+    }
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
     }
     .project-card {
-      background: #1e272e;
+      background: #f7f9fc;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      padding: 1.5rem 1.8rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(52, 89, 168, 0.15);
+      padding: 1.5rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
       cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #40a9ff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #3459a8;
+      border-left: 5px solid #3459a8;
     }
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 20px #1890ff;
+      box-shadow: 0 12px 30px rgba(52, 89, 168, 0.4);
+      color: #1a3d7c;
     }
-    .project-card h3 {
-      margin: 0 0 0.75rem 0;
-      font-weight: 700;
-      font-size: 1.2rem;
+    .project-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
     }
-    .project-card p {
-      flex-grow: 1;
-      font-size: 0.95rem;
-      color: #b0bec5;
-    }
+
     /* Timeline */
     #timeline {
       max-width: 720px;
-      margin: auto;
+      margin: 3rem auto 4rem;
     }
     #timeline h2 {
-      text-align: center;
-      margin-bottom: 2rem;
       font-weight: 700;
-      color: #40a9ff;
-      border-bottom: 2px solid #1890ff;
-      padding-bottom: 5px;
-      max-width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #223056;
     }
     .timeline-line {
       position: relative;
-      margin-left: 40px;
-      padding-left: 10px;
-      border-left: 4px solid #1890ff;
-      min-height: 320px;
+      padding-left: 40px;
+      border-left: 3px solid #6fa8dc;
     }
     .timeline-item {
       position: relative;
       margin-bottom: 2.5rem;
-      padding-left: 20px;
+      padding-left: 1rem;
     }
     .timeline-item::before {
-      content: "";
+      content: '';
       position: absolute;
-      top: 5px;
+      top: 10px;
       left: -30px;
-      width: 14px;
-      height: 14px;
-      background: #40a9ff;
+      width: 20px;
+      height: 20px;
+      background: #3459a8;
       border-radius: 50%;
-      box-shadow: 0 0 8px #1890ff;
+      box-shadow: 0 0 10px #6fa8dc;
       transition: background-color 0.3s ease;
     }
     .timeline-item:hover::before {
-      background: #1890ff;
-      box-shadow: 0 0 12px #40a9ff;
+      background: #1a3d7c;
+      box-shadow: 0 0 15px #6fa8dc;
     }
     .timeline-item h3 {
       font-weight: 700;
-      color: #40a9ff;
-      margin-bottom: 0.25rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      color: #3459a8;
     }
     .timeline-item span {
       display: block;
-      margin-bottom: 0.5rem;
-      color: #8eb6e0;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      color: #6fa8dc;
+      margin-bottom: 0.5rem;
     }
+
     /* Contact */
     #contact {
       max-width: 600px;
       margin: 3rem auto 6rem;
       padding: 2rem 2.5rem;
-      background: #1e272e;
+      background: #f7f9fc;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      color: #a8bbd1;
+      box-shadow: 0 6px 20px rgba(52, 89, 168, 0.1);
+      color: #3459a8;
       text-align: center;
     }
     #contact h2 {
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1.5rem;
-      color: #40a9ff;
+      color: #3459a8;
     }
     #contact a {
-      color: #40a9ff;
+      color: #6fa8dc;
       text-decoration: none;
-      transition: color 0.3s ease;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
     #contact a:hover {
-      color: #8eb6e0;
+      color: #3459a8;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #0a0f1a;
-      color: #a8bbd1;
+      background: #fff;
+      color: #3459a8;
       font-weight: 600;
     }
     footer a {
-      color: #40a9ff;
+      color: #3459a8;
       margin: 0 0.5rem;
       font-size: 1.4rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     footer a:hover {
-      color: #8eb6e0;
+      color: #6fa8dc;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      header {
-        padding: 1rem;
+      nav a {
+        margin-left: 1rem;
       }
       section {
-        padding: 100px 15px 50px;
+        padding: 5rem 1rem 3rem;
       }
-      #home h2 {
-        font-size: 2.5rem;
-      }
-      #projects .project-grid {
+      .project-grid {
         grid-template-columns: 1fr;
       }
+      #timeline {
+        max-width: 100%;
+        padding: 0 1rem;
+      }
       .timeline-line {
-        margin-left: 20px;
-        padding-left: 5px;
-        min-height: 280px;
+        padding-left: 20px;
+        border-left-width: 2px;
       }
       .timeline-item::before {
-        left: -22px;
-        width: 12px;
-        height: 12px;
+        left: -20px;
+        width: 16px;
+        height: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dhrumil Patel</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home" class="hero">
-    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-    <h2>Hi, I'm Dhrumil</h2>
-    <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
-    <a href="#projects" class="button">Explore My Work</a>
-  </section>
+<header>
+  <h1>Dhrumil Patel</h1>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
-      </div>
-      <div class="project-card">
-        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-      </div>
-      <div class="project-card">
-        <a href="network-penetration-testing.html">Network Penetration Testing</a>
-      </div>
-    </div>
-  </section>
+<section id="home" class="hero">
+  <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
+  <h2>Hi, I'm Dhrumil</h2>
+  <p>Cybersecurity Enthusiast focused on threat detection, SOC operations, and network defense.</p>
+  <a href="#projects">Explore My Work</a>
+</section>
 
-  <section id="timeline">
-    <h2 class="section-title">Experience & Education</h2>
-    <div class="timeline-line">
-      <div class="timeline-item">
-        <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
-        <span>Sept 2022 – Aug 2023</span>
-      </div>
-      <div class="timeline-item">
-        <h3>Master of Science in Informatics</h3>
-        <span>Northeastern University, Toronto | 2023 – 2025</span>
-      </div>
-      <div class="timeline-item">
-        <h3>Diploma in Cybersecurity</h3>
-        <span>Durham College | 2021 – 2023</span>
-      </div>
-      <div class="timeline-item">
-        <h3>Bachelor of Engineering in Computer Science</h3>
-        <span>Gujarat Technological University, India | 2013 – 2017</span>
-      </div>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
     </div>
-  </section>
+    <div class="project-card">
+      <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
+    </div>
+    <div class="project-card">
+      <a href="network-penetration-testing.html">Network Penetration Testing</a>
+    </div>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-item">
-      <strong>Email:</strong>
-      <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+<section id="timeline">
+  <h2>Experience & Education</h2>
+  <div class="timeline-line">
+    <div class="timeline-item">
+      <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
+      <span>Sept 2022 – Aug 2023</span>
     </div>
-    <div class="contact-item">
-      <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
+    <div class="timeline-item">
+      <h3>Master of Science in Informatics</h3>
+      <span>Northeastern University, Toronto | 2023 – 2025</span>
     </div>
-  </section>
+    <div class="timeline-item">
+      <h3>Diploma in Cybersecurity</h3>
+      <span>Durham College | 2021 – 2023</span>
+    </div>
+    <div class="timeline-item">
+      <h3>Bachelor of Engineering in Computer Science</h3>
+      <span>Gujarat Technological University, India | 2013 – 2017</span>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Dhrumil Patel</p>
-    <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-item">
+    <strong>Email:</strong>
+    <a href="mailto:dhrumil0620@gmail.com">dhrumil0620@gmail.com</a>
+  </div>
+  <div class="contact-item">
+    <strong>LinkedIn:</strong>
+    <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank">linkedin.com/in/dhrumilpatel06</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Dhrumil Patel</p>
+  <div>
+    <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Scroll spy for active nav link highlight
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+      if(window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
