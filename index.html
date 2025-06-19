@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhrumil Patel | Cybersecurity Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -25,6 +25,7 @@
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text-light);
+      line-height: 1.6;
     }
     header {
       position: fixed;
@@ -50,6 +51,7 @@
       font-weight: 600;
       text-decoration: none;
       position: relative;
+      font-size: 1rem;
     }
     nav a::after {
       content: '';
@@ -70,6 +72,7 @@
       max-width: 1200px;
       margin: auto;
     }
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
@@ -125,6 +128,7 @@
       70% { box-shadow: 0 0 0 20px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
+    /* Projects */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -163,64 +167,83 @@
       color: var(--accent-light);
       text-decoration: none;
     }
-    /* Timeline */
+    /* Timeline zig-zag */
     .timeline {
       margin-top: 4rem;
-      padding: 0 1rem;
-    }
-    .timeline h2 {
-      text-align: center;
-      color: var(--accent-dark);
-      margin-bottom: 3rem;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-    .timeline-container {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
       position: relative;
-      max-width: 720px;
-      margin: auto;
-      padding-left: 40px;
-      border-left: 3px solid var(--accent-light);
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--accent-light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 10px;
     }
     .timeline-item {
+      padding: 1rem 2rem;
       position: relative;
-      margin-bottom: 3.5rem;
-      padding-left: 1rem;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(25, 68, 123, 0.1);
-      padding: 1rem 1.5rem 1.5rem 2rem;
+      width: 50%;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(25, 68, 123, 0.15);
+      margin-bottom: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      margin-right: auto;
+      transform-origin: right center;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      margin-left: auto;
+      transform-origin: left center;
+    }
     .timeline-item:hover {
-      transform: translateX(6px);
+      transform: scale(1.03);
       box-shadow: 0 10px 30px rgba(25, 68, 123, 0.3);
+      z-index: 10;
     }
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -28px;
-      top: 20px;
-      width: 18px;
-      height: 18px;
-      background: var(--accent-dark);
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-dark);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent-light);
+      box-shadow: 0 0 12px var(--accent-light);
       transition: background-color 0.3s ease;
+      z-index: 11;
+    }
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
     }
     .timeline-item:hover::before {
-      background: var(--accent-light);
-      box-shadow: 0 0 15px var(--accent-light);
+      background-color: var(--accent-light);
+      box-shadow: 0 0 20px var(--accent-light);
     }
     .timeline-item h3 {
-      margin: 0;
+      margin-bottom: 0.5rem;
       color: var(--accent-dark);
       font-size: 1.4rem;
+      font-weight: 700;
     }
     .timeline-item span {
       display: block;
       margin-bottom: 0.7rem;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
       color: var(--accent-light);
     }
@@ -328,14 +351,24 @@
       <div class="timeline-item">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
         <span>Sept 2022 – Aug 2023</span>
+        <p>
+          Monitored security alerts, investigated incidents, and created detailed
+          reports using Sumo Logic, CrowdStrike, Netskope, and Power BI.
+        </p>
       </div>
       <div class="timeline-item">
-        <h3>Master of Science in Informatics</h3>
-        <span>Northeastern University, Toronto | 2023 – 2025</span>
+        <h3>Master of Professional Studies in Informatics</h3>
+        <span>Northeastern University, Toronto | Graduated May 2025</span>
+        <p>
+          Focus on Cybersecurity, Network Security, and Risk Assessment methodologies.
+        </p>
       </div>
       <div class="timeline-item">
-        <h3>Bachelor of Technology in Electronics & Communication Engineering</h3>
-        <span>University of Kerala | 2014 – 2018</span>
+        <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
+        <span>Gujarat University, India | Graduated June 2021</span>
+        <p>
+          Comprehensive knowledge of cybersecurity principles, information systems, and IT infrastructure.
+        </p>
       </div>
     </div>
   </section>
