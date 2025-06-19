@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhrumil Patel | Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dhrumil Patel | Timeline</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --bg: #f0f4f8;
@@ -14,6 +13,8 @@
       --accent-dark: #194e70;
       --accent-light: #6fa8dc;
       --card-bg: #ffffff;
+      --timeline-line: #194e70;
+      --timeline-dot: #6fa8dc;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -22,7 +23,10 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text-light);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
       position: fixed;
@@ -63,201 +67,125 @@
     nav a:focus::after {
       width: 100%;
     }
-    section {
-      padding: 6rem 2rem 3rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(25, 68, 123, 0.3);
-      padding: 3rem 1rem;
-      margin-bottom: 3rem;
-    }
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #a2d2ff;
-      box-shadow: 0 0 20px #a2d2ffaa;
-      animation: pulse 2.5s infinite;
-      margin-bottom: 2rem;
-    }
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px #a2d2ffbb;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 6px #a2d2ffaa;
-    }
-    .hero a {
-      background: var(--accent-dark);
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 25px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 15px var(--accent-light);
-      transition: background-color 0.3s ease;
-    }
-    .hero a:hover {
-      background: var(--accent-light);
-      color: var(--accent-dark);
-      box-shadow: 0 0 30px var(--accent-light);
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 #a2d2ff88; }
-      70% { box-shadow: 0 0 0 20px transparent; }
-      100% { box-shadow: 0 0 0 0 transparent; }
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .project-tile {
-      background-color: var(--card-bg);
-      border-left: 6px solid var(--accent-dark);
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .project-tile:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(25, 68, 123, 0.35);
-    }
-    .project-tile a {
-      color: var(--accent-dark);
-      font-weight: 700;
-      font-size: 1.2rem;
-      text-decoration: none;
-      width: 100%;
-      display: block;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
-    }
-    .project-tile a:hover,
-    .project-tile a:focus {
-      color: var(--accent-light);
-      text-decoration: none;
-    }
-
-    /* Zig-Zag Timeline */
-    .timeline {
-      margin-top: 4rem;
+    main {
+      margin-top: 6rem;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+      padding: 2rem 1rem 4rem;
     }
-    .timeline h2 {
+    h2 {
       text-align: center;
+      font-size: 2.4rem;
       color: var(--accent-dark);
       margin-bottom: 3rem;
       font-weight: 700;
-      font-size: 2.2rem;
     }
-    .timeline-container {
+    /* Timeline container */
+    .timeline {
       position: relative;
-      padding: 2rem 0;
+      margin: 0 auto;
+      padding: 0 0 2rem 0;
     }
-    .timeline-container::before {
+    /* Vertical line */
+    .timeline::before {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
       left: 50%;
-      width: 4px;
-      background: var(--accent-dark);
+      top: 0;
       transform: translateX(-50%);
-      border-radius: 10px;
+      width: 4px;
+      height: 100%;
+      background: var(--timeline-line);
+      border-radius: 2px;
+      box-shadow: 0 0 12px var(--accent-light);
+      z-index: 1;
     }
+    /* Timeline item */
     .timeline-item {
       position: relative;
       width: 45%;
+      padding: 1.5rem 2rem;
       background: var(--card-bg);
-      border-radius: 10px;
-      padding: 1rem 2rem;
+      border-radius: 12px;
       box-shadow: 0 6px 15px rgba(25, 68, 123, 0.15);
       margin-bottom: 3rem;
+      z-index: 2;
     }
-    .timeline-item:nth-child(odd) {
+    /* Left side */
+    .timeline-item.left {
       left: 0;
-      clear: both;
       margin-right: auto;
-      transform: translateX(-20px);
+      transform-origin: right center;
+      animation: slideFromLeft 0.8s ease forwards;
     }
-    .timeline-item:nth-child(even) {
-      left: 50%;
+    /* Right side */
+    .timeline-item.right {
+      left: 55%;
       margin-left: auto;
-      clear: both;
-      transform: translateX(20px);
+      transform-origin: left center;
+      animation: slideFromRight 0.8s ease forwards;
     }
+    /* Dot */
     .timeline-item::after {
       content: '';
       position: absolute;
-      top: 1.25rem;
+      top: 1.7rem;
       width: 20px;
       height: 20px;
-      background: var(--accent-dark);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--accent-light);
-      z-index: 1;
+      background: var(--timeline-dot);
+      box-shadow: 0 0 10px var(--accent-light);
+      border: 4px solid var(--card-bg);
+      z-index: 3;
     }
-    .timeline-item:nth-child(odd)::after {
-      right: -40px;
+    .timeline-item.left::after {
+      right: -38px;
     }
-    .timeline-item:nth-child(even)::after {
-      left: -40px;
+    .timeline-item.right::after {
+      left: -38px;
     }
+    /* Content */
     .timeline-item h3 {
-      margin-bottom: 0.4rem;
       color: var(--accent-dark);
-      font-size: 1.3rem;
       font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
     }
     .timeline-item span {
-      color: var(--accent-light);
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
       display: block;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--bg);
-      color: var(--accent-dark);
       font-weight: 600;
-    }
-    footer a {
-      color: var(--accent-dark);
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
+      font-size: 0.9rem;
       color: var(--accent-light);
+      margin-bottom: 1rem;
+    }
+    /* No description as per your request */
+    /* Responsive */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 8px;
+      }
+      .timeline-item,
+      .timeline-item.left,
+      .timeline-item.right {
+        width: 100%;
+        left: 0 !important;
+        margin: 0 0 2rem 20px !important;
+        animation: none !important;
+      }
+      .timeline-item::after {
+        left: 0 !important;
+        right: auto !important;
+      }
+    }
+    /* Animations */
+    @keyframes slideFromLeft {
+      from {opacity: 0; transform: translateX(-50px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+    @keyframes slideFromRight {
+      from {opacity: 0; transform: translateX(50px);}
+      to {opacity: 1; transform: translateX(0);}
     }
   </style>
 </head>
@@ -266,68 +194,28 @@
     <h1>Dhrumil Patel</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#contact">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="timeline.html" aria-current="page">Timeline</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="dhrumil-profile.jpg" alt="Dhrumil Patel" />
-    <h2>Hi, I'm Dhrumil</h2>
-    <p>
-      Cybersecurity Enthusiast focused on threat detection, SOC operations,
-      and network defense.
-    </p>
-    <a href="#projects">Explore My Work</a>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-tile">
-        <a href="virtualization.html">Virtualization with VMware ESXi &amp; VCSA</a>
-      </div>
-      <div class="project-tile">
-        <a href="nist-csf.html">NIST-CSF Strategy Implementation</a>
-      </div>
-      <div class="project-tile">
-        <a href="network-penetration-testing.html">Network Penetration Testing</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="timeline" class="timeline">
+  <main>
     <h2>Experience & Education</h2>
-    <div class="timeline-container">
-      <div class="timeline-item" onclick="window.location.href='experience.html'" style="cursor:pointer;">
+    <section class="timeline">
+      <article class="timeline-item left">
         <h3>SOC Analyst – Infopercept Pvt. Ltd.</h3>
         <span>Sept 2022 – Aug 2023</span>
-      </div>
-      <div class="timeline-item">
+      </article>
+      <article class="timeline-item right">
         <h3>Master of Professional Studies in Informatics</h3>
         <span>Northeastern University, Toronto | Graduated May 2025</span>
-      </div>
-      <div class="timeline-item">
+      </article>
+      <article class="timeline-item left">
         <h3>Bachelor of Science in Cybersecurity and ITIMS</h3>
         <span>Gujarat University, India | Graduated June 2021</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="padding: 3rem 2rem; max-width: 720px; margin: 4rem auto;">
-    <h2 style="text-align: center; color: var(--accent-dark); margin-bottom: 1.5rem;">Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:dhrumil0620@gmail.com" style="color: var(--accent-light);">dhrumil0620@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dhrumilpatel06" target="_blank" style="color: var(--accent-light);">linkedin.com/in/dhrumilpatel06</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Dhrumil Patel</p>
-    <div>
-      <a href="mailto:dhrumil0620@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/dhrumilpatel06"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/dhrumilpatel06"><i class="fab fa-github"></i></a>
-    </div>
-  </footer>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
